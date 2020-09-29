@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from edi.datenschutz.content.verarbeitungstaetigkeit import IVerarbeitungstaetigkeit  # NOQA E501
 from edi.datenschutz.testing import EDI_DATENSCHUTZ_INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.api.exc import InvalidParameterError
@@ -11,11 +12,6 @@ from zope.component import queryUtility
 import unittest
 
 
-try:
-    from plone.dexterity.schema import portalTypeToSchemaName
-except ImportError:
-    # Plone < 5
-    from plone.dexterity.utils import portalTypeToSchemaName
 
 
 class VerarbeitungstaetigkeitIntegrationTest(unittest.TestCase):
@@ -31,8 +27,7 @@ class VerarbeitungstaetigkeitIntegrationTest(unittest.TestCase):
     def test_ct_verarbeitungstaetigkeit_schema(self):
         fti = queryUtility(IDexterityFTI, name='Verarbeitungstaetigkeit')
         schema = fti.lookupSchema()
-        schema_name = portalTypeToSchemaName('Verarbeitungstaetigkeit')
-        self.assertEqual(schema_name, schema.getName())
+        self.assertEqual(IVerarbeitungstaetigkeit, schema)
 
     def test_ct_verarbeitungstaetigkeit_fti(self):
         fti = queryUtility(IDexterityFTI, name='Verarbeitungstaetigkeit')
@@ -43,6 +38,12 @@ class VerarbeitungstaetigkeitIntegrationTest(unittest.TestCase):
         factory = fti.factory
         obj = createObject(factory)
 
+        self.assertTrue(
+            IVerarbeitungstaetigkeit.providedBy(obj),
+            u'IVerarbeitungstaetigkeit not provided by {0}!'.format(
+                obj,
+            ),
+        )
 
     def test_ct_verarbeitungstaetigkeit_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
@@ -52,6 +53,12 @@ class VerarbeitungstaetigkeitIntegrationTest(unittest.TestCase):
             id='verarbeitungstaetigkeit',
         )
 
+        self.assertTrue(
+            IVerarbeitungstaetigkeit.providedBy(obj),
+            u'IVerarbeitungstaetigkeit not provided by {0}!'.format(
+                obj.id,
+            ),
+        )
 
         parent = obj.__parent__
         self.assertIn('verarbeitungstaetigkeit', parent.objectIds())
