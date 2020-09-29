@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddDatenschutzfolgenabschaetzung"
+        title="edi.datenschutz: Add Datenschutzfolgenabschaetzung"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddVerarbeitungstaetigkeit"
         title="edi.datenschutz: Add Verarbeitungstaetigkeit"
     />

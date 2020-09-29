@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Verarbeitungstaetigkeit"
+    name="Datenschutzfolgenabschaetzung"
     meta_type="Dexterity FTI"
     i18n:domain="edi.datenschutz">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Verarbeitungstätigkeit</property>
+      name="title">Datenschutzfolgenabschaetzung</property>
   <property
       i18n:translate=""
-      name="description">Beschreibung einer Verarbeitungstätigkeit</property>
+      name="description">Erstellung einer Datenschutz-Folgenabschaetzung (DSFA)</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Verarbeitungstaetigkeit</property>
+  <property name="factory">Datenschutzfolgenabschaetzung</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
@@ -27,11 +27,11 @@
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.datenschutz.AddVerarbeitungstaetigkeit</property>
-  <property name="klass">edi.datenschutz.content.verarbeitungstaetigkeit.Verarbeitungstaetigkeit</property>
+  <property name="add_permission">edi.datenschutz.AddDatenschutzfolgenabschaetzung</property>
+  <property name="klass">edi.datenschutz.content.datenschutzfolgenabschaetzung.Datenschutzfolgenabschaetzung</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.datenschutz.content.verarbeitungstaetigkeit.IVerarbeitungstaetigkeit</property>
+  <property name="schema">edi.datenschutz.content.datenschutzfolgenabschaetzung.IDatenschutzfolgenabschaetzung</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -61,7 +61,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Verarbeitungstaetigkeit</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Datenschutzfolgenabschaetzung</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
