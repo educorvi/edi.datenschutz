@@ -1,0 +1,6 @@
+[report]
+include =
+    src/edi/*
+omit =
+    */test*
+    */upgrades/*
