@@ -5,5 +5,161 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
   <schema>
+    <fieldset name="beteiligte_personen_und_status"
+              label="1.1 Beteiligte Personen und Status"
+              description="Beteiligte Personen und Status">
+      <field name="an_dsfa_beteiligte_person_en__und_ihre_rolle_n_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>1.1.1 An DSFA beteiligte Person(en) und ihre Rolle(n)</title>
+      </field>
+      <field name="status_der_dsfa" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>1.1.2 Status der DSFA</title>
+        <values>
+          <element>in Bearbeitung</element>
+          <element>Aktiviert</element>
+          <element>Deaktiviert</element>
+          <element>Sonstiges (Bitte in Anmerkungen schreiben)</element>
+        </values>
+        <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+      </field>
+      <field name="anmerkung_zum_status" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>1.1.3 Anmerkung zum Status</title>
+      </field>
+      <field name="kontaktdaten_datenschutzbeauftragte_r" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>1.1.4 Kontaktdaten Datenschutzbeauftragte/r</title>
+      </field>
+    </fieldset>
+    <fieldset name="anlagen_bzw__verweise_zum_dsfa_bericht" 
+              label="1.2 Anlagen bzw. Verweise zum DSFA-Bericht"
+              description="Anlagen bzw. Verweise zum DSFA-Bericht">
+      <field name="anlage_n__hochladen" type="plone.namedfile.field.NamedBlobFile">
+        <description>Hier k&#246;nnen Sie eine Anlage (mehrere Anlagen als zip-Datei) hochladen.</description>
+        <required>False</required>
+        <title>Anlage(n) hochladen</title>
+      </field>
+      <field name="anlage_hochladen" type="plone.namedfile.field.NamedBlobFile">
+        <description>Hier k&#246;nnen Sie eine Anlage (mehrere Anlagen als zip-Datei) hochladen.</description>
+        <required>False</required>
+        <title>1.2 Anlage hochladen</title>
+      </field>
+      <field name="verweis_angeben" type="zope.schema.URI">
+        <description>Hier k&#246;nnen Sie einen Verweis/Link angeben.</description>
+        <required>False</required>
+        <title>Verweis angeben</title>
+      </field>
+      <field name="anmerkung_zu_ihren_anlagen_bzw__verweisen" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>Anmerkung zu Ihren Anlagen bzw. Verweisen</title>
+      </field>
+    </fieldset>
+    <fieldset name="anderungshistorie" 
+              label="1.3 &#196;nderungshistorie"
+              description="&#196;nderungshistorie">
+      <field name="wann__wer__was_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>Wann? Wer? Was?</title>
+      </field>
+    </fieldset>
+    <fieldset name="zeitpunkt_der_nachsten_routinemassigen_uberprufung" 
+              label="1.4 Zeitpunkt der &#220;berpr&#252;fung"
+              description="Zeitpunkt der n&#228;chsten routinem&#228;&#223;igen &#220;berpr&#252;fung">
+      <field name="datum" type="zope.schema.Date">
+        <description/>
+        <required>False</required>
+        <title>Datum</title>
+      </field>
+    </fieldset>
+    <fieldset name="kontext__uberblick" 
+              label="2.1 Kontext: &#220;berblick"
+              description="Kontext: &#220;berblick">
+      <field name="welche_verarbeitung_ist_geplant_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.1 Welche Verarbeitung ist geplant?</title>
+      </field>
+      <field name="welche_zwecke_hat_die_verarbeitung_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.2 Welche Zwecke hat die Verarbeitung?</title>
+      </field>
+      <field name="welche_rechtsgrundlagen_befugnisse_fur_die_verarbeitung_gibt_es_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.3 Welche Rechtsgrundlagen/Befugnisse f&#252;r die Verarbeitung gibt es?</title>
+      </field>
+      <field name="wenn_anwendbar__wie_wird_die_einwilligung_der_betroffenen_personen_eingeholt_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</title>
+      </field>
+      <field name="welche_weiteren_normen__standards_und_zertifizierungen_gibt_es__die_fur_die_verarbeitung_relevant_sind_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die f&#252;r die Verarbeitung relevant sind?</title>
+      </field>
+      <field name="welche_zustandigkeiten_bestehen_fur_die_verarbeitung_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.6 Welche Zust&#228;ndigkeiten bestehen f&#252;r die Verarbeitung?</title>
+      </field>
+      <field name="wie_sind_die_verpflichtungen_der_auftragsverarbeiter_klar_definiert_und_vertraglich_geregelt_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</title>
+      </field>
+      <field name="wurde_der_standpunkt_der_betroffenen_personen_oder_ihrer_vertreter_eingeholt_" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>2.1.8 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</title>
+        <values>
+          <element>Ja</element>
+          <element>Nein</element>
+        </values>
+        <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+      </field>
+      <field name="anmerkung_begrundung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.8.1 Anmerkung/Begr&#252;ndung</title>
+      </field>
+    </fieldset>
+    <fieldset name="kontext__daten__prozesse_und_unterstutzung" 
+              label="2.2 Kontext: Daten, Prozesse und Unterst&#252;tzung"
+              description="Kontext: Daten, Prozesse und Unterst&#252;tzung">
+      <field name="welche_kategorien_personenbezogener_daten_werden_verarbeitet_" type="zope.schema.Text">
+        <description>Platzhalter...Nr./Bezeichnung der Datenkategorie/ Anmerkung</description>
+        <required>False</required>
+        <title>2.2.1 Welche Kategorien personenbezogener Daten werden verarbeitet?</title>
+      </field>
+      <field name="welche_empfanger__denen_die_personenbezogenen_daten_offengelegt_werden__einschliesslich_empfanger_in_drittlandern_oder_internationale_organisationen_gibt_es_" type="zope.schema.Text">
+        <description>Platzhalter...Nr./ Empf&#228;nger/ Anlass der Offenlegung/ Anmerkung</description>
+        <required>False</required>
+        <title>2.2.3 Welche Empf&#228;nger, denen die personenbezogenen Daten offengelegt werden, einschlie&#223;lich Empf&#228;nger in Drittl&#228;ndern oder internationale Organisationen gibt es?</title>
+      </field>
+      <field name="wie_verlauft_der_lebenszyklus_von_daten_und_prozessen_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.2.4 Wie verl&#228;uft der Lebenszyklus von Daten und Prozessen?</title>
+      </field>
+      <field name="mit_hilfe_welcher_betriebsmittel_erfolgt_die_datenverarbeitung_" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.2.5 Mit Hilfe welcher Betriebsmittel erfolgt die Datenverarbeitung?</title>
+      </field>
+      <field name="welche_kategorien_von_personen_sind_von_der_verarbeitung_betroffen_" type="zope.schema.Text">
+        <description>Platzhalter....Nr./Bezeichnung der Kategorie betroffener Personen/ Anmerkung</description>
+        <required>False</required>
+        <title>2.2.2 Welche Kategorien von Personen sind von der Verarbeitung betroffen?</title>
+      </field>
+    </fieldset>
   </schema>
 </model>

@@ -7,10 +7,10 @@
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Datenschutzfolgenabschaetzung</property>
+      name="title">DSFA</property>
   <property
       i18n:translate=""
-      name="description">Erstellung einer Datenschutz-Folgenabschaetzung (DSFA)</property>
+      name="description">Erstellung einer Datenschutz-Folgenabschätzung (DSFA)</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Datenschutzfolgenabschaetzung</property>
