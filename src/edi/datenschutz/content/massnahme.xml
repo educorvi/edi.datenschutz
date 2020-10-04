@@ -5,5 +5,51 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
   <schema>
+    <field name="art_der_massnahme" type="zope.schema.Choice">
+      <required>True</required>
+      <description/>
+      <title>Art der Massnahme</title>
+      <description/>
+      <values>
+        <element>Technische Massnahme</element>
+        <element>Organisatorische Massnahme</element>
+      </values>
+      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+    </field>
+    <field name="zielerfuellung" type="zope.schema.List">
+      <required>True</required>
+      <description/>
+      <title>Gewaehrleistungsziele</title>
+      <description>Auswahl der Gewaehrleistungsziele, deren Erfuellung mit dieser Massnahme unterstuetzt werden soll.</description>
+      <value_type type="zope.schema.Choice">
+        <source>edi.datenschutz.interfaces.ziele</source>
+      </value_type>
+      <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
+    </field>
+    <field name="ausfuehrender" type="zope.schema.TextLine">
+      <required>True</required>
+      <title>Ansprechpartner</title>
+      <description>Wer ist Ansprechpartner f&#252;r die hier beschriebene Massnahme?</description>
+    </field>
+    <field name="email_ansprechpartner" type="zope.schema.TextLine">
+      <required>True</required>
+      <title>E-Mail-Adresse</title>
+      <description></description>
+    </field>
+    <field name="telefon_ansprechpartner" type="zope.schema.TextLine">
+      <required>False</required>
+      <title>Telefon</title>
+      <description></description>
+    </field>
+    <field name="datumsangabe" type="zope.schema.Date">
+      <required>True</required>
+      <title>Datumsangabe</title>
+      <description>Wann wurde die Massnahme implementiert?</description>
+    </field>
+    <field name="beschreibung" type="plone.app.textfield.RichText">
+      <required>True</required>
+      <title>Beschreibung</title>
+      <description>Dokumentation der Massnahme</description>
+    </field>
   </schema>
 </model>

@@ -5,5 +5,71 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
   <schema>
+    <fieldset name="datenminimierung"
+              label="Datenminimierung">
+      <field name="zielmanagement_datenminimierung" type="zope.schema.List">
+        <title>Datenminimierung</title>
+        <description>Auflistung der Risiken/Gefahren</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IZielmanagement</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+    </fieldset>
+    <fieldset name="intervenierbarkeit"
+              label="Intervenierbarkeit">
+      <field name="zielmanagement_intervenierbarkeit" type="zope.schema.List">
+        <title>Intervenierbarkeit</title>
+        <description>Auflistung der Risiken/Gefahren</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IZielmanagement</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+    <fieldset>
+    <fieldset name="transparenz"
+              label="Tranparenz">
+      <field name="zielmanagement_transparenz" type="zope.schema.List">
+        <title>Transparenz</title>
+        <description>Auflistung der Risiken/Gefahren</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IZielmanagement</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+    </fieldset>
+    <fieldset name="nichtverkettung"
+              label="Nichtverkettung">
+      <field name="zielmanagement_nichtverkettung" type="zope.schema.List">
+        <title>Nichtverkettung</title>
+        <description>Auflistung der Risiken/Gefahren</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IZielmanagement</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+    </fieldset>
+    <fieldset name="konzeptionseinhaltung"
+              label="Konzeptionseinhaltung">
+      <field name="zielmanagement_konzeptionseinhaltung" type="zope.schema.List">
+        <title>Konzeptionseinhaltung</title>
+        <description>Auflistung der Risiken/Gefahren</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IZielmanagement</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+    </fieldset>
+    <fieldset name="richtigkeit"
+              label="Richtigkeit">
+      <field name="zielmanagement_richtigkeit" type="zope.schema.List">
+        <title>Richtigkeit</title>
+        <description>Auflistung der Risiken/Gefahren</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IZielmanagement</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+    </fieldset>
   </schema>
 </model>

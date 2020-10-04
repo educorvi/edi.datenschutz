@@ -81,6 +81,18 @@ ampel = SimpleVocabulary((
     SimpleTerm(value="ro", token="ro", title=u"rot"),
     ))
 
+ziele = SimpleVocabulary((
+    SimpleTerm(value="verfuegbarkeit", token="verfuegbarkeit", title=u"Verfügbarkeit"),
+    SimpleTerm(value="vertraulichkeit", token="vertraulichkeit", title=u"Vertraulichkeit"),
+    SimpleTerm(value="datenintegritaet", token="datenintegritaet", title=u"Datenintegrität"),
+    SimpleTerm(value="datenminimierung", token="datenminimierung", title=u"Datenminimierung"),
+    SimpleTerm(value="intervenierbarkeit", token="intervenierbarkeit", title=u"Intervenierbarkeit"),
+    SimpleTerm(value="transparenz", token="tranparenz", title="Transparenz"),
+    SimpleTerm(value="nichtverkettung", token="nichtverkettung", title=u"Nichtverkettung"),
+    SimpleTerm(value="konzeptionseinhaltung", token="konzeptionseinhaltung", title=u"Konzeptionseinhaltung"),
+    SimpleTerm(value="richtigkeit", token="richtigkeit", title=u"Richtigkeit")
+    ))
+
 class IRisikomanagement(Interface):
 
     id = schema.TextLine(title=u"ID")
