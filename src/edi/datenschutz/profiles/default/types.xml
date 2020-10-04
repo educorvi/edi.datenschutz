@@ -5,4 +5,5 @@
   <object meta_type="Dexterity FTI" name="Verarbeitungstaetigkeit"/>
   <object meta_type="Dexterity FTI" name="Datenschutzfolgenabschaetzung"/>
   <object meta_type="Dexterity FTI" name="Risikomanagement"/>
+  <object meta_type="Dexterity FTI" name="Zielerfuellungsmanagement"/>
 </object>

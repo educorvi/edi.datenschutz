@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddZielerfuellungsmanagement"
+        title="edi.datenschutz: Add Zielerfuellungsmanagement"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddRisikomanagement"
         title="edi.datenschutz: Add Risikomanagement"
     />
