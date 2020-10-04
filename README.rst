@@ -14,19 +14,19 @@ Struktur der Inhaltstypen
 -------------------------
 
 - Verarbeitungstätigkeit (Container)
-    |
-    |- Datenschutzfolgenabschätzung (Item)
-    |- Risikomanagement (Item)
-    |- Zielerfüllungsmanagement (Item)
-    |- Maßnahmenkatalog (Container)
-        |
-        |- Maßnahme
-            |
-            |- Kontrolle oder Überprüfung
 
-- Maßnahme
-    |
-    |- Kontrolle oder Überprüfung
+  - Datenschutzfolgenabschätzung (Item)
+  - Risikomanagement (Item)
+  - Zielerfüllungsmanagement (Item)
+  - Maßnahmenkatalog (Container)
+
+    - Maßnahme (Container)
+
+      - Kontrolle oder Überprüfung (Item)
+
+- Maßnahme (Container)
+  
+  - Kontrolle oder Überprüfung (Item)
 
 
 Ansichten
