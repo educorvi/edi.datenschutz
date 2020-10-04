@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddMassnahme"
+        title="edi.datenschutz: Add Massnahme"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddMassnahmenkatalog"
         title="edi.datenschutz: Add Massnahmenkatalog"
     />
