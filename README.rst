@@ -6,39 +6,52 @@
 edi.datenschutz
 ===============
 
-Tell me what your product does
+Mit diesem Add-On soll das Datenschutz-Management unterstützt werden. Das Add-On erhält alle erforderlichen Dokumentarten und Container
+zur Beschreibung und Dokumentation. Über Views werden die gespeicherten Daten für verschiedene Arten von Auskunftsersuchen zusammengefasst 
+und verdichtet. Ein PDF-Export der Datenschutz-Dokumentation soll ermöglicht werden.
 
-Features
+Struktur der Inhaltstypen
+-------------------------
+
+- Verarbeitungstätigkeit (Container)
+    |
+    |- Datenschutzfolgenabschätzung (Item)
+    |- Risikomanagement (Item)
+    |- Zielerfüllungsmanagement (Item)
+    |- Maßnahmenkatalog (Container)
+        |
+        |- Maßnahme
+            |
+            |- Kontrolle oder Überprüfung
+
+- Maßnahme
+    |
+    |- Kontrolle oder Überprüfung
+
+
+Ansichten
+---------
+
+Hier werden künftig die möglichen Ansichten für die diversen Auskunfsersuchen dokumentiert.
+
+
+ToDo:
+-----
+
+- Tests
+- Einzelansichten fuer alle Inhaltstypeen
+- PDF-Export
+
+
+Beispiel
 --------
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
+doc.uv-kooperation.de
 
 Installation
 ------------
 
-Install edi.datenschutz by adding it to your buildout::
+Das Add-On edi.datenschutz muss der Buildout-Konfiguration hinzugefügt werden::
 
     [buildout]
 
@@ -48,25 +61,34 @@ Install edi.datenschutz by adding it to your buildout::
         edi.datenschutz
 
 
-and then running ``bin/buildout``
+danach kann ``bin/buildout`` ausgeführt werden.
 
 
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/edi.datenschutz/issues
-- Source Code: https://github.com/collective/edi.datenschutz
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
+Quellen
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+Dokument „Das Standard-Datenschutzmodell“ 
+Quelle: https://www.bfdi.bund.de/DE/Datenschutz/Themen/Technische_Anwendungen/TechnischeAnwendungenArtikel/Standard-Datenschutzmodell.html
 
+Dokument „Referenz-Maßnahmenkatalog“
+Quelle: https://www.datenschutz-mv.de/datenschutz/datenschutzmodell/
 
-License
--------
+Außerdem:
+Dokumente und Formulare auf der Seite des Bayerischen Landesdatenschutzbeauftragten
+Quelle: https://www.datenschutz-bayern.de/dsfa/
 
-The project is licensed under the GPLv2.
+Modul 1: Beschreibung einer Verarbeitungstätigkeit
+Modul 2: DSFA-Bericht in Formularform für eine Verarbeitungstätigkeit
+Modul 3: Tabellen für das Risikomanagement zu einer Verarbeitungstätigkeit
+Modul 4: Tabellen für das Zielerfüllungsmanagement zu einer Verarbeitungstätigkeit
+
+Unterstützung
+-------------
+
+- lars.walther@educorvi.de
+- seppo.walther@educorvi.de
+
+Lizenz
+------
+
+Das Projekt ist unter GPLv2 lizensiert.
