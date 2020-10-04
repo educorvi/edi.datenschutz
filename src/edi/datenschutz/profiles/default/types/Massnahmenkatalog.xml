@@ -1,39 +1,37 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Verarbeitungstaetigkeit"
+    name="Massnahmenkatalog"
     meta_type="Dexterity FTI"
     i18n:domain="edi.datenschutz">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Verarbeitungstätigkeit</property>
+      name="title">Massnahmenkatalog</property>
   <property
       i18n:translate=""
-      name="description">Beschreibung einer Verarbeitungstätigkeit</property>
+      name="description">Technische und Organisatorische Maßnahmen fuer eine Verarbeitungstaetigkeit</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Verarbeitungstaetigkeit</property>
+  <property name="factory">Massnahmenkatalog</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="Massnahmenkatalog" />
-        <element value="Zielerfuellungsmanagement" />
-        <element value="Risikomanagement" />
-        <element value="Image" />
+  <!--
+    <element value="Document" />
     <element value="File" />
-    <element value="Datenschutzfolgenabschaetzung" />
+  -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.datenschutz.AddVerarbeitungstaetigkeit</property>
-  <property name="klass">edi.datenschutz.content.verarbeitungstaetigkeit.Verarbeitungstaetigkeit</property>
+  <property name="add_permission">edi.datenschutz.AddMassnahmenkatalog</property>
+  <property name="klass">edi.datenschutz.content.massnahmenkatalog.Massnahmenkatalog</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.datenschutz.content.verarbeitungstaetigkeit.IVerarbeitungstaetigkeit</property>
+  <property name="schema">edi.datenschutz.content.massnahmenkatalog.IMassnahmenkatalog</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -63,7 +61,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Verarbeitungstaetigkeit</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Massnahmenkatalog</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
