@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddRisikomanagement"
+        title="edi.datenschutz: Add Risikomanagement"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddDatenschutzfolgenabschaetzung"
         title="edi.datenschutz: Add Datenschutzfolgenabschaetzung"
     />

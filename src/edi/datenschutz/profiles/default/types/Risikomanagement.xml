@@ -1,37 +1,30 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Datenschutzfolgenabschaetzung"
+    name="Risikomanagement"
     meta_type="Dexterity FTI"
     i18n:domain="edi.datenschutz">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">DSFA</property>
+      name="title">Risikomanagement</property>
   <property
       i18n:translate=""
-      name="description">Erstellung einer Datenschutz-Folgenabschätzung (DSFA)</property>
+      name="description">Risikomanagement fuer eine Verarbeitungstaetigkeit</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Datenschutzfolgenabschaetzung</property>
+  <property name="factory">Risikomanagement</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
   <property name="global_allow">False</property>
-  <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-  <!--
-    <element value="Document" />
-    <element value="File" />
-  -->
-  </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.datenschutz.AddDatenschutzfolgenabschaetzung</property>
-  <property name="klass">edi.datenschutz.content.datenschutzfolgenabschaetzung.Datenschutzfolgenabschaetzung</property>
+  <property name="add_permission">edi.datenschutz.AddRisikomanagement</property>
+  <property name="klass">edi.datenschutz.content.risikomanagement.Risikomanagement</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.datenschutz.content.datenschutzfolgenabschaetzung.IDatenschutzfolgenabschaetzung</property>
+  <property name="schema">edi.datenschutz.content.risikomanagement.IRisikomanagement</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -54,14 +47,10 @@
     <!--<element value="plone.tableofcontents"/>-->
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->
-    <!--<element value="plone.nextprevioustoggle" />-->
-    <!--<element value="plone.nextpreviousenabled" />-->
-    <!--<element value="plone.navigationroot" />-->
-    <!--<element value="plone.selectablecontrainstypes" />-->
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Datenschutzfolgenabschaetzung</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Risikomanagement</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
