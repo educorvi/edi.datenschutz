@@ -4,10 +4,37 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="edi.datenschutz"
       metal:use-macro="context/main_template/macros/master">
+
+<!--    
+<body>
+
+  <div class="col-12 col-md-6">
+          <h1 tal:content="context/title"/>
+          <p class="documentDescription" tal:content="context/description"/>
+  </div>
+
+
+  <div class="col-12 col-md-6">
+          <span tal:content="view/get_kontrolle"></span>
+  </div>
+
+</body>
+-->
+
 <body>
   <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
+
+  <!--<div class="container" tal:define="files view/get_files">-->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <span tal:content="structure view/get_kontrolle"></span>
+        </div>
+      </div>
+    </div>
+
   </metal:block>
-</body>
+
+
+
 </html>

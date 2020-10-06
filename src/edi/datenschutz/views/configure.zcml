@@ -8,7 +8,7 @@
 
   <browser:page
     name="kontrolleview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".kontrolleview.Kontrolleview"
     template="kontrolleview.pt"
     permission="zope2.View"

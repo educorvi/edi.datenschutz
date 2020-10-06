@@ -15,3 +15,8 @@ class Kontrolleview(BrowserView):
         # Implement your own actions:
         self.msg = _(u'A small message')
         return self.index()
+
+
+    def get_kontrolle(self):
+        kontrollen = self.context.art_der_kontrolle
+        return kontrollen
