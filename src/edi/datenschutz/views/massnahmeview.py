@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from edi.datenschutz import _
+from edi.datenschutz import interfaces as interfaces
 from Products.Five.browser import BrowserView
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -14,4 +15,12 @@ class Massnahmeview(BrowserView):
     def __call__(self):
         # Implement your own actions:
         self.msg = _(u'A small message')
+        import pdb; pdb.set_trace()
         return self.index()
+
+    def get_ziele(self):
+        terms = self.context.zielerfuellung
+        for i in terms:
+            term = interfaces.ziele.getTerm(i)
+            import pdb; pdb.set_trace()
+

@@ -8,7 +8,7 @@
 
   <browser:page
     name="massnahmeview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".massnahmeview.Massnahmeview"
     template="massnahmeview.pt"
     permission="zope2.View"
