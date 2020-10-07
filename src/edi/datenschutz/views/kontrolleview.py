@@ -20,3 +20,8 @@ class Kontrolleview(BrowserView):
     def get_kontrolle(self):
         kontrollen = self.context.art_der_kontrolle
         return kontrollen
+
+    def get_datumsangabe(self):
+        feld = self.context.datumsangabe
+        formattedfeld = feld.strftime("%d/%m/%Y")
+        return formattedfeld
