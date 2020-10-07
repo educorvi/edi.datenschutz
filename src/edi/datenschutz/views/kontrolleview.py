@@ -25,3 +25,7 @@ class Kontrolleview(BrowserView):
         feld = self.context.datumsangabe
         formattedfeld = feld.strftime("%d/%m/%Y")
         return formattedfeld
+
+#    def ergebnis(self):
+#        ergebnis = self.context.ergebnis
+#        return ergebnis
