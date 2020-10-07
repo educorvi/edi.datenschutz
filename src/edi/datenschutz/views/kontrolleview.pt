@@ -33,6 +33,29 @@
       </div>
     </div>
 
+    <!--<div tal:define="tempdata view/connect_printer" class="row mt-3">-->
+    <div class="row mt-3">
+      <div class="col-12">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <!--  <th scope="row">3</th> -->
+                <td>Ausfuehrender</td>
+                <td tal:content="context/ausfuehrender"></td>
+              </tr>
+              <tr>
+                <td>Druckauftrag</td>
+                <td tal:content="context/email_ausfuehrender"></td>
+              </tr>
+              <tr>
+                <td>Telefon</td>
+                <td tal:content="context/telefon_ausfuehrender"></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
   </metal:block>
 
 
