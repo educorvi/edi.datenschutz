@@ -19,7 +19,9 @@ class Massnahmeview(BrowserView):
 
     def get_ziele(self):
         terms = self.context.zielerfuellung
+        termtitles = [] 
         for i in terms:
             term = interfaces.ziele.getTerm(i)
-            import pdb; pdb.set_trace()
-
+            termtitle = term.title
+            termtitles.append(termtitle)
+        return termtitles
