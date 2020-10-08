@@ -15,7 +15,6 @@ class Massnahmeview(BrowserView):
     def __call__(self):
         # Implement your own actions:
         self.msg = _(u'A small message')
-        import pdb; pdb.set_trace()
         return self.index()
 
     def get_ziele(self):
