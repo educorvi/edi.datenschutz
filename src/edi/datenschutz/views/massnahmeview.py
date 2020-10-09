@@ -29,9 +29,3 @@ class Massnahmeview(BrowserView):
     def get_massnahmenart(self):
         massnahmen = self.context.art_der_massnahme
         return massnahmen
-        """
-        allemassnahmen = []
-        for i in massnahmen:
-            allemassnahmen.append(i)
-        return allemassnahmen
-        """
