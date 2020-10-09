@@ -19,6 +19,18 @@
         </div>
       </div>
 
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <p>Art der Massnahme:</p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_massnahmenart"></p>
+        </div>
+      </div>
+
   </metal:block>
 
 </html>
