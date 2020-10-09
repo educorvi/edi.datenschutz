@@ -52,6 +52,16 @@
       </div>
     </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2">
+          <p>Datumsangabe: </p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_datumsangabe"></p>
+        </div>
+    </div>
+
   </metal:block>
 
 </html>

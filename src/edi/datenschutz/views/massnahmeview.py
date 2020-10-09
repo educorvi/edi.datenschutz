@@ -29,3 +29,8 @@ class Massnahmeview(BrowserView):
     def get_massnahmenart(self):
         massnahmen = self.context.art_der_massnahme
         return massnahmen
+
+    def get_datumsangabe(self):
+        feld = self.context.datumsangabe
+        formattedfeld = feld.strftime("%d/%m/%Y")
+        return formattedfeld
