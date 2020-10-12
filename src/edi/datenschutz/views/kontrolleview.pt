@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="edi.datenschutz"
+      metal:use-macro="context/main_template/macros/master">
+
+<body>
+
+  <metal:block fill-slot="content-core">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2">
+          <p>Art der Kontrolle: </p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_kontrolle"></p>
+        </div>
+      </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <!--  <th scope="row">3</th> -->
+                <td>Ausfuehrender</td>
+                <td tal:content="context/ausfuehrender"></td>
+              </tr>
+              <tr>
+                <td>Druckauftrag</td>
+                <td tal:content="context/email_ausfuehrender"></td>
+              </tr>
+              <tr>
+                <td>Telefon</td>
+                <td tal:content="context/telefon_ausfuehrender"></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2">
+          <p>Datumsangabe: </p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_datumsangabe"></p>
+        </div>
+      </div>
+
+    <div class="container">
+      <div class="row">
+        <p>Ergebnis: </p>
+        <div class="col-12 col-md-6">
+          <span tal:content="structure context/ergebnis/output"></span>
+        </div>
+      </div>
+
+  </metal:block>
+
+</html>
