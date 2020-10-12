@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="verarbeitungstaetigkeitview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".verarbeitungstaetigkeitview.Verarbeitungstaetigkeitview"
+    template="verarbeitungstaetigkeitview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="massnahmeview"
     for="*"
     class=".massnahmeview.Massnahmeview"
