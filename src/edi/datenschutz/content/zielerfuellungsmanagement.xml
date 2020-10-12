@@ -4,7 +4,9 @@
     xmlns:form="http://namespaces.plone.org/supermodel/form"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
+
   <schema>
+
     <fieldset name="datenminimierung"
               label="Datenminimierung">
       <field name="zielmanagement_datenminimierung" type="zope.schema.List">
@@ -16,6 +18,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
+
     <fieldset name="intervenierbarkeit"
               label="Intervenierbarkeit">
       <field name="zielmanagement_intervenierbarkeit" type="zope.schema.List">
@@ -27,6 +30,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
+
     <fieldset name="transparenz"
               label="Tranparenz">
       <field name="zielmanagement_transparenz" type="zope.schema.List">
@@ -38,6 +42,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
+
     <fieldset name="nichtverkettung"
               label="Nichtverkettung">
       <field name="zielmanagement_nichtverkettung" type="zope.schema.List">
@@ -49,6 +54,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
+
     <fieldset name="konzeptionseinhaltung"
               label="Konzeptionseinhaltung">
       <field name="zielmanagement_konzeptionseinhaltung" type="zope.schema.List">
@@ -60,6 +66,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
+
     <fieldset name="richtigkeit"
               label="Richtigkeit">
       <field name="zielmanagement_richtigkeit" type="zope.schema.List">
@@ -71,5 +78,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
+
   </schema>
+
 </model>
