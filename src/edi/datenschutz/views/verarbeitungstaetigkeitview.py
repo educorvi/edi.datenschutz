@@ -20,3 +20,8 @@ class Verarbeitungstaetigkeitview(BrowserView):
         id = self.context.dokument_id
         result = "Dokument-ID: "+str(id)
         return result
+
+    def get_beteiligtepersonen(self):
+        personen = self.context.beteiligte_personen_und_ihre_rollen
+        result = "Nachname, Vorname, Rolle: "+str(personen)
+        return result
