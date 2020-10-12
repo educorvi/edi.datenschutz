@@ -9,8 +9,9 @@
 
   <metal:block fill-slot="content-core">
 
-    <div class="container">
-      <div class="row">
+    <div class="row">
+
+      <div class="container">
         <div class="col-12 col-md-8">
         </div>
         <div class="col-12 col-md-1">
@@ -18,14 +19,11 @@
         <div class="col-12 col-md-3">
         </div>
       </div>
+
     </div>
 
   </metal:block>
 
  </body>
-
-</html>
-
-
 
 </html>
