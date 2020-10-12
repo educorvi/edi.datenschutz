@@ -25,3 +25,8 @@ class Verarbeitungstaetigkeitview(BrowserView):
         personen = self.context.beteiligte_personen_und_ihre_rollen
         result = "Nachname, Vorname, Rolle: "+str(personen)
         return result
+
+    def get_status(self):
+        status = self.context.status
+        result = "Status: "+str(status)
+        return result 
