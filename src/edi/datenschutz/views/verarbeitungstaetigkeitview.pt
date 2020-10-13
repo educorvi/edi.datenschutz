@@ -122,6 +122,27 @@
         </div>
       </div>
 
+      <div class="col-12 col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Bezeichnung</td>
+              <td>Anmerkung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
     </div>
 
   </metal:block>
