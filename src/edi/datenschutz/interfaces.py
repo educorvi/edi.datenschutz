@@ -12,7 +12,7 @@ class IEdiDatenschutzLayer(IDefaultBrowserLayer):
 
 class IAnlagenVerweise(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Bezeichnung der Anlage bzw. des Verweises")
     anmerkung = schema.TextLine(title=u"Anmerkung")
 
@@ -24,46 +24,46 @@ class IAenderungen(Interface):
 
 class IKategorienDaten(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Bezeichnung der Daten")
 
 class IKategorienDatenProzesse(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Bezeichnung der Datenkategorie")
     anmerkung = schema.TextLine(title=u"Anmerkung")
 
 class IKategorienPersonen(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Betroffene Personen")
 
 class IKategorienPersonenDSFA(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Bezeichnung der Kategorien betroffener Personen")
     anmerkung = schema.TextLine(title=u"Anmerkung")
 
 class IKategorienEmpfaenger(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Empfaenger")
     anmerkung = schema.TextLine(title=u"Anlass der Offenlegung")
 
 class IInternationaleOrganisationen(Interface):
 
-    nr = schema.Int(title=u"Nr.")     
+    nr = schema.TextLine(title=u"Nr.")     
     bezeichnung = schema.TextLine(title=u"Drittland oder internationale Organisation")
     anmerkung = schema.TextLine(title=u"Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)")
 
 class IFristenLoeschung(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Löschungsfrist")
 
 class IOffenlegungen(Interface):
 
-    nr = schema.Int(title=u"Nr.")
+    nr = schema.TextLine(title=u"Nr.")
     empfaenger = schema.TextLine(title=u"Empfänger")
     anlass = schema.TextLine(title=u"Anlass der Offenlegung")
     anmerkung = schema.TextLine(title=u"Anmerkung")
