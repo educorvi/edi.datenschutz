@@ -4,7 +4,9 @@
     xmlns:form="http://namespaces.plone.org/supermodel/form"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
+
   <schema>
+
     <field name="art_der_kontrolle" type="zope.schema.Choice">
       <required>True</required>
       <description/>
@@ -16,30 +18,37 @@
       </values>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+
     <field name="ausfuehrender" type="zope.schema.TextLine">
       <required>True</required>
       <title>Ausf&#252;hrender</title>
       <description>Wer hat die Kontrolle oder &#220;berpr&#252;fung ausgef&#252;hrt?</description>
     </field>
+
     <field name="email_ausfuehrender" type="zope.schema.TextLine">
       <required>True</required>
       <title>E-Mail-Adresse</title>
       <description></description>
     </field>
+
     <field name="telefon_ausfuehrender" type="zope.schema.TextLine">
       <required>False</required>
       <title>Telefon</title>
       <description></description>
     </field>
+
     <field name="datumsangabe" type="zope.schema.Date">
       <required>True</required>
       <title>Datumsangabe</title>
       <description>Wann wurde die Kontrolle oder &#220;berpr&#252;fung ausgef&#252;hrt?</description>
     </field>
+
     <field name="ergebnis" type="plone.app.textfield.RichText">
       <required>True</required>
       <title>Ergebnis</title>
       <description>Dokumentation des Ergebnisses der Kontrolle oder &#220;berpr&#252;fung</description>
     </field>
+
   </schema>
+
 </model>

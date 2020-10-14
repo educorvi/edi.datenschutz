@@ -1,0 +1,152 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="edi.datenschutz"
+      metal:use-macro="context/main_template/macros/master">
+
+  <body>
+
+  <metal:block fill-slot="content-core">
+
+    <div class="row">
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+          <p tal:content="view/get_documentid"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>1. Beteiligte Personen und Status</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+          <p tal:content="view/get_beteiligtepersonen"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+          <p tal:content="view/get_status"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>1.3 Anmerkungen zum Status</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/anmerkung_zum_status"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>2. Anlagen bzw. Verweise zur Beschreibung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p>Placeholder NamedBlobFile 1</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p>Placeholder NamedBlobFile 2</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Anlagen bzw. Verweise zur Beschreibung</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Bezeichnung</td>
+              <td>Anmerkung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+    </div>
+
+  </metal:block>
+
+ </body>
+
+</html>
