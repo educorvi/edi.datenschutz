@@ -230,15 +230,15 @@
         <required>False</required>
         <title>3.2.4 Wie k&#246;nnen betroffene Personen ihr Recht auf Berichtigung aus&#252;ben?</title>
       </field>
-      <field name="recht_auf_datenubertragbarkeit" type="zope.schema.Text">
-        <description/>
-        <required>False</required>
-        <title>3.2.6 Wie k&#246;nnen betroffene Personen ihr Recht auf Daten&#252;bertragbarkeit aus&#252;ben?</title>
-      </field>
       <field name="recht_auf_einschrankung_oder_widerspruch" type="zope.schema.Text">
         <description/>
         <required>False</required>
         <title>3.2.5 Wie k&#246;nnen betroffene Personen ihr Recht auf Einschr&#228;nkung oder Widerspruch der Verarbeitung aus&#252;ben?</title>
+      </field>
+      <field name="recht_auf_datenubertragbarkeit" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.6 Wie k&#246;nnen betroffene Personen ihr Recht auf Daten&#252;bertragbarkeit aus&#252;ben?</title>
       </field>
     </fieldset>
     <fieldset name="risiken_risikoanalyse_datensicherheitsziele" 
