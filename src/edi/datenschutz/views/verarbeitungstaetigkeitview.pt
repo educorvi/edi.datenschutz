@@ -438,6 +438,49 @@
         </table>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>8. Kategorien der betroffenen Personen</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der betroffenen Personen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Betroffene Daten</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Datenbezeichnung</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+
 
     </div>
 
