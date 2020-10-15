@@ -514,6 +514,43 @@
         </table>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>10. Übermittlung an ein Drittland oder an eine internationale Organisation</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der betreffenden Übermittlungen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Drittland oder internationale Organisation</th>
+              <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>USA</td>
+              <td>Garantie für garnix</td>
+            </tr>
+          </tbody>
+        </table>
 
 
 
