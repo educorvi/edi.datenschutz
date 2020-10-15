@@ -590,7 +590,25 @@
         </table>
        </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>12. Technische und organisatorische Maßnahmen</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/beschreibung_massnahmen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
 
 
