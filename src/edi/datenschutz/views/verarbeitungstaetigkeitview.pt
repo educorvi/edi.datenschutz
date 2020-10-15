@@ -141,6 +141,24 @@
         </table>
       </div>
 
+      <div class="col-12 col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Wann?</th>
+              <th scope="col">Wer?</th>
+              <th scope="col">Was?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zeitpunkt</td>
+              <td>Person</td>
+              <td>Was denn da los?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
 
     </div>
