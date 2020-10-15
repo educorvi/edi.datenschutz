@@ -211,8 +211,35 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/bezeichnung_der_verarbeitungstatigkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.2 Aktenzeichen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/aktenzeichen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
 
 
