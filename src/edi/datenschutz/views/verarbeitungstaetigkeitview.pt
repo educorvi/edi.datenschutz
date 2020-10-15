@@ -321,6 +321,40 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.6 Beh&ouml;rdlicher Datenschutzbeauftragter</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p>Name, dienstliche Anschrift, Telefonnummer und E-Mail-Adresse</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/behordlicher_datenschutzbeauftragter"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+
+
+
+
 
     </div>
 
