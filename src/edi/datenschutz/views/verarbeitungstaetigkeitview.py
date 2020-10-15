@@ -36,3 +36,8 @@ class Verarbeitungstaetigkeitview(BrowserView):
         formatteddatum = datum.strftime("%d/%m/%Y")
         result = "Datumsangabe: "+str(formatteddatum)
         return result
+
+    def get_dienststelle(self):
+        dienststelle = self.context.dienststelle_sachgebiet_abteilung
+        result = "Dienststelle / Sachgebiet / Abteilung: "+str(dienststelle)
+        return result
