@@ -351,8 +351,35 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>6. Zwecke und Rechtsgrundlagen der Verarbeitung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>6.1 Zwecke</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/zwecke"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
 
 
