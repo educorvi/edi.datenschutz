@@ -123,7 +123,7 @@
       </div>
 
       <div class="col-12 col-md-8">
-        <table class="table">
+        <table class="table table-responsive table-bordered">
           <thead>
             <tr>
               <th scope="col">Nr.</th>
@@ -153,7 +153,7 @@
     </div>
 
       <div class="col-12 col-md-8">
-        <table class="table">
+        <table class="table table-responsive table-bordered">
           <thead>
             <tr>
               <th scope="col">Wann?</th>
