@@ -650,7 +650,25 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/pruefung_bis_wann"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
 
 
