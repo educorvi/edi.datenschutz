@@ -670,6 +670,25 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>14.3 Begründung</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/begruendung"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
 
 
