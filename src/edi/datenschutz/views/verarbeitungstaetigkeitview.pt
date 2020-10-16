@@ -161,10 +161,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Zeitpunkt</td>
-              <td>Person</td>
-              <td>Was denn da los?</td>
+            <tr tal:repeat="aenderung context/aenderungen">
+              <td tal:content="aenderung/wann"></td>
+              <td tal:content="aenderung/wer"></td>
+              <td tal:content="aenderung/was"></td>
             </tr>
           </tbody>
         </table>
