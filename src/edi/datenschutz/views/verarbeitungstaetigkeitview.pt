@@ -123,7 +123,7 @@
       </div>
 
       <div class="col-12 col-md-8">
-        <table class="table">
+        <table class="table table-responsive table-bordered">
           <thead>
             <tr>
               <th scope="col">Nr.</th>
@@ -142,6 +142,593 @@
       </div>
 
 
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>3. &Auml;nderungshistorie</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Wann?</th>
+              <th scope="col">Wer?</th>
+              <th scope="col">Was?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zeitpunkt</td>
+              <td>Person</td>
+              <td>Was denn da los?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>4. Zeitpunkt der &Uuml;berpr&uuml;fung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+          <p tal:content="view/get_ueberpruefung"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>5. Allgemeine Angaben</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/bezeichnung_der_verarbeitungstatigkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.2 Aktenzeichen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/aktenzeichen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.3 Stand</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/stand"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.4 Verantwortlicher</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p>Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/verantwortlicher"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.5 Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p>jeweils Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/angaben_zu_verantwortlichen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>5.6 Beh&ouml;rdlicher Datenschutzbeauftragter</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p>Name, dienstliche Anschrift, Telefonnummer und E-Mail-Adresse</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/behordlicher_datenschutzbeauftragter"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>6. Zwecke und Rechtsgrundlagen der Verarbeitung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>6.1 Zwecke</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/zwecke"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>6.2 Rechtsgrundlagen/Befugnis</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/rechtsgrundlagen_befugnis"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>7. Kategorien der personenbezogenen Daten</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der personenbezogenen Daten</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Daten</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Datenbezeichnung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>8. Kategorien der betroffenen Personen</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der betroffenen Personen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Betroffene Daten</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Datenbezeichnung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>9. Kategorien der Empfänger</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der Empf&auml;nger und Anl&auml;sse der Offenlegung</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Empf&auml;nger</th>
+              <th scope="col">Anlass der Offenlegung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Datenbezeichnung</td>
+              <td>Anlass</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>10. Übermittlung an ein Drittland oder an eine internationale Organisation</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der betreffenden Übermittlungen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Drittland oder internationale Organisation</th>
+              <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>USA</td>
+              <td>Garantie für garnix</td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>11. Fristen für die Löschung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>Auflistung der Löschfristen</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Löschungsfrist</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nummer</td>
+              <td>Frist</td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>12. Technische und organisatorische Maßnahmen</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <span tal:content="structure context/beschreibung_massnahmen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>13. Verantwortliche Organisationseinheit</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="view/get_dienststelle"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>14. Datenschutz-Folgenabschätzung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/datenschutz_folgenabschatzung_erforderlich"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/pruefung_bis_wann"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>14.3 Begründung</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/begruendung"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h3>15. Stellungnahme des Datenschutzbeauftragten</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/vorliegen_stellungnahme"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <h5>15.2 Gegebenenfalls nähere Erläuterung</h5>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="col-12 col-md-8">
+            <p tal:content="context/datenschutz_erlaeuterung"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
 
     </div>
 
