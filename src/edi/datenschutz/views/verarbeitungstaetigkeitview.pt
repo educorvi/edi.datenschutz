@@ -122,6 +122,38 @@
         </div>
       </div>
 
+      <!--<div class="row" tal:define="gcodes view/get_gcodes" tal:condition="gcodes">-->
+    <div class="col-12">
+       <ul class="list-group">
+         <li tal:repeat="anlage context/anlagen_beschreibung" class="list-group-item">
+           <!--<img src="" tal:attributes="src modell/vorschaubild">
+           <a href="" tal:attributes="href modell/url">
+           <span tal:content="modell/title"/>
+           </a>-->
+         </li>
+       </ul>
+    </div>
+
+      <div class="col-12 col-md-8">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="anlage context/anlagen_beschreibung">
+              <td tal:content="anlage/nr"></td>
+              <td tal:content="anlage/bezeichnung"></td>
+              <td tal:content="anlage/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--
       <div class="col-12 col-md-8">
         <table class="table table-responsive table-bordered">
           <thead>
@@ -140,7 +172,7 @@
           </tbody>
         </table>
       </div>
-
+     -->
 
       <div class="container">
         <div class="col-12 col-md-8">
