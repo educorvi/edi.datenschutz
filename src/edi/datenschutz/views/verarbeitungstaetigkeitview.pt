@@ -41,15 +41,14 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="col-12 col-md-8">
-          <p tal:content="view/get_beteiligtepersonen"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
+      <div class="col-12 col-md-8">
+       <ul class="list-group">
+           <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+           <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
+               <span tal:content="person"></span>
+         </li>
+       </ul>
+    </div>
 
       <div class="container">
         <div class="col-12 col-md-8">
