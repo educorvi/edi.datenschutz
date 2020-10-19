@@ -5,6 +5,11 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
   <schema>
+    <field name="id_massnahme" type="zope.schema.TextLine">
+      <required>True</required>
+      <description/>
+      <title>ID der Massnahme</title>      
+    </field>
     <field name="art_der_massnahme" type="zope.schema.Choice">
       <required>True</required>
       <description/>
@@ -14,7 +19,6 @@
         <element>Technische Massnahme</element>
         <element>Organisatorische Massnahme</element>
       </values>
-      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="zielerfuellung" type="zope.schema.List">
       <required>True</required>

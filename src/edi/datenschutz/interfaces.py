@@ -13,8 +13,8 @@ class IEdiDatenschutzLayer(IDefaultBrowserLayer):
 class IAnlagenVerweise(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Bezeichnung der Anlage bzw. des Verweises")
-    anmerkung = schema.TextLine(title=u"Anmerkung")
+    bezeichnung = schema.TextLine(title=u"Bezeichnung der Anlage bzw. des Verweises", required=False)
+    anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 class IAenderungen(Interface):
 
@@ -25,48 +25,48 @@ class IAenderungen(Interface):
 class IKategorienDaten(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Bezeichnung der Daten")
+    bezeichnung = schema.TextLine(title=u"Bezeichnung der Daten", required=False)
 
 class IKategorienDatenProzesse(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Bezeichnung der Datenkategorie")
-    anmerkung = schema.TextLine(title=u"Anmerkung")
+    bezeichnung = schema.TextLine(title=u"Bezeichnung der Datenkategorie", required=False)
+    anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 class IKategorienPersonen(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Betroffene Personen")
+    bezeichnung = schema.TextLine(title=u"Betroffene Personen", required=False)
 
 class IKategorienPersonenDSFA(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Bezeichnung der Kategorien betroffener Personen")
-    anmerkung = schema.TextLine(title=u"Anmerkung")
+    bezeichnung = schema.TextLine(title=u"Bezeichnung der Kategorien betroffener Personen", required=False)
+    anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 class IKategorienEmpfaenger(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Empfaenger")
-    anmerkung = schema.TextLine(title=u"Anlass der Offenlegung")
+    bezeichnung = schema.TextLine(title=u"Empfaenger", required=False)
+    anmerkung = schema.TextLine(title=u"Anlass der Offenlegung", required=False)
 
 class IInternationaleOrganisationen(Interface):
 
     nr = schema.TextLine(title=u"Nr.")     
-    bezeichnung = schema.TextLine(title=u"Drittland oder internationale Organisation")
-    anmerkung = schema.TextLine(title=u"Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)")
+    bezeichnung = schema.TextLine(title=u"Drittland oder internationale Organisation", required=False)
+    anmerkung = schema.TextLine(title=u"Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)", required=False)
 
 class IFristenLoeschung(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Löschungsfrist")
+    bezeichnung = schema.TextLine(title=u"Löschungsfrist", required=False)
 
 class IOffenlegungen(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    empfaenger = schema.TextLine(title=u"Empfänger")
-    anlass = schema.TextLine(title=u"Anlass der Offenlegung")
-    anmerkung = schema.TextLine(title=u"Anmerkung")
+    empfaenger = schema.TextLine(title=u"Empfänger", required=False)
+    anlass = schema.TextLine(title=u"Anlass der Offenlegung", required=False)
+    anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 grad = SimpleVocabulary((
     SimpleTerm(value=1, token="1", title="1"),
@@ -96,16 +96,16 @@ ziele = SimpleVocabulary((
 class IRisikomanagement(Interface):
 
     id = schema.TextLine(title=u"ID")
-    schwachstelle = schema.Text(title=u"Schwachstelle")
-    quelle = schema.TextLine(title=u"Risikoquelle")
-    szenario = schema.Text(title=u"Risko-Szenario")
-    schwere = schema.Choice(title=u"Schaden/Schwere", vocabulary=grad)
-    wahrscheinlichkeit = schema.Choice(title=u"Wahrscheinlichkeit", vocabulary=grad)
+    schwachstelle = schema.Text(title=u"Schwachstelle", required=False)
+    quelle = schema.TextLine(title=u"Risikoquelle", required=False)
+    szenario = schema.Text(title=u"Risko-Szenario", required=False)
+    schwere = schema.Choice(title=u"Schaden/Schwere", vocabulary=grad, required=False)
+    wahrscheinlichkeit = schema.Choice(title=u"Wahrscheinlichkeit", vocabulary=grad, required=False)
 
 class IZielmanagement(Interface):
 
     id = schema.TextLine(title=u"ID")
-    schwachstelle = schema.Text(title=u"Schwachstelle")
-    quelle = schema.TextLine(title=u"Risikoquelle")
-    szenario = schema.Text(title=u"Risko-Szenario")
-    bewertung = schema.Choice(title=u"Wahrscheinlichkeit", vocabulary=ampel)
+    schwachstelle = schema.Text(title=u"Schwachstelle", required=False)
+    quelle = schema.TextLine(title=u"Risikoquelle", required=False)
+    szenario = schema.Text(title=u"Risko-Szenario", required=False)
+    bewertung = schema.Choice(title=u"Wahrscheinlichkeit", vocabulary=ampel, required=False)
