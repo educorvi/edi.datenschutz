@@ -491,7 +491,7 @@
         </div>
     </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h3>15.2 Gegebenenfalls nähere Erläuterung</h3>
             <p tal:content="context/datenschutz_erlaeuterung"></p>
