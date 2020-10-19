@@ -136,7 +136,7 @@
       </div>
       </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>3. &Auml;nderungshistorie</h2>
         </div>
@@ -146,6 +146,7 @@
         </div>
     </div>
 
+      <div class="row mb-3">
       <div class="col-12 col-md-8 mb-3">
         <table class="table table-bordered">
           <thead>
@@ -164,6 +165,7 @@
           </tbody>
         </table>
       </div>
+    </div>
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
