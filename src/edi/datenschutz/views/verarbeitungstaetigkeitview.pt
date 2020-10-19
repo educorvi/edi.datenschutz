@@ -425,65 +425,38 @@
       </div>
       </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>12. Technische und organisatorische Maßnahmen</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
             <span tal:content="structure context/beschreibung_massnahmen/output"></span>
         </div>
         <div class="col-12 col-md-1">
         </div>
         <div class="col-12 col-md-3">
         </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
-            <h2>13. Verantwortliche Organisationseinheit</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
     </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
+            <h2>13. Verantwortliche Organisationseinheit</h2>
             <p tal:content="view/get_dienststelle"></p>
         </div>
         <div class="col-12 col-md-1">
         </div>
         <div class="col-12 col-md-3">
         </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
-            <h2>14. Datenschutz-Folgenabschätzung</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
     </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
+            <h2>14. Datenschutz-Folgenabschätzung</h2>
             <p tal:content="context/datenschutz_folgenabschatzung_erforderlich"></p>
         </div>
         <div class="col-12 col-md-1">
         </div>
         <div class="col-12 col-md-3">
         </div>
-      </div>
+    </div>
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
