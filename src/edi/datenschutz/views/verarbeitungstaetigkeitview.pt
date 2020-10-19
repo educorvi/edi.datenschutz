@@ -478,13 +478,13 @@
           <thead>
             <tr>
               <th scope="col">Nr.</th>
-              <th scope="col">Betroffene Daten</th>
+              <th scope="col">Betroffene Person</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nummer</td>
-              <td>Datenbezeichnung</td>
+            <tr tal:repeat="person context/kategorien_personen">
+              <td tal:content="person/nr"></td>
+              <td tal:content="person/bezeichnung"></td>
             </tr>
           </tbody>
         </table>
