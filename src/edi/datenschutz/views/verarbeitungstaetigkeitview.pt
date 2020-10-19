@@ -11,6 +11,8 @@
    <metal:main fill-slot="main">
        <tal:main-macro metal:define-macro="main">
 
+         <div class="container">
+
        <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
@@ -21,14 +23,11 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
-            <!--<div tal:content="structure context/bio/output" />-->
-
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
 
-    <div class="container">
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
           <p tal:content="view/get_documentid"></p>
         </div>
@@ -38,34 +37,22 @@
         </div>
       </div>
 
-      <div class="container mb-3">
+      <div class="row mb-5">
         <div class="col-12 col-md-8">
             <h2>1. Beteiligte Personen und Status</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
             <h3>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h3>
+            <ul class="list-group">
+              <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+              <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
+                <span tal:content="person"></span>
+              </li>
+              </ul>
         </div>
         <div class="col-12 col-md-1">
         </div>
         <div class="col-12 col-md-3">
         </div>
       </div>
-
-      <div class="col-12 col-md-8 mb-3">
-       <ul class="list-group">
-           <li class="list-group-item active">Nachname, Vorname, Rolle</li>
-           <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
-               <span tal:content="person"></span>
-         </li>
-       </ul>
-    </div>
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
