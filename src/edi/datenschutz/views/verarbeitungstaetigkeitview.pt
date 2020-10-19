@@ -458,18 +458,9 @@
         </div>
     </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h3>14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
             <p tal:content="context/pruefung_bis_wann"></p>
         </div>
         <div class="col-12 col-md-1">
@@ -481,6 +472,7 @@
       <div class="container mb-3">
         <div class="col-12 col-md-8">
             <h3>14.3 Begründung</h3>
+            <p tal:content="context/begruendung"></p>
         </div>
         <div class="col-12 col-md-1">
         </div>
