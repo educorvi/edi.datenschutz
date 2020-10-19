@@ -600,7 +600,7 @@
 
       <div class="container">
         <div class="col-12 col-md-8">
-            <span tal:content="structure context/beschreibung_massnahmen"></span>
+            <span tal:content="structure context/beschreibung_massnahmen/output"></span>
         </div>
         <div class="col-12 col-md-1">
         </div>
