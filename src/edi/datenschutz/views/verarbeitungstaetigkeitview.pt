@@ -469,7 +469,7 @@
         </div>
       </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h3>14.3 Begründung</h3>
             <p tal:content="context/begruendung"></p>
