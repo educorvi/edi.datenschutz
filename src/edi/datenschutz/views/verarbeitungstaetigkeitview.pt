@@ -33,7 +33,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h5>
+            <h3>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -62,7 +62,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>1.3 Anmerkungen zum Status</h5>
+            <h3>1.3 Anmerkungen zum Status</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -113,7 +113,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>Anlagen bzw. Verweise zur Beschreibung</h5>
+            <h3>Anlagen bzw. Verweise zur Beschreibung</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -201,7 +201,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h5>
+            <h3>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -221,7 +221,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>5.2 Aktenzeichen</h5>
+            <h3>5.2 Aktenzeichen</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -241,7 +241,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>5.3 Stand</h5>
+            <h3>5.3 Stand</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -261,7 +261,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>5.4 Verantwortlicher</h5>
+            <h3>5.4 Verantwortlicher</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -291,7 +291,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>5.5 Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h5>
+            <h3>5.5 Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -321,7 +321,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>5.6 Beh&ouml;rdlicher Datenschutzbeauftragter</h5>
+            <h3>5.6 Beh&ouml;rdlicher Datenschutzbeauftragter</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -361,7 +361,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>6.1 Zwecke</h5>
+            <h3>6.1 Zwecke</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -381,7 +381,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>6.2 Rechtsgrundlagen/Befugnis</h5>
+            <h3>6.2 Rechtsgrundlagen/Befugnis</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -411,7 +411,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>Auflistung der personenbezogenen Daten</h5>
+            <h3>Auflistung der personenbezogenen Daten</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -448,7 +448,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>Auflistung der betroffenen Personen</h5>
+            <h3>Auflistung der betroffenen Personen</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -485,7 +485,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>Auflistung der Empf&auml;nger und Anl&auml;sse der Offenlegung</h5>
+            <h3>Auflistung der Empf&auml;nger und Anl&auml;sse der Offenlegung</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -524,7 +524,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>Auflistung der betreffenden Übermittlungen</h5>
+            <h3>Auflistung der betreffenden Übermittlungen</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -563,7 +563,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>Auflistung der Löschfristen</h5>
+            <h3>Auflistung der Löschfristen</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -650,7 +650,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h5>
+            <h3>14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -670,7 +670,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>14.3 Begründung</h5>
+            <h3>14.3 Begründung</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -710,7 +710,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h5>15.2 Gegebenenfalls nähere Erläuterung</h5>
+            <h3>15.2 Gegebenenfalls nähere Erläuterung</h3>
         </div>
         <div class="col-12 col-md-1">
         </div>
