@@ -7,7 +7,24 @@
 
   <body>
 
-  <metal:block fill-slot="content-core">
+      <!--<metal:block fill-slot="content-core">-->
+   <metal:main fill-slot="main">
+       <tal:main-macro metal:define-macro="main">
+
+       <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription" tal:content="context/description" />
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+            <!--<div tal:content="structure context/bio/output" />-->
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
 
     <div class="row">
 
@@ -730,7 +747,10 @@
 
     </div>
 
-  </metal:block>
+    </tal:main-macro>
+
+    <!--</metal:block>-->
+   </metal:main>
 
  </body>
 
