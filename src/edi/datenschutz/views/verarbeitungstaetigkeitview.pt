@@ -555,18 +555,18 @@
             <tr>
               <th scope="col">Nr.</th>
               <th scope="col">Drittland oder internationale Organisation</th>
-              <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)</th>
+              <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art. 49 Abs. 1 Unterabsatz 2 DSGVO</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nummer</td>
-              <td>USA</td>
-              <td>Garantie für garnix</td>
+            <tr tal:repeat="uebermittlung context/internationale_organisationen">
+              <td tal:content="uebermittlung/nr"></td>
+              <td tal:content="uebermittlung/bezeichnung"></td>
+              <td tal:content="uebermittlung/anmerkung"></td>
             </tr>
           </tbody>
         </table>
-       </div>
+      </div>
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
@@ -597,13 +597,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nummer</td>
-              <td>Frist</td>
+            <tr tal:repeat="loeschung context/loeschfristen">
+              <td tal:content="loeschung/nr"></td>
+              <td tal:content="loeschung/bezeichnung"></td>
             </tr>
           </tbody>
         </table>
-       </div>
+      </div>
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
