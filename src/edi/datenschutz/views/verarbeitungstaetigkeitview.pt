@@ -505,7 +505,6 @@
 
     </tal:main-macro>
 
-    <!--</metal:block>-->
    </metal:main>
 
  </body>
