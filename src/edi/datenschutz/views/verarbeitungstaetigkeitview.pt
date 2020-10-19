@@ -515,15 +515,15 @@
           <thead>
             <tr>
               <th scope="col">Nr.</th>
-              <th scope="col">Empf&auml;nger</th>
+              <th scope="col">Empfänger</th>
               <th scope="col">Anlass der Offenlegung</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nummer</td>
-              <td>Datenbezeichnung</td>
-              <td>Anlass</td>
+            <tr tal:repeat="empfaenger context/kategorien_empfaenger">
+              <td tal:content="empfaenger/nr"></td>
+              <td tal:content="empfaenger/bezeichnung"></td>
+              <td tal:content="empfaenger/anmerkung"></td>
             </tr>
           </tbody>
         </table>
