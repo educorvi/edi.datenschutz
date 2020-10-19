@@ -178,35 +178,17 @@
         </div>
     </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>5. Allgemeine Angaben</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
             <h3>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
             <span tal:content="structure context/bezeichnung_der_verarbeitungstatigkeit"></span>
         </div>
         <div class="col-12 col-md-1">
         </div>
         <div class="col-12 col-md-3">
         </div>
-      </div>
+    </div>
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
