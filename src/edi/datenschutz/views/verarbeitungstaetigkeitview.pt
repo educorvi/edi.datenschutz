@@ -23,7 +23,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>1. Beteiligte Personen und Status</h3>
+            <h2>1. Beteiligte Personen und Status</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -83,7 +83,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>2. Anlagen bzw. Verweise zur Beschreibung</h3>
+            <h2>2. Anlagen bzw. Verweise zur Beschreibung</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -142,7 +142,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>3. &Auml;nderungshistorie</h3>
+            <h2>3. &Auml;nderungshistorie</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -171,7 +171,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>4. Zeitpunkt der &Uuml;berpr&uuml;fung</h3>
+            <h2>4. Zeitpunkt der &Uuml;berpr&uuml;fung</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -191,7 +191,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>5. Allgemeine Angaben</h3>
+            <h2>5. Allgemeine Angaben</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -351,7 +351,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>6. Zwecke und Rechtsgrundlagen der Verarbeitung</h3>
+            <h2>6. Zwecke und Rechtsgrundlagen der Verarbeitung</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -401,7 +401,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>7. Kategorien der personenbezogenen Daten</h3>
+            <h2>7. Kategorien der personenbezogenen Daten</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -438,7 +438,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>8. Kategorien der betroffenen Personen</h3>
+            <h2>8. Kategorien der betroffenen Personen</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -475,7 +475,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>9. Kategorien der Empfänger</h3>
+            <h2>9. Kategorien der Empfänger</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -514,7 +514,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>10. Übermittlung an ein Drittland oder an eine internationale Organisation</h3>
+            <h2>10. Übermittlung an ein Drittland oder an eine internationale Organisation</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -553,7 +553,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>11. Fristen für die Löschung</h3>
+            <h2>11. Fristen für die Löschung</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -590,7 +590,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>12. Technische und organisatorische Maßnahmen</h3>
+            <h2>12. Technische und organisatorische Maßnahmen</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -610,7 +610,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>13. Verantwortliche Organisationseinheit</h3>
+            <h2>13. Verantwortliche Organisationseinheit</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -630,7 +630,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>14. Datenschutz-Folgenabschätzung</h3>
+            <h2>14. Datenschutz-Folgenabschätzung</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -690,7 +690,7 @@
 
       <div class="container mb-3">
         <div class="col-12 col-md-8">
-            <h3>15. Stellungnahme des Datenschutzbeauftragten</h3>
+            <h2>15. Stellungnahme des Datenschutzbeauftragten</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
