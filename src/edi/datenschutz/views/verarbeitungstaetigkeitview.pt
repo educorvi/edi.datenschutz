@@ -41,15 +41,14 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="col-12 col-md-8">
-          <p tal:content="view/get_beteiligtepersonen"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
+      <div class="col-12 col-md-8">
+       <ul class="list-group">
+           <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+           <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
+               <span tal:content="person"></span>
+         </li>
+       </ul>
+    </div>
 
       <div class="container">
         <div class="col-12 col-md-8">
@@ -132,15 +131,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nummer</td>
-              <td>Bezeichnung</td>
-              <td>Anmerkung</td>
+            <tr tal:repeat="anlage context/anlagen_beschreibung">
+              <td tal:content="anlage/nr"></td>
+              <td tal:content="anlage/bezeichnung"></td>
+              <td tal:content="anlage/anmerkung"></td>
             </tr>
           </tbody>
         </table>
       </div>
-
 
       <div class="container">
         <div class="col-12 col-md-8">
@@ -162,10 +160,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Zeitpunkt</td>
-              <td>Person</td>
-              <td>Was denn da los?</td>
+            <tr tal:repeat="aenderung context/aenderungen">
+              <td tal:content="aenderung/wann"></td>
+              <td tal:content="aenderung/wer"></td>
+              <td tal:content="aenderung/was"></td>
             </tr>
           </tbody>
         </table>
@@ -430,9 +428,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nummer</td>
-              <td>Datenbezeichnung</td>
+            <tr tal:repeat="datenbezeichnung context/kategorien_daten">
+              <td tal:content="datenbezeichnung/nr"></td>
+              <td tal:content="datenbezeichnung/bezeichnung"></td>
             </tr>
           </tbody>
         </table>
@@ -602,7 +600,7 @@
 
       <div class="container">
         <div class="col-12 col-md-8">
-            <span tal:content="structure context/beschreibung_massnahmen"></span>
+            <span tal:content="structure context/beschreibung_massnahmen/output"></span>
         </div>
         <div class="col-12 col-md-1">
         </div>
