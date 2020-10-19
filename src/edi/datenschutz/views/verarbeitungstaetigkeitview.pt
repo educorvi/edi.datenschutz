@@ -224,28 +224,10 @@
         </div>
       </div>
 
-      <div class="container mb-3">
+      <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h3>5.5 Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
-            <p>jeweils Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse</p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="container mb-3">
-        <div class="col-12 col-md-8">
+            <h4>jeweils Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse:</h4>
             <span tal:content="structure context/angaben_zu_verantwortlichen"></span>
         </div>
         <div class="col-12 col-md-1">
