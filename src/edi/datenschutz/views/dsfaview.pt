@@ -106,6 +106,37 @@
         </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anlagen bzw. Verweise zur Beschreibung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="anlage context/anlagen_beschreibung">
+              <td tal:content="anlage/nr"></td>
+              <td tal:content="anlage/bezeichnung"></td>
+              <td tal:content="anlage/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
 
 
 
