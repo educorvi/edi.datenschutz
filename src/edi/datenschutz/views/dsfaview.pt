@@ -74,6 +74,38 @@
         </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.2 Anlagen bzw. Verweise zum DSFA-Bericht</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anlage 1</h3>
+            <p>Placeholder NamedBlobFile 1</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anlage 2</h3>
+            <p>Placeholder NamedBlobFile 2</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
 
 
 
