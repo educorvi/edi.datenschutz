@@ -544,6 +544,28 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>4.1.4.2 Begründung</h3>
+            <span tal:content="structure context/begrundung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>4.1.4.3 Beschreibung der Abstimmung</h3>
+            <span tal:content="structure context/beschreibung_der_abstimmung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
 
 
 
