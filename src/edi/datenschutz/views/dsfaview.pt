@@ -52,6 +52,17 @@
         </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>1.1.3 Anmerkungen zum Status</h3>
+            <span tal:content="structure context/anmerkung_zum_status"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
 
 
 
