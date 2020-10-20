@@ -290,6 +290,26 @@
         </div>
     </div>
 
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Datenkategorie</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="kategorie context/kategorien_personenbezogener_daten">
+              <td tal:content="kategorie/nr"></td>
+              <td tal:content="kategorie/bezeichnung"></td>
+              <td tal:content="kategorie/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
 
 
 
