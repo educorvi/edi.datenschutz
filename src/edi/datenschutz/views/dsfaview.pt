@@ -342,8 +342,60 @@
       </div>
       </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.3 Auflistung der Empfänger denen Daten offengelegt wurden</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Empfänger</th>
+              <th scope="col">Anlass der Offenlegung</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="kategorie context/empfaenger_fuer_offenlegung">
+              <td tal:content="kategorie/nr"></td>
+              <td tal:content="kategorie/empfaenger"></td>
+              <td tal:content="kategorie/anlass"></td>
+              <td tal:content="kategorie/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.4 Wie verläuft der Lebenszyklus von Daten und Prozessen?</h3>
+            <span tal:content="structure context/lebenszyklus_daten_prozesse"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.5 Mit Hilfe welcher Betriebsmittel erfolgt die Datenverarbeitung?</h3>
+            <span tal:content="structure context/betriebsmittel_fuer_datenverarbeitung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 
