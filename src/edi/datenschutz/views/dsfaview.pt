@@ -246,6 +246,21 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</h3>
+            <span tal:content="structure context/verpflichtungen_der_auftragsverarbeiter"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+
+
+
+
 
 
 
