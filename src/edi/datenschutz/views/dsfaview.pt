@@ -533,6 +533,17 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.1.4 Abstimmung mit der Aufsichtsbehörde</h2>
+            <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
 
 
 
