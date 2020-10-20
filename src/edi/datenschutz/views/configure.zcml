@@ -8,7 +8,7 @@
 
   <browser:page
     name="dsfaview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".dsfaview.Dsfaview"
     template="dsfaview.pt"
     permission="zope2.View"
