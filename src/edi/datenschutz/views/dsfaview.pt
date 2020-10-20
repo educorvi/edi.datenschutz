@@ -257,6 +257,16 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.8 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
+            <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 
