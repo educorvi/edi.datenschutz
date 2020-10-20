@@ -179,6 +179,17 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>2.1 Kontext: Überblick</h2>
+            <h3>2.1.1 Welche Verarbeitung ist geplant?</h3>
+            <span tal:content="structure context/welche_verarbeitung_ist_geplant_"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 
