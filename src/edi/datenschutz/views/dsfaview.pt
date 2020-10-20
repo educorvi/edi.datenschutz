@@ -509,6 +509,30 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.1.1 Risikoanalyse: SDM-Datensicherheitsziele</h2>
+            <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
+            <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.1.2 Risikoanalyse: SDM-Schutzbedarfsziele</h2>
+            <h3>4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
+            <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
 
 
 
