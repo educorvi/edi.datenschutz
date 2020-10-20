@@ -137,6 +137,37 @@
       </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.3 &Auml;nderungshistorie</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Wann?</th>
+              <th scope="col">Wer?</th>
+              <th scope="col">Was?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="aenderung context/aenderungen">
+              <td tal:content="aenderung/wann"></td>
+              <td tal:content="aenderung/wer"></td>
+              <td tal:content="aenderung/was"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
 
 
 
