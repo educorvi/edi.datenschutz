@@ -213,7 +213,16 @@
         </div>
     </div>
 
-
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</h3>
+            <span tal:content="structure context/wenn_anwendbar__wie_wird_die_einwilligung_der_betroffenen_personen_eingeholt_"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 
