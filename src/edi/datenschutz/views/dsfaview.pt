@@ -442,6 +442,73 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte</h2>
+            <h3>3.2.1 Wie werden die betroffenen Personen über die Verarbeitung informiert?</h3>
+            <span tal:content="structure context/information_betroffener_personen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.2 Wie könne Betroffene ihr Recht auf Auskunft ausüben?</h3>
+            <span tal:content="structure context/recht_auf_auskunft_betroffener"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.3 Wie können betroffene Personen ihr Recht auf Löschung ausüben?</h3>
+            <span tal:content="structure context/recht_auf_loschung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.4 Wie können betroffene Personen ihr Recht auf Berichtigung ausüben?</h3>
+            <span tal:content="structure context/recht_auf_berichtigung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.5 Wie können betroffene Personen ihr Recht auf Einschränkung oder Widerspruch der Verarbeitung ausüben?</h3>
+            <span tal:content="structure context/recht_auf_einschrankung_oder_widerspruch"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.6 Wie können betroffene Personen ihr Recht auf Datenübertragbarkeit ausüben?</h3>
+            <span tal:content="structure context/recht_auf_datenubertragbarkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
 
 
 
