@@ -168,6 +168,16 @@
       </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.4 Zeitpunkt der nächsten routinemäßigen &Uuml;berpr&uuml;fung</h2>
+            <p tal:content="view/get_ueberpruefung"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 

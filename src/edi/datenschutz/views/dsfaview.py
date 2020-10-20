@@ -20,3 +20,9 @@ class Dsfaview(BrowserView):
         status = self.context.status_der_dsfa
         result = "Status: "+str(status)
         return result
+
+    def get_ueberpruefung(self):
+        datum = self.context.datum
+        formatteddatum = datum.strftime("%d/%m/%Y")
+        result = "Datumsangabe: "+str(formatteddatum)
+        return result
