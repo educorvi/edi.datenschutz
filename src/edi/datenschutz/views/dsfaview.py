@@ -15,3 +15,8 @@ class Dsfaview(BrowserView):
         # Implement your own actions:
         self.msg = _(u'A small message')
         return self.index()
+
+    def get_status(self):
+        status = self.context.status_der_dsfa
+        result = "Status: "+str(status)
+        return result
