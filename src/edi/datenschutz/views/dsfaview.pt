@@ -224,6 +224,16 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die für die Verarbeitung relevant sind?</h3>
+            <span tal:content="structure context/normen_verarbeitung_relevant"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 
