@@ -566,6 +566,18 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.2 Geplante oder bereits umgesetzte Datenschutzmaßnahmen</h2>
+            <h3>Allgemeine Anmerkungen zu den umgesetzten Datenschutzmaßnahmen</h3>
+            <span tal:content="structure context/id_bezeichnung_bescheibung_und_anmerkung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
 
 
 
