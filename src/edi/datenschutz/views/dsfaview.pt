@@ -1,0 +1,595 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="edi.datenschutz"
+      metal:use-macro="context/main_template/macros/master">
+
+  <body>
+
+   <metal:main fill-slot="main">
+     <tal:main-macro metal:define-macro="main">
+
+       <div class="container">
+
+         <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+         <h1 class="documentFirstHeading" tal:content="context/title" />
+
+         <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+         <p class="documentDescription" tal:content="context/description" />
+
+         <div tal:replace="structure provider:plone.abovecontentbody" />
+
+         <div tal:replace="structure provider:plone.belowcontentbody" />
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.1 Beteiligte Personen und Status</h2>
+            <h3>1.1.1 An DSFA beteiligte Person(en) und ihre Rolle(n)</h3>
+            <ul class="list-group">
+              <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+              <li tal:repeat="person context/dsfa_beteiligte_person" class="list-group-item">
+                <span tal:content="person"></span>
+              </li>
+              </ul>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>1.1.2 Status der DSFA</h3>
+            <p tal:content="view/get_status"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>1.1.3 Anmerkungen zum Status</h3>
+            <span tal:content="structure context/anmerkung_zum_status"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>1.1.4 Kontaktdaten Datenschutzbeauftragte/r</h3>
+            <span tal:content="structure context/kontaktdaten_datenschutzbeauftragter"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.2 Anlagen bzw. Verweise zum DSFA-Bericht</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anlage 1</h3>
+            <p>Placeholder NamedBlobFile 1</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anlage 2</h3>
+            <p>Placeholder NamedBlobFile 2</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anlagen bzw. Verweise zur Beschreibung</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="anlage context/anlagen_beschreibung">
+              <td tal:content="anlage/nr"></td>
+              <td tal:content="anlage/bezeichnung"></td>
+              <td tal:content="anlage/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.3 &Auml;nderungshistorie</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Wann?</th>
+              <th scope="col">Wer?</th>
+              <th scope="col">Was?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="aenderung context/aenderungen">
+              <td tal:content="aenderung/wann"></td>
+              <td tal:content="aenderung/wer"></td>
+              <td tal:content="aenderung/was"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>1.4 Zeitpunkt der nächsten routinemäßigen &Uuml;berpr&uuml;fung</h2>
+            <p tal:content="view/get_ueberpruefung"></p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>2.1 Kontext: Überblick</h2>
+            <h3>2.1.1 Welche Verarbeitung ist geplant?</h3>
+            <span tal:content="structure context/welche_verarbeitung_ist_geplant_"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.2 Weclhe Zwecke hat die Verarbeitung?</h3>
+            <span tal:content="structure context/welche_zwecke_hat_die_verarbeitung_"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.3 Welche Rechtsgrundlagen/Befugnisse für die Verarbeitung gibt es?</h3>
+            <span tal:content="structure context/welche_rechtsgrundlagen_befugnisse_fur_die_verarbeitung_gibt_es_"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</h3>
+            <span tal:content="structure context/wenn_anwendbar__wie_wird_die_einwilligung_der_betroffenen_personen_eingeholt_"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die für die Verarbeitung relevant sind?</h3>
+            <span tal:content="structure context/normen_verarbeitung_relevant"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.6 Welche Zuständigkeiten bestehen für die Verarbeitung?</h3>
+            <span tal:content="structure context/zustandigkeiten_fur_verarbeitung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</h3>
+            <span tal:content="structure context/verpflichtungen_der_auftragsverarbeiter"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.1.8 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
+            <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>Anmerkung/Begründung</h3>
+            <span tal:content="structure context/anmerkung_begrundung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>2.2 Kontext: Daten, Prozesse und Unterstützung</h2>
+            <h3>2.2.1 Auflistung der Datenkategorien</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Datenkategorie</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="kategorie context/kategorien_personenbezogener_daten">
+              <td tal:content="kategorie/nr"></td>
+              <td tal:content="kategorie/bezeichnung"></td>
+              <td tal:content="kategorie/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.2 Auflistung der Kategorien betroffener Personen</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Bezeichnung der Kategorien betroffener Personen</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
+              <td tal:content="kategorie/nr"></td>
+              <td tal:content="kategorie/bezeichnung"></td>
+              <td tal:content="kategorie/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.3 Auflistung der Empfänger denen Daten offengelegt wurden</h3>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+      <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nr.</th>
+              <th scope="col">Empfänger</th>
+              <th scope="col">Anlass der Offenlegung</th>
+              <th scope="col">Anmerkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="kategorie context/empfaenger_fuer_offenlegung">
+              <td tal:content="kategorie/nr"></td>
+              <td tal:content="kategorie/empfaenger"></td>
+              <td tal:content="kategorie/anlass"></td>
+              <td tal:content="kategorie/anmerkung"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.4 Wie verläuft der Lebenszyklus von Daten und Prozessen?</h3>
+            <span tal:content="structure context/lebenszyklus_daten_prozesse"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>2.2.5 Mit Hilfe welcher Betriebsmittel erfolgt die Datenverarbeitung?</h3>
+            <span tal:content="structure context/betriebsmittel_fuer_datenverarbeitung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</h2>
+            <h3>3.1.1 Warum ist die Verarbeitung zwingend erforderlich und ein verhältnismäßiges Mittel, den angestrebten Zweck zu erreichen?</h3>
+            <span tal:content="structure context/verarbeitung_als_verhaltnismassiges_mittel"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.1.2 Warum sind die Daten erforderlich?</h3>
+            <span tal:content="structure context/warum_daten_erforderlich"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.1.3 Wie werden die Daten korrekt und auf dem neuesten Stand gehalten?</h3>
+            <span tal:content="structure context/daten_auf_dem_neuesten_stand"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.1.4 Welche Speicherdauer haben die Daten?</h3>
+            <span tal:content="structure context/speicherdauer_der_daten"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte</h2>
+            <h3>3.2.1 Wie werden die betroffenen Personen über die Verarbeitung informiert?</h3>
+            <span tal:content="structure context/information_betroffener_personen"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.2 Wie könne Betroffene ihr Recht auf Auskunft ausüben?</h3>
+            <span tal:content="structure context/recht_auf_auskunft_betroffener"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.3 Wie können betroffene Personen ihr Recht auf Löschung ausüben?</h3>
+            <span tal:content="structure context/recht_auf_loschung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.4 Wie können betroffene Personen ihr Recht auf Berichtigung ausüben?</h3>
+            <span tal:content="structure context/recht_auf_berichtigung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.5 Wie können betroffene Personen ihr Recht auf Einschränkung oder Widerspruch der Verarbeitung ausüben?</h3>
+            <span tal:content="structure context/recht_auf_einschrankung_oder_widerspruch"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>3.2.6 Wie können betroffene Personen ihr Recht auf Datenübertragbarkeit ausüben?</h3>
+            <span tal:content="structure context/recht_auf_datenubertragbarkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.1.1 Risikoanalyse: SDM-Datensicherheitsziele</h2>
+            <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
+            <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.1.2 Risikoanalyse: SDM-Schutzbedarfsziele</h2>
+            <h3>4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
+            <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.1.4 Abstimmung mit der Aufsichtsbehörde</h2>
+            <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>4.1.4.2 Begründung</h3>
+            <span tal:content="structure context/begrundung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>4.1.4.3 Beschreibung der Abstimmung</h3>
+            <span tal:content="structure context/beschreibung_der_abstimmung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>4.2 Geplante oder bereits umgesetzte Datenschutzmaßnahmen</h2>
+            <h3>Allgemeine Anmerkungen zu den umgesetzten Datenschutzmaßnahmen</h3>
+            <span tal:content="structure context/id_bezeichnung_bescheibung_und_anmerkung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+    </tal:main-macro>
+
+   </metal:main>
+
+ </body>
+
+</html>
