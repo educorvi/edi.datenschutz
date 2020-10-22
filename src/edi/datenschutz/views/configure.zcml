@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="massnahmenkatalogview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".massnahmenkatalogview.Massnahmenkatalogview"
+    template="massnahmenkatalogview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="risikomanagementview"
     for="*"
     class=".risikomanagementview.Risikomanagementview"
