@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="zielerfuellungsmanagementview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".zielerfuellungsmanagementview.Zielerfuellungsmanagementview"
+    template="zielerfuellungsmanagementview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="massnahmenkatalogview"
     for="*"
     class=".massnahmenkatalogview.Massnahmenkatalogview"
