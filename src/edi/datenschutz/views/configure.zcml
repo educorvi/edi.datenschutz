@@ -8,7 +8,7 @@
 
   <browser:page
     name="massnahmenkatalogview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".massnahmenkatalogview.Massnahmenkatalogview"
     template="massnahmenkatalogview.pt"
     permission="zope2.View"
