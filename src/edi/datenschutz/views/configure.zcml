@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="risikomanagementview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".risikomanagementview.Risikomanagementview"
+    template="risikomanagementview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="dsfaview"
     for="*"
     class=".dsfaview.Dsfaview"
