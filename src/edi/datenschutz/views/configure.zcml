@@ -31,16 +31,16 @@
     />
 
   <browser:page
-    name="dsfaview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.datenschutzfolgenabschaetzung.IDatenschutzfolgenabschaetzung"
     class=".dsfaview.Dsfaview"
     template="dsfaview.pt"
     permission="zope2.View"
     />
 
   <browser:page
-    name="verarbeitungstaetigkeitview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.verarbeitungstaetigkeit.IVerarbeitungstaetigkeit"
     class=".verarbeitungstaetigkeitview.Verarbeitungstaetigkeitview"
     template="verarbeitungstaetigkeitview.pt"
     permission="zope2.View"
