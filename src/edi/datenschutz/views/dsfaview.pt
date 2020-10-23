@@ -193,7 +193,7 @@
 
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h3>2.1.2 Weclhe Zwecke hat die Verarbeitung?</h3>
+            <h3>2.1.2 Welche Zwecke hat die Verarbeitung?</h3>
             <span tal:content="structure context/welche_zwecke_hat_die_verarbeitung_"></span>
         </div>
         <div class="col-12 col-md-1">
@@ -259,7 +259,7 @@
 
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h3>2.1.8 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
+            <h3>2.1.8.1 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
             <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
         </div>
         <div class="col-12 col-md-1">
@@ -270,7 +270,7 @@
 
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h3>Anmerkung/Begründung</h3>
+            <h3>.2.1.8.2 Anmerkung/Begründung</h3>
             <span tal:content="structure context/anmerkung_begrundung"></span>
         </div>
         <div class="col-12 col-md-1">
@@ -511,7 +511,7 @@
 
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h2>4.1.1 Risikoanalyse: SDM-Datensicherheitsziele</h2>
+            <h2>4.1 Risikoanalyse: SDM-Datensicherheitsziele</h2>
             <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
             <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
         </div>
@@ -523,7 +523,6 @@
 
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h2>4.1.2 Risikoanalyse: SDM-Schutzbedarfsziele</h2>
             <h3>4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
             <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
         </div>
@@ -536,6 +535,17 @@
     <div class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>4.1.4 Abstimmung mit der Aufsichtsbehörde</h2>
+            <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h3>4.1.4.1 Wurde die zuständige Aufsichtsbehörde konsultiert bzw. ist eine Konsultation geplant?</h3>
             <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
         </div>
         <div class="col-12 col-md-1">
