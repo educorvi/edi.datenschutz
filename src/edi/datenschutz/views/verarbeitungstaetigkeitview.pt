@@ -22,7 +22,6 @@
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
 
-         <div tal:replace="structure provider:plone.belowcontentbody" />
 
 
 
@@ -505,6 +504,9 @@
         <div class="col-12 col-md-3">
         </div>
       </div>
+
+      
+         <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </div>
 
