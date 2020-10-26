@@ -72,6 +72,15 @@
         </div>
       </div>
 
-  </metal:block>
+         <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </div>
+
+    </tal:main-macro>
+
+   </metal:main>
+
+ </body>
+
 
 </html>
