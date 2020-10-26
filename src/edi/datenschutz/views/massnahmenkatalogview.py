@@ -83,6 +83,11 @@ class Massnahmenkatalogview(BrowserView):
                     datenintegritaet_title.append(i.title)
                     datenintegritaet_orgatechnisch.append(i.art_der_massnahme)
                     datenintegritaet_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'datenminimierung'):
+                    datenminimierung_id.append(i.id_massnahme)
+                    datenminimierung_title.append(i.title)
+                    datenminimierung_orgatechnisch.append(i.art_der_massnahme)
+                    datenminimierung_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
