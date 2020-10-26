@@ -93,6 +93,11 @@ class Massnahmenkatalogview(BrowserView):
                     intervenierbarkeit_title.append(i.title)
                     intervenierbarkeit_orgatechnisch.append(i.art_der_massnahme)
                     intervenierbarkeit_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'transparenz'):
+                    transparenz_id.append(i.id_massnahme)
+                    transparenz_title.append(i.title)
+                    transparenz_orgatechnisch.append(i.art_der_massnahme)
+                    transparenz_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
