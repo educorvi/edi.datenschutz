@@ -55,8 +55,8 @@
     />
 
   <browser:page
-    name="kontrolleview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.kontrolle.IKontrolle"
     class=".kontrolleview.Kontrolleview"
     template="kontrolleview.pt"
     permission="zope2.View"
