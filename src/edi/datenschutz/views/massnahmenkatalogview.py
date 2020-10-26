@@ -112,7 +112,7 @@ class Massnahmenkatalogview(BrowserView):
                     richtigkeit_id.append(i.id_massnahme)
                     richtigkeit_title.append(i.title)
                     richtigkeit_orgatechnisch.append(i.art_der_massnahme)
-                    richtigkeit_ansprechpartner.append(i.ausfuehrender)
+                    richtigkeirichtigkeit_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
