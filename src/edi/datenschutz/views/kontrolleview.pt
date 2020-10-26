@@ -63,7 +63,9 @@
       </div>
 
       <div class="row mb3-">
+        <div class="col-12 col-md-2">
         <p>Ergebnis: </p>
+        </div>
         <div class="col-12 col-md-6">
           <span tal:content="structure context/ergebnis/output"></span>
         </div>
