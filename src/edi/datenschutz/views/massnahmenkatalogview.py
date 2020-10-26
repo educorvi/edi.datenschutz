@@ -30,20 +30,36 @@ class Massnahmenkatalogview(BrowserView):
         datenintegritaet_orgatechnisch = []
         datenintegritaet_ansprechpartner = []
 
-        verfuegbarkeit_id = []
-        verfuegbarkeit_title = []
-        verfuegbarkeit_orgatechnisch = []
-        verfuegbarkeit_ansprechpartner = []
+        datenminimierung_id = []
+        datenminimierung_title = []
+        datenminimierung_orgatechnisch = []
+        datenminimierung_ansprechpartner = []
 
-        verfuegbarkeit_id = []
-        verfuegbarkeit_title = []
-        verfuegbarkeit_orgatechnisch = []
-        verfuegbarkeit_ansprechpartner = []
+        intervenierbarkeit_id = []
+        intervenierbarkeit_title = []
+        intervenierbarkeit_orgatechnisch = []
+        intervenierbarkeit_ansprechpartner = []
 
-        verfuegbarkeit_id = []
-        verfuegbarkeit_title = []
-        verfuegbarkeit_orgatechnisch = []
-        verfuegbarkeit_ansprechpartner = []
+        transparenz_id = []
+        transparenz_title = []
+        transparenz_orgatechnisch = []
+        transparenz_ansprechpartner = []
+
+        nichtverkettung_id = []
+        nichtverkettung_title = []
+        nichtverkettung_orgatechnisch = []
+        nichtverkettung_ansprechpartner = []
+
+        konzeptionseinhaltung_id = []
+        konzeptionseinhaltung_title = []
+        konzeptionseinhaltung_orgatechnisch = []
+        konzeptionseinhaltung_ansprechpartner = []
+
+        richtigkeit_id = []
+        richtigkeit_title = []
+        richtigkeit_orgatechnisch = []
+        richtigkeit_ansprechpartner = []
+
 
         for i in self.context.getFolderContents():
             iobject = i.getObject()
@@ -57,6 +73,11 @@ class Massnahmenkatalogview(BrowserView):
                     verfuegbarkeit_title.append(i.title)
                     verfuegbarkeit_orgatechnisch.append(i.art_der_massnahme)
                     verfuegbarkeit_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'vertraulichkeit'):
+                    vertraulichkeit_id.append(i.id_massnahme)
+                    vertraulichkeit_title.append(i.title)
+                    vertraulichkeit_orgatechnisch.append(i.art_der_massnahme)
+                    vertraulichkeit_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
