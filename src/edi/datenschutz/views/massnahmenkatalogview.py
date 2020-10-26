@@ -98,6 +98,11 @@ class Massnahmenkatalogview(BrowserView):
                     transparenz_title.append(i.title)
                     transparenz_orgatechnisch.append(i.art_der_massnahme)
                     transparenz_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'nichtverkettung'):
+                    nichtverkettung_id.append(i.id_massnahme)
+                    nichtverkettung_title.append(i.title)
+                    nichtverkettung_orgatechnisch.append(i.art_der_massnahme)
+                    nichtverkettung_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
