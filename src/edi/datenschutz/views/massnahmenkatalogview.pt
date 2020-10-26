@@ -34,13 +34,11 @@
             </tr>
           </thead>
           <tbody>
-            <!--
-            <tr tal:repeat="anlage context/anlagen_beschreibung">
-              <td tal:content="anlage/nr"></td>
+            <tr tal:repeat="element view/getlists/verfuegbarkeit_id">
+              <td tal:content="element"></td>
               <td tal:content="anlage/bezeichnung"></td>
               <td tal:content="anlage/anmerkung"></td>
             </tr>
-            -->
           </tbody>
         </table>
       </div>
