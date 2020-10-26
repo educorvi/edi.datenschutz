@@ -88,6 +88,11 @@ class Massnahmenkatalogview(BrowserView):
                     datenminimierung_title.append(i.title)
                     datenminimierung_orgatechnisch.append(i.art_der_massnahme)
                     datenminimierung_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'intervenierbarkeit'):
+                    intervenierbarkeit_id.append(i.id_massnahme)
+                    intervenierbarkeit_title.append(i.title)
+                    intervenierbarkeit_orgatechnisch.append(i.art_der_massnahme)
+                    intervenierbarkeit_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
