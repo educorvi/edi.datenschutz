@@ -78,6 +78,11 @@ class Massnahmenkatalogview(BrowserView):
                     vertraulichkeit_title.append(i.title)
                     vertraulichkeit_orgatechnisch.append(i.art_der_massnahme)
                     vertraulichkeit_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'datenintegritaet'):
+                    datenintegritaet_id.append(i.id_massnahme)
+                    datenintegritaet_title.append(i.title)
+                    datenintegritaet_orgatechnisch.append(i.art_der_massnahme)
+                    datenintegritaet_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
