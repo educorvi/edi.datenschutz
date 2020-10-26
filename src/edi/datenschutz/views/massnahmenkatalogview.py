@@ -103,6 +103,16 @@ class Massnahmenkatalogview(BrowserView):
                     nichtverkettung_title.append(i.title)
                     nichtverkettung_orgatechnisch.append(i.art_der_massnahme)
                     nichtverkettung_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'konzeptionseinhaltung'):
+                    konzeptionseinhaltung_id.append(i.id_massnahme)
+                    konzeptionseinhaltung_title.append(i.title)
+                    konzeptionseinhaltung_orgatechnisch.append(i.art_der_massnahme)
+                    konzeptionseinhaltung_ansprechpartner.append(i.ausfuehrender)
+                elif(object == 'richtigkeit'):
+                    richtigkeit_id.append(i.id_massnahme)
+                    richtigkeit_title.append(i.title)
+                    richtigkeit_orgatechnisch.append(i.art_der_massnahme)
+                    richtigkeit_ansprechpartner.append(i.ausfuehrender)
 
         import pdb; pdb.set_trace()
 
