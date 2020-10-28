@@ -67,9 +67,7 @@ class Massnahmenkatalogview(BrowserView):
         objects = []
         datenminimierung = []
 
-        for i in self.context.getFolderContents():
-            iobject = i.getObject()
-            objects.append(iobject)
+        objects = self.get_folder_contents()
 
         for i in objects:
             for object in i.zielerfuellung:
