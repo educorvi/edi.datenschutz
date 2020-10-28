@@ -104,3 +104,18 @@ class Massnahmenkatalogview(BrowserView):
                     transparenz.append(i)
         
         return transparenz
+
+    def nichtverkettung(self):
+        objects = []
+        nichtverkettung = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'nichtverkettung'):
+                    nichtverkettung.append(i)
+        
+        return nichtverkettung
