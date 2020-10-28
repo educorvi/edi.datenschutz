@@ -74,3 +74,18 @@ class Massnahmenkatalogview(BrowserView):
                     datenminimierung.append(i)
         
         return datenminimierung
+
+    def intervenierbarkeit(self):
+        objects = []
+        intervenierbarkeit = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'intervenierbarkeit'):
+                    intervenierbarkeit.append(i)
+        
+        return intervenierbarkeit
