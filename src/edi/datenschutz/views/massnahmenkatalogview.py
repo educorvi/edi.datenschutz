@@ -134,3 +134,18 @@ class Massnahmenkatalogview(BrowserView):
                     konzeptionseinhaltung.append(i)
         
         return konzeptionseinhaltung
+
+    def richtigkeit(self):
+        objects = []
+        richtigkeit = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'richtigkeit'):
+                    richtigkeit.append(i)
+        
+        return richtigkeit
