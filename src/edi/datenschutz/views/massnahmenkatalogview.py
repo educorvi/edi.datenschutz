@@ -17,7 +17,7 @@ class Massnahmenkatalogview(BrowserView):
 
     def verfuegbarkeit(self):
         objects = []
-        verfuegbarkeit_id = []
+        verfuegbarkeit = []
 
         for i in self.context.getFolderContents():
             iobject = i.getObject()
@@ -26,6 +26,21 @@ class Massnahmenkatalogview(BrowserView):
         for i in objects:
             for object in i.zielerfuellung:
                 if(object == 'verfuegbarkeit'):
-                    verfuegbarkeit_id.append(i)
+                    verfuegbarkeit.append(i)
         
-        return verfuegbarkeit_id
+        return verfuegbarkeit
+
+    def vertraulichkeit(self):
+        objects = []
+        vertraulichkeit = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'vertraulichkeit'):
+                    vertraulichkeit.append(i)
+        
+        return vertraulichkeit
