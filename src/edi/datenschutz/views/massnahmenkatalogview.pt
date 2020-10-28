@@ -34,13 +34,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="element view/getlists">
-              <td tal:content="element"></td>
-              <!--
+            <tr tal:repeat="element view/verfuegbarkeit">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+            <!--
+            <tr>
               <td tal:content="anlage/bezeichnung"></td>
               <td tal:content="anlage/anmerkung"></td>
-              -->
             </tr>
+            -->
           </tbody>
         </table>
       </div>
