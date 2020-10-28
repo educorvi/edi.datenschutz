@@ -9,4 +9,5 @@
   <object meta_type="Dexterity FTI" name="Massnahmenkatalog"/>
   <object meta_type="Dexterity FTI" name="Massnahme"/>
   <object meta_type="Dexterity FTI" name="Kontrolle"/>
+  <object meta_type="Dexterity FTI" name="Risiko"/>
 </object>
