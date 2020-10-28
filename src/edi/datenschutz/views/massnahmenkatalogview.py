@@ -3,6 +3,9 @@
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
 
+from plone.memoize import ram
+from time import time
+
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -15,13 +18,17 @@ class Massnahmenkatalogview(BrowserView):
         self.msg = _(u'A small message')
         return self.index()
 
+    @ram.cache(lambda *args: time() // (60 * 1))
+    def get_folder_contents(self):
+        contents = self.context.listFolderContents()
+        print("Deutschland isch stabil")
+        return contents
+
     def verfuegbarkeit(self):
         objects = []
         verfuegbarkeit = []
 
-        for i in self.context.getFolderContents():
-            iobject = i.getObject()
-            objects.append(iobject)
+        objects = self.get_folder_contents()
 
         for i in objects:
             for object in i.zielerfuellung:
