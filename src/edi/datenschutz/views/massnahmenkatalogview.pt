@@ -187,6 +187,39 @@
       </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Transparenz</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/transparenz">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
 
 
 
