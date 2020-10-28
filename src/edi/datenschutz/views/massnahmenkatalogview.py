@@ -89,3 +89,18 @@ class Massnahmenkatalogview(BrowserView):
                     intervenierbarkeit.append(i)
         
         return intervenierbarkeit
+
+    def transparenz(self):
+        objects = []
+        transparenz = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'transparenz'):
+                    transparenz.append(i)
+        
+        return transparenz
