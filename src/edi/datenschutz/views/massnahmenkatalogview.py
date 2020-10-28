@@ -21,7 +21,6 @@ class Massnahmenkatalogview(BrowserView):
     @ram.cache(lambda *args: time() // (60 * 1))
     def get_folder_contents(self):
         contents = self.context.listFolderContents()
-        print("Deutschland isch stabil")
         return contents
 
     def verfuegbarkeit(self):
