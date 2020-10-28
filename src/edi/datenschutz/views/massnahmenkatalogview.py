@@ -119,3 +119,18 @@ class Massnahmenkatalogview(BrowserView):
                     nichtverkettung.append(i)
         
         return nichtverkettung
+
+    def konzeptionseinhaltung(self):
+        objects = []
+        konzeptionseinhaltung = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'konzeptionseinhaltung'):
+                    konzeptionseinhaltung.append(i)
+        
+        return konzeptionseinhaltung
