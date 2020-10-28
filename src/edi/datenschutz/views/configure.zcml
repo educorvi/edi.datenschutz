@@ -47,16 +47,16 @@
     />
 
   <browser:page
-    name="massnahmeview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.massnahme.IMassnahme"
     class=".massnahmeview.Massnahmeview"
     template="massnahmeview.pt"
     permission="zope2.View"
     />
 
   <browser:page
-    name="kontrolleview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.kontrolle.IKontrolle"
     class=".kontrolleview.Kontrolleview"
     template="kontrolleview.pt"
     permission="zope2.View"
