@@ -44,3 +44,18 @@ class Massnahmenkatalogview(BrowserView):
                     vertraulichkeit.append(i)
         
         return vertraulichkeit
+
+    def datenintegritaet(self):
+        objects = []
+        datenintegritaet = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'datenintegritaet'):
+                    datenintegritaet.append(i)
+        
+        return datenintegritaet
