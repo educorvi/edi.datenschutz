@@ -40,12 +40,6 @@
               <td tal:content="element/art_der_massnahme"></td>
               <td tal:content="element/ausfuehrender"></td>
             </tr>
-            <!--
-            <tr>
-              <td tal:content="anlage/bezeichnung"></td>
-              <td tal:content="anlage/anmerkung"></td>
-            </tr>
-            -->
           </tbody>
         </table>
       </div>
