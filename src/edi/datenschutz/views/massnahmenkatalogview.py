@@ -59,3 +59,18 @@ class Massnahmenkatalogview(BrowserView):
                     datenintegritaet.append(i)
         
         return datenintegritaet
+
+    def datenminimierung(self):
+        objects = []
+        datenminimierung = []
+
+        for i in self.context.getFolderContents():
+            iobject = i.getObject()
+            objects.append(iobject)
+
+        for i in objects:
+            for object in i.zielerfuellung:
+                if(object == 'datenminimierung'):
+                    datenminimierung.append(i)
+        
+        return datenminimierung
