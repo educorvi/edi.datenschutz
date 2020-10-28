@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddGefaehrdung"
+        title="edi.datenschutz: Add Gefaehrdung"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddRisiko"
         title="edi.datenschutz: Add Risiko"
     />
