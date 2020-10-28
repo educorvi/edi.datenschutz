@@ -4,10 +4,338 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="edi.datenschutz"
       metal:use-macro="context/main_template/macros/master">
+
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
-</body>
+
+   <metal:main fill-slot="main">
+     <tal:main-macro metal:define-macro="main">
+
+       <div class="container">
+
+         <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+         <h1 class="documentFirstHeading" tal:content="context/title" />
+
+         <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+         <p class="documentDescription" tal:content="context/description" />
+
+         <div tal:replace="structure provider:plone.abovecontentbody" />
+
+     <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Verfügbarkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/verfuegbarkeit">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Vertraulichkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/vertraulichkeit">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Datenintegrität</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/datenintegritaet">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Datenminimierung</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/datenminimierung">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Intervenierbarkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/intervenierbarkeit">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Transparenz</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/transparenz">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Nichtverkettung</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/nichtverkettung">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Konzeptionseinhaltung</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/konzeptionseinhaltung">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Richtigkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+     
+     <div class="row mb-3">
+      <div class="col-12 col-md-8 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titel</th>
+              <th scope="col">Organisatorisch/technisch</th>
+              <th scope="col">Ansprechpartner(in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="element view/richtigkeit">
+              <td tal:content="element/id_massnahme"></td>
+              <td tal:content="element/title"></td>
+              <td tal:content="element/art_der_massnahme"></td>
+              <td tal:content="element/ausfuehrender"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+
+
+
+
+
+         <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </div>
+
+    </tal:main-macro>
+
+   </metal:main>
+
+ </body>
+
+
+
+
+
 </html>

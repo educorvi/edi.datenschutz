@@ -5,12 +5,27 @@
       i18n:domain="edi.datenschutz"
       metal:use-macro="context/main_template/macros/master">
 
-<body>
+ <body>
 
-  <metal:block fill-slot="content-core">
-  
-    <div class="container">
-      <div class="row">
+   <metal:main fill-slot="main">
+     <tal:main-macro metal:define-macro="main">
+
+       <div class="container">
+
+         <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+         <h1 class="documentFirstHeading" tal:content="context/title" />
+
+         <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+         <p class="documentDescription" tal:content="context/description" />
+
+         <div tal:replace="structure provider:plone.abovecontentbody" />
+
+
+
+
+      <div class="row mb-3">
         <div class="col-12 col-md-4">
           <p>Art der Massnahme:</p>
         </div>
@@ -19,8 +34,7 @@
         </div>
       </div>
 
-    <div class="container">
-      <div class="row">
+      <div class="row mb-3">
         <div class="col-12 col-md-4">
           <p>Gewaehrleistungsziele:</p>
         </div>
@@ -29,7 +43,7 @@
         </div>
       </div>
 
-    <div class="row mt-3">
+    <div class="row mb-3">
       <div class="col-12">
           <table class="table table-striped">
             <tbody>
@@ -50,8 +64,7 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
+      <div class="row mb-3">
         <div class="col-12 col-md-2">
           <p>Datumsangabe: </p>
         </div>
@@ -60,14 +73,18 @@
         </div>
     </div>
 
-    <div class="container">
-      <div class="row">
+      <div class="row mb-3">
+        <div class="col-12 col-md-12">
         <p>Beschreibung:</p>
-        <div class="col-12 col-md-6">
-          <span tal:content="structure context/beschreibung/output"></span>
-        </div>
+        <span tal:content="structure context/beschreibung/output"></span>
       </div>
 
-  </metal:block>
+      </div>
+
+    </tal:main-macro>
+
+   </metal:main>
+
+ </body>
 
 </html>
