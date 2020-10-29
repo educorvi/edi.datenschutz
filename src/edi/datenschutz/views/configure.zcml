@@ -8,7 +8,7 @@
 
   <browser:page
     name="gefaehrdungview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".gefaehrdungview.Gefaehrdungview"
     template="gefaehrdungview.pt"
     permission="zope2.View"
@@ -16,7 +16,7 @@
 
   <browser:page
     name="risikoview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".risikoview.Risikoview"
     template="risikoview.pt"
     permission="zope2.View"
