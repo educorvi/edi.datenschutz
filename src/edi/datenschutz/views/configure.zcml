@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="risikoview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".risikoview.Risikoview"
+    template="risikoview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="view"
     for="edi.datenschutz.content.zielerfuellungsmanagement.IZielerfuellungsmanagement"
     class=".zielerfuellungsmanagementview.Zielerfuellungsmanagementview"
