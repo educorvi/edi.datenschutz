@@ -73,6 +73,72 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Eintrittswahrscheinlichkeit</h2>
+            <span tal:content="structure context/grad_wahrscheinlichkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Erläuterung zur Eintrittswahrscheinlichkeit</h2>
+            <span tal:content="structure context/wahrscheinlichkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Schaden/Schwere</h2>
+            <span tal:content="structure context/grad_schwere"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Erläuterung zur Schwere / zum Schaden</h2>
+            <span tal:content="structure context/schwere"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Maßnahmen zur Vermeidung oder Minimierung des Risikos</h2>
+            <p>Placeholder Maßnahmen</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Erläuterungen zu den Maßnahmen</h2>
+            <span tal:content="structure context/erlaeuterung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
 
 
 
