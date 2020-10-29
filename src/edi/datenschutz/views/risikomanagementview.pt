@@ -59,6 +59,278 @@
        </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Vertraulichkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/vertraulichkeit">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Datenintegrität</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/datenintegritaet">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Datenminimierung</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/datenminimierung">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Intervenierbarkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/intervenierbarkeit">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Transparenz</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/transparenz">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Nichtverkettung</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/nichtverkettung">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Konzeptionseinhaltung</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/konzeptionseinhaltung">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Richtigkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
+       <!--<div class="col-12 col-md-8 mb-3">-->
+        <div class="col-12 mb-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Schwachstelle</th>
+              <th scope="col">Risikoquelle</th>
+              <th scope="col">Risiko-Szenario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="object view/richtigkeit">
+              <td tal:content="object/id"></td>
+              <td tal:content="object/schwachstelle"></td>
+              <td tal:content="object/quelle"></td>
+              <td tal:content="object/szenario"></td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+      </div>
+
 
 
 
