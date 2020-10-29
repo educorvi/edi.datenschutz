@@ -48,7 +48,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="kategorie context/verfuegbarkeit">
+            <tr tal:repeat="kategorie view/get_folder_contents">
               <td tal:content="kategorie/id"></td>
               <td tal:content="kategorie/schwachstelle"></td>
               <td tal:content="kategorie/risikoquelle"></td>
