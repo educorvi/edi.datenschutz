@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="gefaehrdungview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".gefaehrdungview.Gefaehrdungview"
+    template="gefaehrdungview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="risikoview"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".risikoview.Risikoview"
