@@ -23,3 +23,17 @@ class Risikomanagementview(BrowserView):
     def get_folder_contents(self):
         contents = self.context.listFolderContents()
         return contents
+
+    def verfuegbarkeit(self):
+        objects = []
+        verfuegbarkeit = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'verfuegbarkeit'):
+                    verfuegbarkeit.append(i)
+
+        return verfuegbarkeit
+

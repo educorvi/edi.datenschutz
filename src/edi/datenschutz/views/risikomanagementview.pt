@@ -26,6 +26,16 @@
 
 
        <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Verfügbarkeit</h2>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+       <div class="row mb-3">
        <!--<div class="col-12 col-md-8 mb-3">-->
         <div class="col-12 mb-3">
         <table class="table table-bordered">
@@ -38,7 +48,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="object view/get_folder_contents">
+            <tr tal:repeat="object view/verfuegbarkeit">
               <td tal:content="object/id"></td>
               <td tal:content="object/schwachstelle"></td>
               <td tal:content="object/quelle"></td>
