@@ -3,6 +3,9 @@
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
 
+from plone.memoize import ram
+from time import time
+
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -15,3 +18,8 @@ class Risikomanagementview(BrowserView):
         # Implement your own actions:
         self.msg = _(u'A small message')
         return self.index()
+
+    @ram.cache(lambda *args: time() // (60 * 1))
+    def get_folder_contents(self):
+        contents = self.context.listFolderContents()
+        return contents
