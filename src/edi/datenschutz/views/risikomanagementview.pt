@@ -45,8 +45,6 @@
               <th scope="col">Schwachstelle</th>
               <th scope="col">Risikoquelle</th>
               <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Schaden/Schwere</th>
-              <th scope="col">Wahrscheinlichkeit</th>
             </tr>
           </thead>
           <tbody>
@@ -55,8 +53,6 @@
               <td tal:content="kategorie/schwachstelle"></td>
               <td tal:content="kategorie/risikoquelle"></td>
               <td tal:content="kategorie/risikoszenario"></td>
-              <td tal:content="kategorie/schaden"></td>
-              <td tal:content="kategorie/wahrscheinlichkeit"></td>
             </tr>
           </tbody>
         </table>
