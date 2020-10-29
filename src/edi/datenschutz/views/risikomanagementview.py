@@ -37,3 +37,106 @@ class Risikomanagementview(BrowserView):
 
         return verfuegbarkeit
 
+    def vertraulichkeit(self):
+        objects = []
+        vertraulichkeit = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'vertraulichkeit'):
+                    vertraulichkeit.append(i)
+
+        return vertraulichkeit
+
+    def datenintegritaet(self):
+        objects = []
+        datenintegritaet = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'datenintegritaet'):
+                    datenintegritaet.append(i)
+
+        return datenintegritaet
+
+    def datenminimierung(self):
+        objects = []
+        datenminimierung = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'datenminimierung'):
+                    datenminimierung.append(i)
+
+        return datenminimierung
+
+    def intervenierbarkeit(self):
+        objects = []
+        intervenierbarkeit = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'intervenierbarkeit'):
+                    intervenierbarkeit.append(i)
+
+        return intervenierbarkeit
+
+    def transparenz(self):
+        objects = []
+        transparenz = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'transparenz'):
+                    transparenz.append(i)
+
+        return transparenz
+
+    def nichtverkettung(self):
+        objects = []
+        nichtverkettung = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'nichtverkettung'):
+                    nichtverkettung.append(i)
+
+        return nichtverkettung
+
+    def konzeptionseinhaltung(self):
+        objects = []
+        konzeptionseinhaltung = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'konzeptionseinhaltung'):
+                    konzeptionseinhaltung.append(i)
+
+        return konzeptionseinhaltung
+
+    def richtigkeit(self):
+        objects = []
+        richtigkeit = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for object in i.focus:
+                if (object == 'richtigkeit'):
+                    richtigkeit.append(i)
+
+        return richtigkeit
