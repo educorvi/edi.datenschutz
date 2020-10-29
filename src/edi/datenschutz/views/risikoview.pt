@@ -26,14 +26,52 @@
 
       <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h2>1.1 Beteiligte Personen und Status</h2>
-            <h3>1.1.1 An DSFA beteiligte Person(en) und ihre Rolle(n)</h3>
+            <h2>Fokus</h2>
+            <ul class="list-group">
+              <!--<li class="list-group-item active">Nachname, Vorname, Rolle</li>-->
+              <li tal:repeat="focus context/focus" class="list-group-item">
+                <span tal:content="focus/title"></span>
+              </li>
+              </ul>
         </div>
         <div class="col-12 col-md-1">
         </div>
         <div class="col-12 col-md-3">
         </div>
       </div>
+
+     <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Schwachstelle</h2>
+            <span tal:content="structure context/schwachstelle"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Risikoquelle</h2>
+            <span tal:content="structure context/quelle"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Risiko-Szenario</h2>
+            <span tal:content="structure context/szenario"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
 
 
 
