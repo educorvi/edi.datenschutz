@@ -23,7 +23,7 @@
     />
 
   <browser:page
-    name="risikomanagementview"
+    name="view"
     for="edi.datenschutz.content.risikomanagement.IRisikomanagement"
     class=".risikomanagementview.Risikomanagementview"
     template="risikomanagementview.pt"
