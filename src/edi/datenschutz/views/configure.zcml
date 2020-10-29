@@ -24,7 +24,7 @@
 
   <browser:page
     name="risikomanagementview"
-    for="*"
+    for="edi.datenschutz.content.risikomanagement.IRisikomanagement"
     class=".risikomanagementview.Risikomanagementview"
     template="risikomanagementview.pt"
     permission="zope2.View"
