@@ -243,7 +243,7 @@
        </div>
       </div>
 
-      <div tal:condition="view/transparenz" class="row mb-3">
+      <div tal:condition="transparenz" class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>Transparenz</h2>
         </div>
@@ -253,7 +253,7 @@
         </div>
       </div>
 
-       <div tal:condition="view/transparenz" class="row mb-3">
+      <div tal:condition="transparenz" class="row mb-3">
        <!--<div class="col-12 col-md-8 mb-3">-->
         <div class="col-12 mb-3">
         <table class="table table-bordered">
@@ -263,14 +263,22 @@
               <th scope="col">Schwachstelle</th>
               <th scope="col">Risikoquelle</th>
               <th scope="col">Risiko-Szenario</th>
+              <th scope="col">Maßnahmen</th>
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="object view/transparenz">
-              <td tal:content="object/id"></td>
-              <td tal:content="object/schwachstelle"></td>
-              <td tal:content="object/quelle"></td>
-              <td tal:content="object/szenario"></td>
+            <tr tal:repeat="objdict transparenz">
+              <td tal:content="python:objdict['obj'].id"></td>
+              <td tal:content="python:objdict['obj'].schwachstelle"></td>
+              <td tal:content="python:objdict['obj'].quelle"></td>
+              <td tal:content="python:objdict['obj'].szenario"></td>
+              <td tal:define="refs objdict/refs">
+                <ul>
+                  <li tal:repeat="massnahmedict refs">
+                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
+                  </li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>
