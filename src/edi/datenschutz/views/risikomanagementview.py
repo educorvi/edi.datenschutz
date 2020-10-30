@@ -44,7 +44,6 @@ class Risikomanagementview(BrowserView):
 
                 verfuegbarkeit.append(objdict)
 
-
         return verfuegbarkeit
 
     def vertraulichkeit(self):
@@ -76,9 +75,18 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'datenintegritaet'):
-                    datenintegritaet.append(i)
+            objdict = {}
+            if 'datenintegritaet' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                datenintegritaet.append(objdict)
 
         return datenintegritaet
 
@@ -89,9 +97,18 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'datenminimierung'):
-                    datenminimierung.append(i)
+            objdict = {}
+            if 'datenminimierung' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                datenminimierung.append(objdict)
 
         return datenminimierung
 
@@ -102,9 +119,18 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'intervenierbarkeit'):
-                    intervenierbarkeit.append(i)
+            objdict = {}
+            if 'intervenierbarkeit' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                intervenierbarkeit.append(objdict)
 
         return intervenierbarkeit
 
@@ -115,9 +141,18 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'transparenz'):
-                    transparenz.append(i)
+            objdict = {}
+            if 'transparenz' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                transparenz.append(objdict)
 
         return transparenz
 
@@ -128,9 +163,18 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'nichtverkettung'):
-                    nichtverkettung.append(i)
+            objdict = {}
+            if 'nichtverkettung' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                nichtverkettung.append(objdict)
 
         return nichtverkettung
 
@@ -141,21 +185,40 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'konzeptionseinhaltung'):
-                    konzeptionseinhaltung.append(i)
+            objdict = {}
+            if 'konzeptionseinhaltung' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                konzeptionseinhaltung.append(objdict)
 
         return konzeptionseinhaltung
 
-    def richtigkeit(self):
-        objects = []
-        richtigkeit = []
 
-        objects = self.get_folder_contents()
+def richtigkeit(self):
+    objects = []
+    richtigkeit = []
 
-        for i in objects:
-            for object in i.focus:
-                if (object == 'richtigkeit'):
-                    richtigkeit.append(i)
+    objects = self.get_folder_contents()
 
-        return richtigkeit
+    for i in objects:
+        objdict = {}
+        if 'richtigkeit' in i.focus:
+            objdict['obj'] = i
+            objdict['refs'] = []
+            for massnahme in i.massnahmen:
+                objmassnahme = massnahme.to_object
+                massnahmendict = {}
+                massnahmendict['title'] = objmassnahme.title
+                massnahmendict['url'] = objmassnahme.absolute_url()
+                objdict['refs'].append(massnahmendict)
+
+            richtigkeit.append(objdict)
+
+    return richtigkeit
