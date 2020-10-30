@@ -7,16 +7,16 @@
   -*- extra stuff goes here -*-
 
   <browser:page
-    name="gefaehrdungview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.gefaehrdung.IGefaehrdung"
     class=".gefaehrdungview.Gefaehrdungview"
     template="gefaehrdungview.pt"
     permission="zope2.View"
     />
 
   <browser:page
-    name="risikoview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.risiko.IRisiko"
     class=".risikoview.Risikoview"
     template="risikoview.pt"
     permission="zope2.View"
