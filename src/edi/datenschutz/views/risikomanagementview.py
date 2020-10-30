@@ -31,8 +31,9 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'verfuegbarkeit'):
+            for focus in i.focus:
+                if focus == 'verfuegbarkeit':
+                    import pdb; pdb.set_trace()
                     verfuegbarkeit.append(i)
 
         return verfuegbarkeit
