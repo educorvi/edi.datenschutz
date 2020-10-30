@@ -25,7 +25,7 @@ class IGefaehrdung(model.Schema):
     grad_wahrscheinlichkeit = schema.Choice(title=u"Index Gefährdungsbewertung", vocabulary=ampel, required=True)
     wahrscheinlichkeit = schema.Text(title=u"Erläuterung zur Gefährdungsbewertung", required=False)
     massnahmen = RelationList(title=u"Maßnahmen zur Vermeidung oder Minimierung des Risikos",
-                              value_type=RelationChoice(vocabulary='plone.app.vocabularies.Catalog'))
+                              value_type=RelationChoice(vocabulary='plone.app.vocabularies.Catalog'), required=False)
     erlaeuterung = schema.Text(title=u"Erläuterungen zu den Maßnahmen", required=False)
 
     directives.widget(
