@@ -12,7 +12,13 @@
 
        <div class="container" tal:define="verfuegbarkeit view/verfuegbarkeit;
                                           vertraulichkeit view/vertraulichkeit;
-                                          datenminimierung view/datenminimierung">
+                                          datenminimierung view/datenminimierung;
+                                          datenintegritaet view/datenintegritaet;
+                                          datenminimierung view/datenminimierung;
+                                          intervenierbarkeit view/intervenierbarkeit;
+                                          transparenz view/transparenz;
+                                          nichtverkettung view/nichtverkettung;
+                                          konzeptionseinhaltung view/konzeptionseinhaltung">
 
          <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -111,9 +117,9 @@
        </div>
       </div>
 
-      <div tal:condition="view/datenintegritaet" class="row mb-3">
+     <div tal:condition="datenintegritaet" class="row mb-3">
         <div class="col-12 col-md-8">
-            <h2>Datenintegrität</h2>
+            <h2>Vertraulichkeit</h2>
         </div>
         <div class="col-12 col-md-1">
         </div>
@@ -121,7 +127,7 @@
         </div>
       </div>
 
-       <div tal:condition="view/datenintegritaet" class="row mb-3">
+      <div tal:condition="datenintegritaet" class="row mb-3">
        <!--<div class="col-12 col-md-8 mb-3">-->
         <div class="col-12 mb-3">
         <table class="table table-bordered">
@@ -131,14 +137,22 @@
               <th scope="col">Schwachstelle</th>
               <th scope="col">Risikoquelle</th>
               <th scope="col">Risiko-Szenario</th>
+              <th scope="col">Maßnahmen</th>
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="object view/datenintegritaet">
-              <td tal:content="object/id"></td>
-              <td tal:content="object/schwachstelle"></td>
-              <td tal:content="object/quelle"></td>
-              <td tal:content="object/szenario"></td>
+            <tr tal:repeat="objdict datenintegritaet">
+              <td tal:content="python:objdict['obj'].id"></td>
+              <td tal:content="python:objdict['obj'].schwachstelle"></td>
+              <td tal:content="python:objdict['obj'].quelle"></td>
+              <td tal:content="python:objdict['obj'].szenario"></td>
+              <td tal:define="refs objdict/refs">
+                <ul>
+                  <li tal:repeat="massnahmedict refs">
+                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
+                  </li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -314,7 +328,7 @@
         </table>
        </div>
       </div>
-
+<!--
       <div tal:condition="view/richtigkeit" class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>Richtigkeit</h2>
@@ -326,7 +340,6 @@
       </div>
 
        <div tal:condition="view/richtigkeit" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
         <div class="col-12 mb-3">
         <table class="table table-bordered">
           <thead>
@@ -348,8 +361,7 @@
         </table>
        </div>
       </div>
-
-
+-->
 
 
       </div>
