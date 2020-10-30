@@ -200,25 +200,24 @@ class Risikomanagementview(BrowserView):
 
         return konzeptionseinhaltung
 
+    def richtigkeit(self):
+        objects = []
+        richtigkeit = []
 
-def richtigkeit(self):
-    objects = []
-    richtigkeit = []
+        objects = self.get_folder_contents()
 
-    objects = self.get_folder_contents()
+        for i in objects:
+            objdict = {}
+            if 'richtigkeit' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
 
-    for i in objects:
-        objdict = {}
-        if 'richtigkeit' in i.focus:
-            objdict['obj'] = i
-            objdict['refs'] = []
-            for massnahme in i.massnahmen:
-                objmassnahme = massnahme.to_object
-                massnahmendict = {}
-                massnahmendict['title'] = objmassnahme.title
-                massnahmendict['url'] = objmassnahme.absolute_url()
-                objdict['refs'].append(massnahmendict)
+                richtigkeit.append(objdict)
 
-            richtigkeit.append(objdict)
-
-    return richtigkeit
+        return richtigkeit
