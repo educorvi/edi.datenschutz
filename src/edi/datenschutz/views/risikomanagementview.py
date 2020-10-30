@@ -40,6 +40,8 @@ class Risikomanagementview(BrowserView):
                     massnahmendict = {}
                     massnahmendict['title'] = objmassnahme.title
                     massnahmendict['url'] = objmassnahme.absolute_url()
+                    massnahmendict['uid'] = objmassnahme.UID()
+                    massnahmendict['obj'] = objmassnahme
                     objdict['refs'].append(massnahmendict)
 
                 verfuegbarkeit.append(objdict)

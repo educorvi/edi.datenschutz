@@ -1,0 +1,57 @@
+       <div class="container">
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-4">
+          <p>Art der Massnahme:</p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_massnahmenart"></p>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-4">
+          <p>Gewaehrleistungsziele:</p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_ziele"></p>
+        </div>
+      </div>
+
+    <div class="row mb-3">
+      <div class="col-12">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td>Ausfuehrender</td>
+                <td tal:content="context/ausfuehrender"></td>
+              </tr>
+              <tr>
+                <td>Druckauftrag</td>
+                <td tal:content="context/email_ansprechpartner"></td>
+              </tr>
+              <tr>
+                <td>Telefon</td>
+                <td tal:content="context/telefon_ansprechpartner"></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-2">
+          <p>Datumsangabe: </p>
+        </div>
+        <div class="col-12 col-md-2">
+          <p tal:content="structure view/get_datumsangabe"></p>
+        </div>
+    </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-12">
+        <p>Beschreibung:</p>
+        <span tal:content="structure context/beschreibung/output"></span>
+      </div>
+
+      </div>

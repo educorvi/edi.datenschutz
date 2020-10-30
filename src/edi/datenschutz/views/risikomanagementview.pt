@@ -67,6 +67,35 @@
                 <ul>
                   <li tal:repeat="massnahmedict refs">
                     <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
+      <a href="#" data-toggle="modal" data-target="#exampleModal" tal:attributes="data-target python:'#'+massnahmedict['uid']" tal:content="massnahmedict/title">
+  Launch demo modal
+</a>
+
+
+                    <div class="modal fade" tal:attributes="id massnahmedict/uid; aria_labelledby massnahmedict/uid" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" tal:content="massnahmedict/title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div tal:define="massnahme massnahmedict/obj" class="modal-body">
+        <span tal:replace="massnahme/@@massnahmeviewraw"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
                   </li>
                 </ul>
               </td>

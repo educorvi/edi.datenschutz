@@ -71,6 +71,14 @@
     />
 
   <browser:page
+    name="massnahmeraw"
+    for="edi.datenschutz.content.massnahme.IMassnahme"
+    class=".massnahmeview.Massnahmeview"
+    template="massnahmeviewraw.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="view"
     for="edi.datenschutz.content.kontrolle.IKontrolle"
     class=".kontrolleview.Kontrolleview"
