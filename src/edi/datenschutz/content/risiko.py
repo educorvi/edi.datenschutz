@@ -22,7 +22,7 @@ class IRisiko(model.Schema):
     focus = schema.List(title="Fokus", value_type=schema.Choice(vocabulary=ziele))
     schwachstelle = schema.Text(title=u"Schwachstelle", required=True)
     quelle = schema.TextLine(title=u"Risikoquelle", required=False)
-    szenario = schema.Text(title=u"Risko-Szenario", required=False)
+    szenario = schema.Text(title=u"Risiko-Szenario", required=False)
     grad_wahrscheinlichkeit = schema.Choice(title=u"Eintrittswahrscheinlichkeit", vocabulary=grad, required=True)
     wahrscheinlichkeit = schema.Text(title=u"Erläuterung zur Eintrittswahrscheinlichkeit", required=False)
     grad_schwere = schema.Choice(title=u"Schaden/Schwere", vocabulary=grad, required=False)
