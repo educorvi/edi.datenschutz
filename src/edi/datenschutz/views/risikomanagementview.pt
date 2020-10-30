@@ -10,7 +10,9 @@
    <metal:main fill-slot="main">
      <tal:main-macro metal:define-macro="main">
 
-       <div class="container">
+       <div class="container" tal:define="verfuegbarkeit view/verfuegbarkeit;
+                                          vertraulichkeit view/vertraulichkeit;
+                                          datenminimierung view/datenminimierung">
 
          <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -35,7 +37,7 @@
         </div>
       </div>
 
-       <div tal:condition="view/verfuegbarkeit" class="row mb-3">
+       <div tal:condition="verfuegbarkeit" class="row mb-3">
        <!--<div class="col-12 col-md-8 mb-3">-->
         <div class="col-12 mb-3">
         <table class="table table-bordered">
@@ -45,14 +47,22 @@
               <th scope="col">Schwachstelle</th>
               <th scope="col">Risikoquelle</th>
               <th scope="col">Risiko-Szenario</th>
+              <th scope="col">Maßnahmen</th>
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="object view/verfuegbarkeit">
-              <td tal:content="object/id"></td>
-              <td tal:content="object/schwachstelle"></td>
-              <td tal:content="object/quelle"></td>
-              <td tal:content="object/szenario"></td>
+            <tr tal:repeat="objdict verfuegbarkeit">
+              <td tal:content="python:objdict['obj'].id"></td>
+              <td tal:content="python:objdict['obj'].schwachstelle"></td>
+              <td tal:content="python:objdict['obj'].quelle"></td>
+              <td tal:content="python:objdict['obj'].szenario"></td>
+              <td tal:define="refs objdict/refs">
+                <ul>
+                  <li tal:repeat="massnahmedict refs">
+                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
+                  </li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -320,7 +330,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="object view/richtigkeit">
+             <tr tal:repeat="object view/richtigkeit">
               <td tal:content="object/id"></td>
               <td tal:content="object/schwachstelle"></td>
               <td tal:content="object/quelle"></td>
