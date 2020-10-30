@@ -7,8 +7,24 @@
   -*- extra stuff goes here -*-
 
   <browser:page
-    name="zielerfuellungsmanagementview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.gefaehrdung.IGefaehrdung"
+    class=".gefaehrdungview.Gefaehrdungview"
+    template="gefaehrdungview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="view"
+    for="edi.datenschutz.content.risiko.IRisiko"
+    class=".risikoview.Risikoview"
+    template="risikoview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="view"
+    for="edi.datenschutz.content.zielerfuellungsmanagement.IZielerfuellungsmanagement"
     class=".zielerfuellungsmanagementview.Zielerfuellungsmanagementview"
     template="zielerfuellungsmanagementview.pt"
     permission="zope2.View"
@@ -23,8 +39,8 @@
     />
 
   <browser:page
-    name="risikomanagementview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.risikomanagement.IRisikomanagement"
     class=".risikomanagementview.Risikomanagementview"
     template="risikomanagementview.pt"
     permission="zope2.View"

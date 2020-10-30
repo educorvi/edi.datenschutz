@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="edi.datenschutz"
+      metal:use-macro="context/main_template/macros/master">
+
+  <body>
+
+   <metal:main fill-slot="main">
+     <tal:main-macro metal:define-macro="main">
+
+       <div class="container">
+
+         <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+         <h1 class="documentFirstHeading" tal:content="context/title" />
+
+         <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+         <p class="documentDescription" tal:content="context/description" />
+
+         <div tal:replace="structure provider:plone.abovecontentbody" />
+
+         <div tal:replace="structure provider:plone.belowcontentbody" />
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Fokus</h2>
+            <ul class="list-group">
+              <!--<li class="list-group-item active">Nachname, Vorname, Rolle</li>-->
+              <li tal:repeat="focus context/focus" class="list-group-item">
+                <span tal:content="focus/title"></span>
+              </li>
+              </ul>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+      </div>
+
+     <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Schwachstelle</h2>
+            <span tal:content="structure context/schwachstelle"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Gefährdungsquelle</h2>
+            <span tal:content="structure context/quelle"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Gefährdungsszenario</h2>
+            <span tal:content="structure context/szenario"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Index Gefährdungsbewertung</h2>
+            <span tal:content="structure context/grad_wahrscheinlichkeit/title"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Erläuterung zur Gefährdungsbewertung</h2>
+            <span tal:content="structure context/wahrscheinlichkeit"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Maßnahmen zur Vermeidung oder Minimierung des Risikos</h2>
+            <p>Placeholder Maßnahmen</p>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 col-md-8">
+            <h2>Erläuterungen zu den Maßnahmen</h2>
+            <span tal:content="structure context/erlaeuterung"></span>
+        </div>
+        <div class="col-12 col-md-1">
+        </div>
+        <div class="col-12 col-md-3">
+        </div>
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+    </tal:main-macro>
+
+   </metal:main>
+
+ </body>
+
+</html>
