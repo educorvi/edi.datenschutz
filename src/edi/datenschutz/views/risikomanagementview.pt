@@ -27,7 +27,7 @@
          <div tal:replace="structure provider:plone.belowcontentbody" />
 
 
-       <div tal:condition="view/verfuegbarkeit" class="row mb-3">
+       <div tal:condition="verfuegbarkeit" class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>Verfügbarkeit</h2>
         </div>
@@ -69,7 +69,7 @@
        </div>
       </div>
 
-      <div tal:condition="view/vertraulichkeit" class="row mb-3">
+      <div tal:condition="vertraulichkeit" class="row mb-3">
         <div class="col-12 col-md-8">
             <h2>Vertraulichkeit</h2>
         </div>
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-       <div tal:condition="view/vertraulichkeit" class="row mb-3">
+      <div tal:condition="vertraulichkeit" class="row mb-3">
        <!--<div class="col-12 col-md-8 mb-3">-->
         <div class="col-12 mb-3">
         <table class="table table-bordered">
@@ -89,14 +89,22 @@
               <th scope="col">Schwachstelle</th>
               <th scope="col">Risikoquelle</th>
               <th scope="col">Risiko-Szenario</th>
+              <th scope="col">Maßnahmen</th>
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="object view/vertraulichkeit">
-              <td tal:content="object/id"></td>
-              <td tal:content="object/schwachstelle"></td>
-              <td tal:content="object/quelle"></td>
-              <td tal:content="object/szenario"></td>
+            <tr tal:repeat="objdict vertraulichkeit">
+              <td tal:content="python:objdict['obj'].id"></td>
+              <td tal:content="python:objdict['obj'].schwachstelle"></td>
+              <td tal:content="python:objdict['obj'].quelle"></td>
+              <td tal:content="python:objdict['obj'].szenario"></td>
+              <td tal:define="refs objdict/refs">
+                <ul>
+                  <li tal:repeat="massnahmedict refs">
+                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
+                  </li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>

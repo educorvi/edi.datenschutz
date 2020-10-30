@@ -54,9 +54,18 @@ class Risikomanagementview(BrowserView):
         objects = self.get_folder_contents()
 
         for i in objects:
-            for object in i.focus:
-                if (object == 'vertraulichkeit'):
-                    vertraulichkeit.append(i)
+            objdict = {}
+            if 'vertraulichkeit' in i.focus:
+                objdict['obj'] = i
+                objdict['refs'] = []
+                for massnahme in i.massnahmen:
+                    objmassnahme = massnahme.to_object
+                    massnahmendict = {}
+                    massnahmendict['title'] = objmassnahme.title
+                    massnahmendict['url'] = objmassnahme.absolute_url()
+                    objdict['refs'].append(massnahmendict)
+
+                vertraulichkeit.append(objdict)
 
         return vertraulichkeit
 
