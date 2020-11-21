@@ -31,8 +31,8 @@
     />
 
   <browser:page
-    name="massnahmenkatalogview"
-    for="*"
+    name="view"
+    for="edi.datenschutz.content.massnahmenkatalog.IMassnahmenkatalog"
     class=".massnahmenkatalogview.Massnahmenkatalogview"
     template="massnahmenkatalogview.pt"
     permission="zope2.View"

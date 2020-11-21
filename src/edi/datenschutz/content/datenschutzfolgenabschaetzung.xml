@@ -259,6 +259,110 @@
         <title>4.1.2 Wie wird die Erf&#252;llung der SDM-Schutzbedarfsziele gew&#228;hrleistet?</title>
       </field>
     </fieldset>
+
+    <fieldset name="risikogesamtbewertung"
+	      label="4.1.3 Risikogesamtbewertung"
+	      description="Risikogesamtbewertung: Wie wird die Einhaltung der DSGVO gewährleistet?">
+      <field name="verfuegbarkeit" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Verf&#252;gbarkeit</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="vertraulichkeit" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Vertraulichkeit</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="datenintegritaet" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Datenintegrit&#228;t</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="datenminimierung" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Datenminimierung</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="intervenierbarkeit" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Intervenierbarkeit</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="transparenz" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Transparenz</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="nichtverkettung" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Nichtverkettung</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="konzeptionseinhaltung" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Konzeptionseinhaltung</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+
+      <field name="richtigkeit" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Richtigkeit</title>
+        <values>
+          <element>rot</element>
+          <element>gelb</element>
+          <element>gr&#252;n</element>
+        </values>
+      </field>
+    </fieldset>	    
+
     <fieldset name="abstimmung_aufsichtsbehorde" 
               label="4.1.4 Abstimmung mit der Aufsichtsbeh&#246;rde"
               description="Abstimmung mit der zust&#228;ndigen Aufsichtsbeh&#246;rde">

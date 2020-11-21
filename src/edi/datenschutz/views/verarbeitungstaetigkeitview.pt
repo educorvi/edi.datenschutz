@@ -5,25 +5,22 @@
       i18n:domain="edi.datenschutz"
       metal:use-macro="context/main_template/macros/master">
 
-  <body>
+<body>
 
-   <metal:main fill-slot="main">
-     <tal:main-macro metal:define-macro="main">
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
 
-       <div class="container">
+    <div class="container">
 
-         <div tal:replace="structure provider:plone.abovecontenttitle" />
+      <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-         <h1 class="documentFirstHeading" tal:content="context/title" />
+      <h1 class="documentFirstHeading" tal:content="context/title" />
 
-         <div tal:replace="structure provider:plone.belowcontenttitle" />
+      <div tal:replace="structure provider:plone.belowcontenttitle" />
 
-         <p class="documentDescription" tal:content="context/description" />
+      <p class="documentDescription" tal:content="context/description" />
 
-         <div tal:replace="structure provider:plone.abovecontentbody" />
-
-
-
+      <div tal:replace="structure provider:plone.abovecontentbody" />
 
       <div class="row mb-3">
         <div class="col-12 col-md-8">
@@ -36,484 +33,388 @@
       </div>
 
       <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>1. Beteiligte Personen und Status</h2>
-            <h3>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h3>
-            <ul class="list-group">
-              <li class="list-group-item active">Nachname, Vorname, Rolle</li>
-              <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
-                <span tal:content="person"></span>
-              </li>
-              </ul>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
+	      
+        <div class="col-12 col-md-9">
+          <div class="accordion" id="accordeonAnsicht">
+
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse0" aria-controls="collapse0">1. Beteiligte Personen und Status</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingOne" data-parent="#accordeonAnsicht" id="collapse0">
+                <div class="card-body">
+                  <h3>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h3>
+                  <ul class="list-group">
+                    <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+                    <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
+                      <span tal:content="person"></span>
+                    </li>
+                  </ul>
+                  <h3 class="mt-5">1.2 Status <span tal:attributes="class python:view.get_status()[1]" 
+		                                    tal:content="python:view.get_status()[0]"/></h3>
+                  <h3 class="mt-5">1.3 Anmerkungen zum Status</h3>
+                  <p tal:content="structure context/anmerkung_zum_status"></p>
+                </div>
+              </div>
+	    </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse1" aria-controls="collapse1">2. Anlagen bzw. Verweise zur Beschreibung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordeonAnsicht" id="collapse1">
+                <div class="card-body">
+                  <h3>Anlage 1</h3>
+                  <p>Placeholder NamedBlobFile 1</p>
+                  <h3 class="mt-5">Anlage 2</h3>
+                  <p>Placeholder NamedBlobFile 2</p>
+                  <h3 class="mt-5">Anlagen bzw. Verweise zur Beschreibung</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="anlage context/anlagen_beschreibung">
+                        <td tal:content="anlage/nr"></td>
+                        <td tal:content="anlage/bezeichnung"></td>
+                        <td tal:content="anlage/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingTree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse2" aria-controls="collapse2">3. &Auml;nderungshistorie</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
+                <div class="card-body">
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Wann?</th>
+		        <th scope="col">Wer?</th>
+		        <th scope="col">Was?</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="aenderung context/aenderungen">
+		        <td tal:content="aenderung/wann"></td>
+		        <td tal:content="aenderung/wer"></td>
+		        <td tal:content="aenderung/was"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+                </div>
+              </div>
+            </div><!--card-->
+	    
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse3" aria-controls="collapse3">4. Zeitpunkt der &Uuml;berpr&uuml;fung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFour" data-parent="#accordeonAnsicht" id="collapse3">
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse4" aria-controls="collapse4">5. Allgemeine Angaben</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+                <div class="card-body">
+                  <h3>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h3>
+                  <span tal:content="structure context/bezeichnung_der_verarbeitungstatigkeit"></span>
+		  <h3 class="mt-5">5.2 Aktenzeichen</h3>
+                  <span tal:content="structure context/aktenzeichen"></span>	
+                  <h3 class="mt-5">5.3 Stand</h3>
+                  <span tal:content="structure context/stand"></span>
+                  <h3 class="mt-5">5.4 Verantwortlicher</h3>
+                  <h4 class="mt-5">Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse:</h4>
+                  <span tal:content="structure context/verantwortlicher"></span>
+                  <h3 class="mt-5">5.5 Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
+                  <h4 class="mt-5">jeweils Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse:</h4>
+                  <span tal:content="structure context/angaben_zu_verantwortlichen"></span>
+                  <h3 class="mt-5">5.6 Beh&ouml;rdlicher Datenschutzbeauftragter</h3>
+                  <h4 class="mt-5">Name, dienstliche Anschrift, Telefonnummer und E-Mail-Adresse</h4>
+                  <span tal:content="structure context/behordlicher_datenschutzbeauftragter"></span>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse5" aria-controls="collapse5">6. Zwecke und Rechtsgrundlagen der Verarbeitung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingSix" data-parent="#accordeonAnsicht" id="collapse5">
+                <div class="card-body">
+                  <h3>6.1 Zwecke</h3>
+                  <span tal:content="structure context/zwecke"></span>
+                  <h3 class="mt-5">6.2 Rechtsgrundlagen/Befugnis</h3>
+                  <span tal:content="structure context/rechtsgrundlagen_befugnis"></span>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse6" aria-controls="collapse6">7. Kategorien der personenbezogenen Daten</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingSeven" data-parent="#accordeonAnsicht" id="collapse6">
+                <div class="card-body">
+		  <h3>Auflistung der personenbezogenen Daten</h3>
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Bezeichnung der Daten</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="datenbezeichnung context/kategorien_daten">
+		        <td tal:content="datenbezeichnung/nr"></td>
+		        <td tal:content="datenbezeichnung/bezeichnung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse7" aria-controls="collapse7">8. Kategorien der betroffenen Personen</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingEight" data-parent="#accordeonAnsicht" id="collapse7">
+                <div class="card-body">
+                  <h3>Auflistung der betroffenen Personen</h3>			
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Betroffene Person</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="person context/kategorien_personen">
+		        <td tal:content="person/nr"></td>
+		        <td tal:content="person/bezeichnung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse8" aria-controls="collapse8">9. Kategorien der Empfänger</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingNine" data-parent="#accordeonAnsicht" id="collapse8">
+                <div class="card-body">
+                  <h3>Auflistung der Empf&auml;nger und Anl&auml;sse der Offenlegung</h3>
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Empfänger</th>
+		        <th scope="col">Anlass der Offenlegung</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="empfaenger context/kategorien_empfaenger">
+		        <td tal:content="empfaenger/nr"></td>
+		        <td tal:content="empfaenger/bezeichnung"></td>
+		        <td tal:content="empfaenger/anmerkung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse9" aria-controls="collapse9">10. Übermittlung an ein Drittland oder an eine internationale Organisation</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingTen" data-parent="#accordeonAnsicht" id="collapse9">
+                <div class="card-body">
+                  <h3>Auflistung der betreffenden Übermittlungen</h3>
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Drittland oder internationale Organisation</th>
+		        <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art. 49 Abs. 1 Unterabsatz 2 DSGVO</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="uebermittlung context/internationale_organisationen">
+		        <td tal:content="uebermittlung/nr"></td>
+		        <td tal:content="uebermittlung/bezeichnung"></td>
+		        <td tal:content="uebermittlung/anmerkung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingEleven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                     data-target="#collapse10" aria-controls="collapse10">11. Fristen für die Löschung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingEleven" data-parent="#accordeonAnsicht" id="collapse10">
+                <div class="card-body">
+                  <h3>Auflistung der Löschfristen</h3>
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Löschungsfrist</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="loeschung context/loeschfristen">
+		        <td tal:content="loeschung/nr"></td>
+		        <td tal:content="loeschung/bezeichnung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+                </div>
+              </div>
+            </div><!--card-->
+
+	    <div class="card">
+              <div class="card-header" id="headingTwelf">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse11" aria-controls="collapse11">12. Technische und organisatorische Maßnahmen</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingTwelf" data-parent="#accordeonAnsicht" id="collapse11">
+                <div class="card-body">
+		  <div tal:condition="context/beschreibung_massnahmen" tal:replace="structure context/beschreibung_massnahmen/output"/>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingThirteen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse12" aria-controls="collapse12">13. Verantwortliche Organisationseinheit</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingThirteen" data-parent="#accordeonAnsicht" id="collapse12">
+                <div class="card-body">
+	          <div tal:condition="context/dienststelle_sachgebiet_abteilung" 
+			  tal:replace="structure context/dienststelle_sachgebiet_abteilung"/>		
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingFourteen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse13" aria-controls="collapse13">14. Datenschutz-Folgenabschätzung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFourteen" data-parent="#accordeonAnsicht" id="collapse13">
+                <div class="card-body">
+                  <h3>14.1 Ist f&#252;r die Form der Verarbeitung eine Datenschutz-Folgenabsch&#228;tzung nach Art. 35 DSGVO erforderlich?</h3>
+                  <p tal:content="context/datenschutz_folgenabschatzung_erforderlich"></p>
+                  <h3 class="mt-5">14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h3>
+                  <p tal:content="context/pruefung_bis_wann"></p>
+                  <h3 class="mt-5">14.3 Begründung</h3>
+                  <p tal:content="context/begruendung"></p>
+                </div>
+              </div>
+            </div><!--card-->
+
+            <div class="card">
+              <div class="card-header" id="headingFiveteen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse14" aria-controls="collapse14">15. Stellungnahme des Datenschutzbeauftragten</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordeonAnsicht" id="collapse14">
+                <div class="card-body">
+                  <h3>15.1 Liegt eine Stellungnahme des Datenschutzbeauftragten vor?</h3>
+                  <p tal:content="context/vorliegen_stellungnahme"></p>
+                  <h3 class="mt-5">15.2 Gegebenenfalls nähere Erläuterung</h3>
+                  <p tal:content="context/datenschutz_erlaeuterung"></p>
+                </div>
+              </div>
+            </div><!--card-->
+
+	  </div>
+	</div>
+
         <div class="col-12 col-md-3">
+           <div class="card card-shadow mb-3">
+              <div class="card-header">Inhalt</div>
+              <div class="card-body">
+		 <ul tal:define="fc view/get_foldercontents">
+                   <li tal:repeat="entry fc"><a tal:attributes="href entry/getURL" tal:content="entry/Title"/></li>
+		 </ul>
+              </div>
+            </div>
         </div>
       </div>
 
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>1.2 Status</h3>
-            <p tal:content="view/get_status"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>1.3 Anmerkungen zum Status</h3>
-            <span tal:content="structure context/anmerkung_zum_status"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>2. Anlagen bzw. Verweise zur Beschreibung</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>Anlage 1</h3>
-            <p>Placeholder NamedBlobFile 1</p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>Anlage 2</h3>
-            <p>Placeholder NamedBlobFile 2</p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>Anlagen bzw. Verweise zur Beschreibung</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nr.</th>
-              <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
-              <th scope="col">Anmerkung</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="anlage context/anlagen_beschreibung">
-              <td tal:content="anlage/nr"></td>
-              <td tal:content="anlage/bezeichnung"></td>
-              <td tal:content="anlage/anmerkung"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>3. &Auml;nderungshistorie</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Wann?</th>
-              <th scope="col">Wer?</th>
-              <th scope="col">Was?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="aenderung context/aenderungen">
-              <td tal:content="aenderung/wann"></td>
-              <td tal:content="aenderung/wer"></td>
-              <td tal:content="aenderung/was"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>4. Zeitpunkt der &Uuml;berpr&uuml;fung</h2>
-            <p tal:content="view/get_ueberpruefung"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>5. Allgemeine Angaben</h2>
-            <h3>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h3>
-            <span tal:content="structure context/bezeichnung_der_verarbeitungstatigkeit"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>5.2 Aktenzeichen</h3>
-            <span tal:content="structure context/aktenzeichen"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>5.3 Stand</h3>
-            <span tal:content="structure context/stand"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>5.4 Verantwortlicher</h3>
-            <h4>Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse:</h4>
-            <span tal:content="structure context/verantwortlicher"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>5.5 Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
-            <h4>jeweils Bezeichnung, Anschrift, Telefonnummer und E-Mail-Adresse:</h4>
-            <span tal:content="structure context/angaben_zu_verantwortlichen"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>5.6 Beh&ouml;rdlicher Datenschutzbeauftragter</h3>
-            <h4>Name, dienstliche Anschrift, Telefonnummer und E-Mail-Adresse</h4>
-            <span tal:content="structure context/behordlicher_datenschutzbeauftragter"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>6. Zwecke und Rechtsgrundlagen der Verarbeitung</h2>
-            <h3>6.1 Zwecke</h3>
-            <span tal:content="structure context/zwecke"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>6.2 Rechtsgrundlagen/Befugnis</h3>
-            <span tal:content="structure context/rechtsgrundlagen_befugnis"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>7. Kategorien der personenbezogenen Daten</h2>
-            <h3>Auflistung der personenbezogenen Daten</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nr.</th>
-              <th scope="col">Bezeichnung der Daten</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="datenbezeichnung context/kategorien_daten">
-              <td tal:content="datenbezeichnung/nr"></td>
-              <td tal:content="datenbezeichnung/bezeichnung"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>8. Kategorien der betroffenen Personen</h2>
-            <h3>Auflistung der betroffenen Personen</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nr.</th>
-              <th scope="col">Betroffene Person</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="person context/kategorien_personen">
-              <td tal:content="person/nr"></td>
-              <td tal:content="person/bezeichnung"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>9. Kategorien der Empfänger</h2>
-            <h3>Auflistung der Empf&auml;nger und Anl&auml;sse der Offenlegung</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nr.</th>
-              <th scope="col">Empfänger</th>
-              <th scope="col">Anlass der Offenlegung</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="empfaenger context/kategorien_empfaenger">
-              <td tal:content="empfaenger/nr"></td>
-              <td tal:content="empfaenger/bezeichnung"></td>
-              <td tal:content="empfaenger/anmerkung"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>10. Übermittlung an ein Drittland oder an eine internationale Organisation</h2>
-            <h3>Auflistung der betreffenden Übermittlungen</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nr.</th>
-              <th scope="col">Drittland oder internationale Organisation</th>
-              <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art. 49 Abs. 1 Unterabsatz 2 DSGVO</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="uebermittlung context/internationale_organisationen">
-              <td tal:content="uebermittlung/nr"></td>
-              <td tal:content="uebermittlung/bezeichnung"></td>
-              <td tal:content="uebermittlung/anmerkung"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>11. Fristen für die Löschung</h2>
-            <h3>Auflistung der Löschfristen</h3>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-      <div class="col-12 col-md-8 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nr.</th>
-              <th scope="col">Löschungsfrist</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="loeschung context/loeschfristen">
-              <td tal:content="loeschung/nr"></td>
-              <td tal:content="loeschung/bezeichnung"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>12. Technische und organisatorische Maßnahmen</h2>
-            <span tal:content="structure context/beschreibung_massnahmen/output"></span>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>13. Verantwortliche Organisationseinheit</h2>
-            <p tal:content="view/get_dienststelle"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>14. Datenschutz-Folgenabschätzung</h2>
-            <h3>14.1 Ist f&#252;r die Form der Verarbeitung eine Datenschutz-Folgenabsch&#228;tzung nach Art. 35 DSGVO erforderlich?</h3>
-            <p tal:content="context/datenschutz_folgenabschatzung_erforderlich"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>14.2 Falls ja, bis wann durchzuführen oder zu überprüfen?</h3>
-            <p tal:content="context/pruefung_bis_wann"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>14.3 Begründung</h3>
-            <p tal:content="context/begruendung"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>15. Stellungnahme des Datenschutzbeauftragten</h2>
-            <h3>15.1 Liegt eine Stellungnahme des Datenschutzbeauftragten vor?</h3>
-            <p tal:content="context/vorliegen_stellungnahme"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-    </div>
-
-      <div class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h3>15.2 Gegebenenfalls nähere Erläuterung</h3>
-            <p tal:content="context/datenschutz_erlaeuterung"></p>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      
-         <div tal:replace="structure provider:plone.belowcontentbody" />
+      <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </div>
 
     </tal:main-macro>
 
-   </metal:main>
+  </metal:main>
 
- </body>
+</body>
 
 </html>

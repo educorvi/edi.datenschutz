@@ -12,8 +12,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
     # template = ViewPageTemplateFile('verarbeitungstaetigkeitview.pt')
 
     def __call__(self):
-        # Implement your own actions:
-        #import pdb; pdb.set_trace()
         self.msg = _(u'A small message')
         return self.index()
 
@@ -28,9 +26,16 @@ class Verarbeitungstaetigkeitview(BrowserView):
         return result
 
     def get_status(self):
+        statusdict = {
+                'in Bearbeitung':'badge badge-primary',
+                'Aktiviert':'badge badge-success',
+                'Deaktiviert':'badge badge-danger',
+                'Sonstiges (Bitte  in Anmerkungen schreiben)':'badge badge-warning'}
         status = self.context.status
-        result = "Status: "+str(status)
-        return result 
+        if self.context.status == 'Sonstiges (Bitte  in Anmerkungen schreiben)':
+            return ('Sonstiges', statusdict.get(self.context.status))
+        else:
+            return (self.context.status, statusdict.get(self.context.status))
 
     def get_ueberpruefung(self):
         datum = self.context.datumsangabe
@@ -42,3 +47,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
         dienststelle = self.context.dienststelle_sachgebiet_abteilung
         result = "Dienststelle / Sachgebiet / Abteilung: "+str(dienststelle)
         return result
+
+    def get_foldercontents(self):
+        return self.context.getFolderContents()

@@ -42,7 +42,7 @@ class Risikomanagementview(BrowserView):
                     massnahmendict = {}
                     massnahmendict['title'] = objmassnahme.title
                     massnahmendict['url'] = objmassnahme.absolute_url()
-                    massnahmendict['uid'] = objmassnahme.UID()
+                    massnahmendict['uid'] = 'edi'+objmassnahme.UID()
 
                     rawview = api.content.get_view(
                         name='massnahmeraw',
@@ -77,7 +77,7 @@ class Risikomanagementview(BrowserView):
                         request=self.request,
                     )
                     massdict['title'] = objmassnahme.title
-                    massdict['uid'] = objmassnahme.UID()
+                    massdict['uid'] = 'edi'+objmassnahme.UID()
                     massdict['rawview'] = rawview()
                     massnahmen.append(massdict)
 
