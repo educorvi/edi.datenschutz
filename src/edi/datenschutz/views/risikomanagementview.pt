@@ -66,7 +66,11 @@
               <td tal:define="refs objdict/refs">
                 <ul>
                   <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
+                    <!--<a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>-->
+                    <a href="#" data-toggle="modal" data-target="#exampleModal"
+                            tal:attributes="data-target python:'#'+massnahmedict['uid']" tal:content="massnahmedict/title">
+                             Launch demo modal
+                    </a>
                   </li>
                 </ul>
               </td>
@@ -382,7 +386,7 @@
 
       <div tal:condition="richtigkeit" class="row mb-3">
        <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
+       <div class="col-12 mb-3">
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -412,8 +416,28 @@
        </div>
       </div>
 
-
+      <div tal:repeat="massnahme view/massnahmen" class="modal fade" tal:attributes="id massnahme/uid;aria_labelledby massnahme/uid" 
+	   tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" tal:content="massnahme/title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+		    <span tal:replace="structure massnahme/rawview"/>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
+
+    </div>
 
 
 

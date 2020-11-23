@@ -6,6 +6,8 @@ from Products.Five.browser import BrowserView
 from plone.memoize import ram
 from time import time
 
+from plone import api
+
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -40,11 +42,46 @@ class Risikomanagementview(BrowserView):
                     massnahmendict = {}
                     massnahmendict['title'] = objmassnahme.title
                     massnahmendict['url'] = objmassnahme.absolute_url()
+                    massnahmendict['uid'] = 'edi'+objmassnahme.UID()
+
+                    rawview = api.content.get_view(
+                        name='massnahmeraw',
+                        context=objmassnahme,
+                        request=self.request,
+                    )
+
+                    #massnahmendict['obj'] = objmassnahme
+                    massnahmendict['view'] = rawview()
                     objdict['refs'].append(massnahmendict)
 
                 verfuegbarkeit.append(objdict)
 
         return verfuegbarkeit
+
+    def massnahmen(self):
+        uids = []
+        massnahmen = []
+
+        objects = self.get_folder_contents()
+
+        for i in objects:
+            for k in i.massnahmen:
+                objmassnahme = k.to_object
+                if objmassnahme.UID() not in uids:
+                    massdict = {}
+                    uids.append(objmassnahme.UID())
+
+                    rawview = api.content.get_view(
+                        name='massnahmeraw',
+                        context=objmassnahme,
+                        request=self.request,
+                    )
+                    massdict['title'] = objmassnahme.title
+                    massdict['uid'] = 'edi'+objmassnahme.UID()
+                    massdict['rawview'] = rawview()
+                    massnahmen.append(massdict)
+
+        return massnahmen
 
     def vertraulichkeit(self):
         objects = []
