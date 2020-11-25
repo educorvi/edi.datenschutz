@@ -172,6 +172,60 @@
               </div>
             </div><!--card-->
 
+
+            <div class="card">
+              <div class="card-header" id="headingTree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse2" aria-controls="collapse2">2.2 Kontext: Daten, Prozesse und Unterstützung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
+                <div class="card-body">
+
+                  <h3>2.2.1 Auflistung der Datenkategorien</h3>
+
+		  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Bezeichnung der Datenkategorie</th>
+		        <th scope="col">Anmerkung</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="kategorie context/kategorien_personenbezogener_daten">
+		        <td tal:content="kategorie/nr"></td>
+		        <td tal:content="kategorie/bezeichnung"></td>
+		        <td tal:content="kategorie/anmekrung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+
+                  <h3 class="mt-5">2.2.2 Auflistung der Kategorien betroffener Personen</h3>
+
+      <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+		        <th scope="col">Bezeichnung der Kategorien betroffener Personen</th>
+		        <th scope="col">Anmerkung</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
+		        <td tal:content="kategorie/nr"></td>
+		        <td tal:content="kategorie/bezeichnung"></td>
+		        <td tal:content="kategorie/anmekrung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+
+                </div>
+              </div>
+            </div><!--card-->
+
+
             <div class="card">
               <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
