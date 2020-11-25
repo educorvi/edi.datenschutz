@@ -165,6 +165,9 @@
                   <h3 class="mt-5">2.1.8.1 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
                   <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
 
+                  <h3 class="mt-5">2.1.8.2 Anmerkung/Begründung</h3>
+                  <span tal:content="structure context/anmerkung_begrundung"></span>
+
                 </div>
               </div>
             </div><!--card-->
