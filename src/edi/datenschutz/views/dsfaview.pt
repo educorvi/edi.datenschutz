@@ -253,6 +253,48 @@
             </div><!--card-->
 
 
+      <div class="card">
+              <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse4" aria-controls="collapse4">3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+                <div class="card-body">
+
+                  <h3>3.1.1 Warum ist die Verarbeitung zwingend erforderlich und ein verhältnismäßiges Mittel, den angestrebten Zweck zu erreichen?</h3>
+                  <span tal:content="structure context/verarbeitung_als_verhaltnismassiges_mittel"></span>
+
+		              <h3 class="mt-5">3.1.2 Warum sind die Daten erforderlich?</h3>
+                  <span tal:content="structure context/warum_daten_erforderlich"></span>
+
+                  <h3 class="mt-5">2.1.3 Welche Rechtsgrundlagen/Befugnisse für die Verarbeitung gibt es?</h3>
+                  <span tal:content="structure context/welche_rechtsgrundlagen_befugnisse_fur_die_verarbeitung_gibt_es_"></span>
+
+                  <h3 class="mt-5">2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</h3>
+                  <span tal:content="structure context/wenn_anwendbar__wie_wird_die_einwilligung_der_betroffenen_personen_eingeholt_"></span>
+
+                  <h3 class="mt-5">2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die für die Verarbeitung relevant sind?</h3>
+                  <span tal:content="structure context/normen_verarbeitung_relevant"></span>
+
+                  <h3 class="mt-5">2.1.6 Welche Zuständigkeiten bestehen für die Verarbeitung?</h3>
+                  <span tal:content="structure context/zustandigkeiten_fur_verarbeitung"></span>
+
+                  <h3 class="mt-5">2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</h3>
+                  <span tal:content="structure context/verpflichtungen_der_auftragsverarbeiter"></span>
+
+                  <h3 class="mt-5">2.1.8.1 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
+                  <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
+
+                  <h3 class="mt-5">2.1.8.2 Anmerkung/Begründung</h3>
+                  <span tal:content="structure context/anmerkung_begrundung"></span>
+
+                </div>
+              </div>
+            </div><!--card-->
+
+
             <div class="card">
               <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
