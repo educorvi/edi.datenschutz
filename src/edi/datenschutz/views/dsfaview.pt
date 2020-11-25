@@ -324,8 +324,8 @@
                   <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
                   <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
 
-		              <h3 class="mt-5">3.2.2 Wie könne Betroffene ihr Recht auf Auskunft ausüben?</h3>
-                  <span tal:content="structure context/recht_auf_auskunft_betroffener"></span>
+		              <h3 class="=mt-5">4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
+                  <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
 
                   <h3 class="mt-5">3.2.3 Wie können betroffene Personen ihr Recht auf Löschung ausüben?</h3>
                   <span tal:content="structure context/recht_auf_loschung"></span>
