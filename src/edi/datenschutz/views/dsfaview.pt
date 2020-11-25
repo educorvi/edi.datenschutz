@@ -272,8 +272,8 @@
                   <h3 class="mt-5">3.1.3 Wie werden die Daten korrekt und auf dem neuesten Stand gehalten?</h3>
                   <span tal:content="structure context/daten_auf_dem_neuesten_stand"></span>
 
-                  <h3 class="mt-5">2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</h3>
-                  <span tal:content="structure context/wenn_anwendbar__wie_wird_die_einwilligung_der_betroffenen_personen_eingeholt_"></span>
+                  <h3 class="mt-5">3.1.4 Welche Speicherdauer haben die Daten?</h3>
+                  <span tal:content="structure context/speicherdauer_der_daten"></span>
 
                   <h3 class="mt-5">2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die für die Verarbeitung relevant sind?</h3>
                   <span tal:content="structure context/normen_verarbeitung_relevant"></span>
