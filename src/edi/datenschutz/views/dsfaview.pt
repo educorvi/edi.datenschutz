@@ -162,6 +162,9 @@
                   <h3 class="mt-5">2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</h3>
                   <span tal:content="structure context/verpflichtungen_der_auftragsverarbeiter"></span>
 
+                  <h3 class="mt-5">2.1.8.1 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
+                  <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
+
                 </div>
               </div>
             </div><!--card-->
