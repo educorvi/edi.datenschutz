@@ -174,13 +174,13 @@
 
 
             <div class="card">
-              <div class="card-header" id="headingTree">
+              <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse2" aria-controls="collapse2">2.2 Kontext: Daten, Prozesse und Unterstützung</button>
+                     data-target="#collapse5" aria-controls="collapse5">2.2 Kontext: Daten, Prozesse und Unterstützung</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
+              <div class="collapse" aria-labelledby="headingSix" data-parent="#accordeonAnsicht" id="collapse5">
                 <div class="card-body">
 
                   <h3>2.2.1 Auflistung der Datenkategorien</h3>
@@ -254,13 +254,13 @@
 
 
       <div class="card">
-              <div class="card-header" id="headingFive">
+              <div class="card-header" id="headingSeven">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse6" aria-controls="collapse6">3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse6">
+              <div class="collapse" aria-labelledby="headingSeven" data-parent="#accordeonAnsicht" id="collapse6">
                 <div class="card-body">
 
                   <h3>3.1.1 Warum ist die Verarbeitung zwingend erforderlich und ein verhältnismäßiges Mittel, den angestrebten Zweck zu erreichen?</h3>
@@ -280,13 +280,13 @@
             </div><!--card-->
 
       <div class="card">
-              <div class="card-header" id="headingFive">
+              <div class="card-header" id="headingEight">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse8" aria-controls="collapse8">3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse8">
+              <div class="collapse" aria-labelledby="headingEight" data-parent="#accordeonAnsicht" id="collapse8">
                 <div class="card-body">
 
                   <h3>3.2.1 Wie werden die betroffenen Personen über die Verarbeitung informiert?</h3>
@@ -312,13 +312,13 @@
             </div><!--card-->
 
       <div class="card">
-              <div class="card-header" id="headingFive">
+              <div class="card-header" id="headingNine">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse9" aria-controls="collapse9">4.1 Risikoanalyse: SDM-Datensicherheitsziele</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse9">
+              <div class="collapse" aria-labelledby="headingNine" data-parent="#accordeonAnsicht" id="collapse9">
                 <div class="card-body">
 
                   <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
@@ -332,13 +332,13 @@
             </div><!--card-->
 
       <div class="card">
-              <div class="card-header" id="headingFive">
+              <div class="card-header" id="headingTen">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse10" aria-controls="collapse10">4.1.4 Abstimmung mit der Aufsichtsbehörde</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse10">
+              <div class="collapse" aria-labelledby="headingTen" data-parent="#accordeonAnsicht" id="collapse10">
                 <div class="card-body">
 
                   <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
@@ -357,13 +357,13 @@
             </div><!--card-->
 
       <div class="card">
-              <div class="card-header" id="headingFive">
+              <div class="card-header" id="headingEleven">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse11" aria-controls="collapse11">4.2 Geplante oder bereits umgesetzte Datenschutzmaßnahmen</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse11">
+              <div class="collapse" aria-labelledby="headingEleven" data-parent="#accordeonAnsicht" id="collapse11">
                 <div class="card-body">
 
                   <h3>Allgemeine Anmerkungen zu den umgesetzten Datenschutzmaßnahmen</h3>
