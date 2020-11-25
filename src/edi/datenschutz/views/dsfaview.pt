@@ -301,6 +301,9 @@
                   <h3 class="mt-5">3.2.4 Wie können betroffene Personen ihr Recht auf Berichtigung ausüben?</h3>
                   <span tal:content="structure context/recht_auf_berichtigung"></span>
 
+                  <h3 class="mt-5">3.2.5 Wie können betroffene Personen ihr Recht auf Einschränkung oder Widerspruch der Verarbeitung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_einschrankung_oder_widerspruch"></span>
+
                 </div>
               </div>
             </div><!--card-->
