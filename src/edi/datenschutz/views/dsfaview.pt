@@ -248,7 +248,6 @@
                   <h3 class="mt-5">2.2.5 Mit Hilfe welcher Betriebsmittel erfolgt die Datenverarbeitung?</h3>
                   <span tal:content="structure context/betriebsmittel_fuer_datenverarbeitung"></span>
 
-
                 </div>
               </div>
             </div><!--card-->
