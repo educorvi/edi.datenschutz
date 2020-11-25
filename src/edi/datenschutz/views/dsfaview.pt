@@ -58,7 +58,7 @@
               <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse1" aria-controls="collapse1">2. Anlagen bzw. Verweise zur Beschreibung</button>
+                     data-target="#collapse1" aria-controls="collapse1">1.2 Anlagen bzw. Verweise zum DSFA-Bericht</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordeonAnsicht" id="collapse1">
