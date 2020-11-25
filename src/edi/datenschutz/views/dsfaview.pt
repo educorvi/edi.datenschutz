@@ -221,6 +221,27 @@
 		    </tbody>
 		  </table>
 
+                  <h3 class="mt-5">2.2.3 Auflistung der Empfänger denen Daten offengelegt wurden</h3>
+
+      <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th scope="col">Nr.</th>
+            <th scope="col">Empfänger</th>
+            <th scope="col">Anlass der Offenlegung</th>
+            <th scope="col">Anmerkung</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr tal:repeat="kategorie context/empfaenger_fuer_offenlegung">
+		        <td tal:content="kategorie/nr"></td>
+            <td tal:content="kategorie/empfaenger"></td>
+            <td tal:content="kategorie/anlass"></td>
+            <td tal:content="kategorie/anmerkung"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+
                 </div>
               </div>
             </div><!--card-->
