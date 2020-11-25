@@ -311,6 +311,38 @@
               </div>
             </div><!--card-->
 
+      <div class="card">
+              <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse4" aria-controls="collapse4">4.1 Risikoanalyse: SDM-Datensicherheitsziele</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+                <div class="card-body">
+
+                  <h3>3.2.1 Wie werden die betroffenen Personen über die Verarbeitung informiert?</h3>
+                  <span tal:content="structure context/information_betroffener_personen"></span>
+
+		              <h3 class="mt-5">3.2.2 Wie könne Betroffene ihr Recht auf Auskunft ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_auskunft_betroffener"></span>
+
+                  <h3 class="mt-5">3.2.3 Wie können betroffene Personen ihr Recht auf Löschung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_loschung"></span>
+
+                  <h3 class="mt-5">3.2.4 Wie können betroffene Personen ihr Recht auf Berichtigung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_berichtigung"></span>
+
+                  <h3 class="mt-5">3.2.5 Wie können betroffene Personen ihr Recht auf Einschränkung oder Widerspruch der Verarbeitung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_einschrankung_oder_widerspruch"></span>
+
+                  <h3 class="mt-5">3.2.6 Wie können betroffene Personen ihr Recht auf Datenübertragbarkeit ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_datenubertragbarkeit"></span>
+
+                </div>
+              </div>
+            </div><!--card-->
+
 
             <div class="card">
               <div class="card-header" id="headingSix">
