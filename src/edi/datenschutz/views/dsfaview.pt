@@ -242,6 +242,10 @@
 		    </tbody>
 		  </table>
 
+                  <h3 class="mt-5">2.2.4 Wie verläuft der Lebenszyklus von Daten und Prozessen?</h3>
+                  <span tal:content="structure context/lebenszyklus_daten_prozesse"></span>
+
+
                 </div>
               </div>
             </div><!--card-->
