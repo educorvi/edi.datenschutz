@@ -92,7 +92,7 @@
               <div class="card-header" id="headingTree">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse2" aria-controls="collapse2">3. &Auml;nderungshistorie</button>
+                     data-target="#collapse2" aria-controls="collapse2">1.3 &Auml;nderungshistorie</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
