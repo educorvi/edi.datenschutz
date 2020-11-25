@@ -283,10 +283,10 @@
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse4" aria-controls="collapse4">3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte</button>
+                     data-target="#collapse8" aria-controls="collapse8">3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse8">
                 <div class="card-body">
 
                   <h3>3.2.1 Wie werden die betroffenen Personen über die Verarbeitung informiert?</h3>
