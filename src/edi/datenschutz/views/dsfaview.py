@@ -17,9 +17,21 @@ class Dsfaview(BrowserView):
         return self.index()
 
     def get_status(self):
+        statusdict = {
+                'in Bearbeitung':'badge badge-primary',
+                'Aktiviert':'badge badge-success',
+                'Deaktiviert':'badge badge-danger',
+                'Sonstiges (Bitte  in Anmerkungen schreiben)':'badge badge-warning'}
         status = self.context.status_der_dsfa
-        result = "Status: "+str(status)
-        return result
+        if self.context.status_der_dsfa == 'Sonstiges (Bitte  in Anmerkungen schreiben)':
+            return ('Sonstiges', statusdict.get(self.context.status_der_dsfa))
+        else:
+            return (self.context.status_der_dsfa, statusdict.get(self.context.status_der_dsfa))
+
+    #def get_status(self):
+        #status = self.context.status_der_dsfa
+        #result = "Status: "+str(status)
+        #return result
 
     def get_ueberpruefung(self):
         datum = self.context.datum
