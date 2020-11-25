@@ -257,10 +257,10 @@
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse4" aria-controls="collapse4">3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</button>
+                     data-target="#collapse6" aria-controls="collapse6">3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse6">
                 <div class="card-body">
 
                   <h3>3.1.1 Warum ist die Verarbeitung zwingend erforderlich und ein verhältnismäßiges Mittel, den angestrebten Zweck zu erreichen?</h3>
