@@ -346,6 +346,12 @@
 		              <h3 class="mt-5">4.1.4.1 Wurde die zuständige Aufsichtsbehörde konsultiert bzw. ist eine Konsultation geplant?</h3>
                   <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
 
+                  <h3 class="mt-5">4.1.4.2 Begründung</h3>
+                  <span tal:content="structure context/begrundung"></span>
+
+                  <h3 class="mt-5">4.1.4.3 Beschreibung der Abstimmung</h3>
+                  <span tal:content="structure context/beschreibung_der_abstimmung"></span>
+
                 </div>
               </div>
             </div><!--card-->
