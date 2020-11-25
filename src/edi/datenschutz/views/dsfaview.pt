@@ -324,7 +324,26 @@
                   <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
                   <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
 
-		              <h3 class="=mt-5">4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
+		              <h3 class="mt-5">4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
+                  <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
+
+                </div>
+              </div>
+            </div><!--card-->
+
+      <div class="card">
+              <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse4" aria-controls="collapse4">4.1.4 Abstimmung mit der Aufsichtsbehörde</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+                <div class="card-body">
+
+                  <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
+
+		              <h3 class="mt-5">4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
                   <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
 
                 </div>
