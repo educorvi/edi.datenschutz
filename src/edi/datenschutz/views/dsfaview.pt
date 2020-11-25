@@ -177,7 +177,7 @@
               <div class="card-header" id="headingTree">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse2" aria-controls="collapse2">2.2 Kontext: Daten, Prozesse und Unterstützung</button>
+                     data-target="#collapse5" aria-controls="collapse5">2.2 Kontext: Daten, Prozesse und Unterstützung</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
@@ -257,7 +257,7 @@
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse4" aria-controls="collapse4">3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</button>
+                     data-target="#collapse6" aria-controls="collapse6">3.1 Grundlegende Prinzipien: Verhältnismäßigkeit und Notwendigkeit</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
@@ -284,7 +284,7 @@
               <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse5" aria-controls="collapse5">6. Zwecke und Rechtsgrundlagen der Verarbeitung</button>
+                     data-target="#collapse7" aria-controls="collapse7">6. Zwecke und Rechtsgrundlagen der Verarbeitung</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingSix" data-parent="#accordeonAnsicht" id="collapse5">
