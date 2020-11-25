@@ -315,10 +315,10 @@
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse4" aria-controls="collapse4">4.1 Risikoanalyse: SDM-Datensicherheitsziele</button>
+                     data-target="#collapse9" aria-controls="collapse9">4.1 Risikoanalyse: SDM-Datensicherheitsziele</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse9">
                 <div class="card-body">
 
                   <h3>4.1.1 Wie wird die Erfüllung der SDM-Datensicherheitsziele gewährleistet?</h3>
