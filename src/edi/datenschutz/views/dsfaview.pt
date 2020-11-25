@@ -335,10 +335,10 @@
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse4" aria-controls="collapse4">4.1.4 Abstimmung mit der Aufsichtsbehörde</button>
+                     data-target="#collapse10" aria-controls="collapse10">4.1.4 Abstimmung mit der Aufsichtsbehörde</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse10">
                 <div class="card-body">
 
                   <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
@@ -360,10 +360,10 @@
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse4" aria-controls="collapse4">4.2 Geplante oder bereits umgesetzte Datenschutzmaßnahmen</button>
+                     data-target="#collapse11" aria-controls="collapse11">4.2 Geplante oder bereits umgesetzte Datenschutzmaßnahmen</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse11">
                 <div class="card-body">
 
                   <h3>Allgemeine Anmerkungen zu den umgesetzten Datenschutzmaßnahmen</h3>
