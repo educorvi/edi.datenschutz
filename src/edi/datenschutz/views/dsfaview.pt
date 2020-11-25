@@ -275,21 +275,6 @@
                   <h3 class="mt-5">3.1.4 Welche Speicherdauer haben die Daten?</h3>
                   <span tal:content="structure context/speicherdauer_der_daten"></span>
 
-                  <h3 class="mt-5">2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die für die Verarbeitung relevant sind?</h3>
-                  <span tal:content="structure context/normen_verarbeitung_relevant"></span>
-
-                  <h3 class="mt-5">2.1.6 Welche Zuständigkeiten bestehen für die Verarbeitung?</h3>
-                  <span tal:content="structure context/zustandigkeiten_fur_verarbeitung"></span>
-
-                  <h3 class="mt-5">2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</h3>
-                  <span tal:content="structure context/verpflichtungen_der_auftragsverarbeiter"></span>
-
-                  <h3 class="mt-5">2.1.8.1 Wurde der Standpunkt der betroffenen Personen oder ihrer Vertreter eingeholt?</h3>
-                  <span tal:content="structure context/standpunkt_der_betroffenen_personen"></span>
-
-                  <h3 class="mt-5">2.1.8.2 Anmerkung/Begründung</h3>
-                  <span tal:content="structure context/anmerkung_begrundung"></span>
-
                 </div>
               </div>
             </div><!--card-->
