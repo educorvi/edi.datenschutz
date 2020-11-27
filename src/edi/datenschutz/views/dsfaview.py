@@ -30,6 +30,6 @@ class Dsfaview(BrowserView):
 
     def get_ueberpruefung(self):
         datum = self.context.datum
-        formatteddatum = datum.strftime("%d/%m/%Y")
+        formatteddatum = datum.strftime("%d.%m.%Y")
         result = "Datumsangabe: "+str(formatteddatum)
         return result

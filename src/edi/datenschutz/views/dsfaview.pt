@@ -126,7 +126,7 @@
               </div>
               <div class="collapse" aria-labelledby="headingFour" data-parent="#accordeonAnsicht" id="collapse3">
                 <div class="card-body">
-
+                    <p tal:content="view/get_ueberpruefung"></p>
                 </div>
               </div>
             </div><!--card-->
