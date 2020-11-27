@@ -39,7 +39,7 @@ class Verarbeitungstaetigkeitview(BrowserView):
 
     def get_ueberpruefung(self):
         datum = self.context.datumsangabe
-        formatteddatum = datum.strftime("%d/%m/%Y")
+        formatteddatum = datum.strftime("%d.%m.%Y")
         result = "Datumsangabe: "+str(formatteddatum)
         return result
 

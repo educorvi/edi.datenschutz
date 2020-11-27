@@ -33,14 +33,14 @@
       </div>
 
       <div class="row mb-3">
-	      
+
         <div class="col-12 col-md-9">
           <div class="accordion" id="accordeonAnsicht">
 
             <div class="card">
               <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse0" aria-controls="collapse0">1. Beteiligte Personen und Status</button>
                   </h2>
               </div>
@@ -53,7 +53,7 @@
                       <span tal:content="person"></span>
                     </li>
                   </ul>
-                  <h3 class="mt-5">1.2 Status <span tal:attributes="class python:view.get_status()[1]" 
+                  <h3 class="mt-5">1.2 Status <span tal:attributes="class python:view.get_status()[1]"
 		                                    tal:content="python:view.get_status()[0]"/></h3>
                   <h3 class="mt-5">1.3 Anmerkungen zum Status</h3>
                   <p tal:content="structure context/anmerkung_zum_status"></p>
@@ -64,7 +64,7 @@
             <div class="card">
               <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse1" aria-controls="collapse1">2. Anlagen bzw. Verweise zur Beschreibung</button>
                   </h2>
               </div>
@@ -98,7 +98,7 @@
             <div class="card">
               <div class="card-header" id="headingTree">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse2" aria-controls="collapse2">3. &Auml;nderungshistorie</button>
                   </h2>
               </div>
@@ -123,17 +123,17 @@
                 </div>
               </div>
             </div><!--card-->
-	    
+
             <div class="card">
               <div class="card-header" id="headingFour">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse3" aria-controls="collapse3">4. Zeitpunkt der &Uuml;berpr&uuml;fung</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingFour" data-parent="#accordeonAnsicht" id="collapse3">
                 <div class="card-body">
-
+                   <p tal:content="view/get_ueberpruefung"></p>
                 </div>
               </div>
             </div><!--card-->
@@ -141,7 +141,7 @@
             <div class="card">
               <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse4" aria-controls="collapse4">5. Allgemeine Angaben</button>
                   </h2>
               </div>
@@ -150,7 +150,7 @@
                   <h3>5.1 Bezeichnung der Verarbeitungst&auml;tigkeit</h3>
                   <span tal:content="structure context/bezeichnung_der_verarbeitungstatigkeit"></span>
 		  <h3 class="mt-5">5.2 Aktenzeichen</h3>
-                  <span tal:content="structure context/aktenzeichen"></span>	
+                  <span tal:content="structure context/aktenzeichen"></span>
                   <h3 class="mt-5">5.3 Stand</h3>
                   <span tal:content="structure context/stand"></span>
                   <h3 class="mt-5">5.4 Verantwortlicher</h3>
@@ -169,7 +169,7 @@
             <div class="card">
               <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse5" aria-controls="collapse5">6. Zwecke und Rechtsgrundlagen der Verarbeitung</button>
                   </h2>
               </div>
@@ -186,7 +186,7 @@
             <div class="card">
               <div class="card-header" id="headingSeven">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse6" aria-controls="collapse6">7. Kategorien der personenbezogenen Daten</button>
                   </h2>
               </div>
@@ -214,13 +214,13 @@
             <div class="card">
               <div class="card-header" id="headingEight">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse7" aria-controls="collapse7">8. Kategorien der betroffenen Personen</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingEight" data-parent="#accordeonAnsicht" id="collapse7">
                 <div class="card-body">
-                  <h3>Auflistung der betroffenen Personen</h3>			
+                  <h3>Auflistung der betroffenen Personen</h3>
 		  <table class="table table-bordered">
 		    <thead>
 		      <tr>
@@ -242,7 +242,7 @@
             <div class="card">
               <div class="card-header" id="headingNine">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse8" aria-controls="collapse8">9. Kategorien der Empfänger</button>
                   </h2>
               </div>
@@ -272,7 +272,7 @@
             <div class="card">
               <div class="card-header" id="headingTen">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse9" aria-controls="collapse9">10. Übermittlung an ein Drittland oder an eine internationale Organisation</button>
                   </h2>
               </div>
@@ -302,7 +302,7 @@
             <div class="card">
               <div class="card-header" id="headingEleven">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false" 
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse10" aria-controls="collapse10">11. Fristen für die Löschung</button>
                   </h2>
               </div>
@@ -350,8 +350,8 @@
               </div>
               <div class="collapse" aria-labelledby="headingThirteen" data-parent="#accordeonAnsicht" id="collapse12">
                 <div class="card-body">
-	          <div tal:condition="context/dienststelle_sachgebiet_abteilung" 
-			  tal:replace="structure context/dienststelle_sachgebiet_abteilung"/>		
+	          <div tal:condition="context/dienststelle_sachgebiet_abteilung"
+			  tal:replace="structure context/dienststelle_sachgebiet_abteilung"/>
                 </div>
               </div>
             </div><!--card-->
