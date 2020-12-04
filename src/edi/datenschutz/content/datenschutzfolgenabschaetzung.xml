@@ -282,6 +282,7 @@
       <field name="datenintegritaet" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Datenintegrit&#228;t</title>
         <values>
           <element>rot</element>
@@ -293,6 +294,7 @@
       <field name="datenminimierung" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Datenminimierung</title>
         <values>
           <element>rot</element>
@@ -304,6 +306,7 @@
       <field name="intervenierbarkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Intervenierbarkeit</title>
         <values>
           <element>rot</element>
@@ -315,6 +318,7 @@
       <field name="transparenz" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Transparenz</title>
         <values>
           <element>rot</element>
@@ -326,6 +330,7 @@
       <field name="nichtverkettung" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Nichtverkettung</title>
         <values>
           <element>rot</element>
@@ -337,6 +342,7 @@
       <field name="konzeptionseinhaltung" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Konzeptionseinhaltung</title>
         <values>
           <element>rot</element>
@@ -348,6 +354,7 @@
       <field name="richtigkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Richtigkeit</title>
         <values>
           <element>rot</element>
