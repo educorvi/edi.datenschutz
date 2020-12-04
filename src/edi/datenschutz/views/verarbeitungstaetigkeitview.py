@@ -50,3 +50,63 @@ class Verarbeitungstaetigkeitview(BrowserView):
 
     def get_foldercontents(self):
         return self.context.getFolderContents()
+
+
+    """
+    def get_verfuegbarkeit(dsfa):
+        verfuegbarkeit = dsfa[0].verfuegbarkeit
+        return verfuegbarkeit
+
+    def get_vertraulichkeit(dsfa):
+        vertraulichkeit = dsfa[0].vertraulichkeit
+        return vertraulichkeit
+
+    def get_datenintegritaet(dsfa):
+        datenintegritaet = dsfa[0].datenintegritaet
+        return datenintegritaet
+
+    def get_datenminimierung(dsfa):
+        datenminimierung = dsfa[0].datenminimierung
+        return datenminimierung
+
+    def get_intervenierbarkeit(dsfa):
+        intervenierbarkeit = dsfa[0].intervenierbarkeit
+        return intervenierbarkeit
+
+    def get_transparenz(dsfa):
+        transparenz = dsfa[0].transparenz
+        return transparenz
+
+    def get_nichtverkettung(dsfa):
+        nichtverkettung = dsfa[0].nichtverkettung
+        return nichtverkettung
+
+    def get_konzeptionseinhaltung(dsfa):
+        konzeptionseinhaltung = dsfa[0].konzeptionseinhaltung
+        return konzeptionseinhaltung
+
+    def get_richtigkeit(dsfa):
+        richtigkeit = dsfa[0].richtigkeit
+        return richtigkeit
+
+    """
+    def get_zielelist(self):
+
+        dsfa = self.context.listFolderContents(contentFilter={"portal_type": "Datenschutzfolgenabschaetzung"})
+
+        verfuegbarkeit = dsfa[0].verfuegbarkeit
+        if verfuegbarkeit == None:
+            verfuegbarkeit = "Kein Wert"
+        vertraulichkeit = dsfa[0].vertraulichkeit
+        datenintegritaet = dsfa[0].datenintegritaet
+        datenminimierung = dsfa[0].datenminimierung
+        intervenierbarkeit = dsfa[0].intervenierbarkeit
+        transparenz = dsfa[0].transparenz
+        nichtverkettung = dsfa[0].nichtverkettung
+        konzeptionseinhaltung = dsfa[0].konzeptionseinhaltung
+        richtigkeit = dsfa[0].richtigkeit
+
+        ziele = []
+        ziele.append(('Verfügbarkeit:', verfuegbarkeit))
+
+        return ziele

@@ -52,7 +52,7 @@ class IKategorienEmpfaenger(Interface):
 
 class IInternationaleOrganisationen(Interface):
 
-    nr = schema.TextLine(title=u"Nr.")     
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Drittland oder internationale Organisation", required=False)
     anmerkung = schema.TextLine(title=u"Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)", required=False)
 
@@ -76,10 +76,13 @@ grad = SimpleVocabulary((
     ))
 
 ampel = SimpleVocabulary((
-    SimpleTerm(value="gr", token="gr", title=u"grün"),
-    SimpleTerm(value="ge", token="ge", title=u"gelb"),
-    SimpleTerm(value="ro", token="ro", title=u"rot"),
+    SimpleTerm(value="success", token="gr", title=u"grün"),
+    SimpleTerm(value="warning", token="ge", title=u"gelb"),
+    SimpleTerm(value="danger", token="ro", title=u"rot"),
     ))
+
+def get_ampel(context):
+    return ampel
 
 ziele = SimpleVocabulary((
     SimpleTerm(value="verfuegbarkeit", token="verfuegbarkeit", title=u"Verfügbarkeit"),

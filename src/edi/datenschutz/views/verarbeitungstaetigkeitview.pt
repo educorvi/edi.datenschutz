@@ -407,6 +407,26 @@
         </div>
       </div>
 
+
+      <div class="col-12 col-md-3">
+           <div class="card card-shadow mb-3">
+              <div class="card-header">Gewährleistungsziele</div>
+              <div class="card-body">
+
+		 <ul>
+                   <li tal:repeat="ziel view/get_zielelist">
+
+                     <span tal:content="python: ziel[0]"/>
+                     <span tal:attributes="class python:'badge badge-'+ziel[1]">Farbe</span>
+
+                   </li>
+		 </ul>
+
+              </div>
+            </div>
+        </div>
+
+
       <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </div>

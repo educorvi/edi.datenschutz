@@ -5,7 +5,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
   <schema>
-    <fieldset name="beteiligte_personen_und_status" 
+    <fieldset name="beteiligte_personen_und_status"
               label="1.1 Beteiligte Personen und Status"
               description="Beteiligte Personen und Status">
       <field name="dsfa_beteiligte_person" type="zope.schema.List">
@@ -37,7 +37,7 @@
         <title>1.1.4 Kontaktdaten Datenschutzbeauftragte/r</title>
       </field>
     </fieldset>
-    <fieldset name="anlagen_bzw__verweise_zum_dsfa_bericht" 
+    <fieldset name="anlagen_bzw__verweise_zum_dsfa_bericht"
               label="1.2 Anlagen bzw. Verweise zum DSFA-Bericht"
               description="Anlagen bzw. Verweise zum DSFA-Bericht">
       <field name="anlagen1_hochladen" type="plone.namedfile.field.NamedBlobFile">
@@ -71,7 +71,7 @@
         <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
       </field>
     </fieldset>
-    <fieldset name="zeitpunkt_der_uberprufung" 
+    <fieldset name="zeitpunkt_der_uberprufung"
               label="1.4 Zeitpunkt der n&#228;chsten routinem&#228;&#223;igen &#220;berpr&#252;fung"
               description="Zeitpunkt der n&#228;chsten routinem&#228;&#223;igen &#220;berpr&#252;fung">
       <field name="datum" type="zope.schema.Date">
@@ -80,7 +80,7 @@
         <title>Datum</title>
       </field>
     </fieldset>
-    <fieldset name="kontext_uberblick" 
+    <fieldset name="kontext_uberblick"
               label="2.1 Kontext: &#220;berblick">
               description="Kontext: &#220;berblick">
       <field name="welche_verarbeitung_ist_geplant_" type="zope.schema.Text">
@@ -183,7 +183,7 @@
     </fieldset>
 
 
-    <fieldset name="grundlegende_prinzipien_verhaltnismassigkeit_notwendigkeit" 
+    <fieldset name="grundlegende_prinzipien_verhaltnismassigkeit_notwendigkeit"
               label="3.1 Grundlegende Prinzipien: Verh&#228;ltnism&#228;&#223;igkeit und Notwendigkeit"
               description="Grundlegende Prinzipien: Verh&#228;ltnism&#228;&#223;igkeit und Notwendigkeit">
       <field name="verarbeitung_als_verhaltnismassiges_mittel" type="zope.schema.Text">
@@ -207,7 +207,7 @@
         <title>3.1.4 Welche Speicherdauer haben die Daten?</title>
       </field>
     </fieldset>
-    <fieldset name="grundlegende_prinzipien_der_betroffenenrechte" 
+    <fieldset name="grundlegende_prinzipien_der_betroffenenrechte"
               label="3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte"
               description="Grundlegende Prinzipien: Umsetzung der Betroffenenrechte">
       <field name="information_betroffener_personen" type="zope.schema.Text">
@@ -241,7 +241,7 @@
         <title>3.2.6 Wie k&#246;nnen betroffene Personen ihr Recht auf Daten&#252;bertragbarkeit aus&#252;ben?</title>
       </field>
     </fieldset>
-    <fieldset name="risiken_risikoanalyse_datensicherheitsziele" 
+    <fieldset name="risiken_risikoanalyse_datensicherheitsziele"
               label="4.1.1 Risikoanalyse: SDM-Datensicherheitsziele"
               description="Risikoanalyse: Erf&#252;llung der SDM-Datensicherheitsziele">
       <field name="erfullung_der_sdm_datensicherheitsziele" type="zope.schema.Text">
@@ -267,11 +267,7 @@
         <description/>
         <required>False</required>
         <title>Verf&#252;gbarkeit</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="vertraulichkeit" type="zope.schema.Choice">
@@ -361,9 +357,9 @@
           <element>gr&#252;n</element>
         </values>
       </field>
-    </fieldset>	    
+    </fieldset>
 
-    <fieldset name="abstimmung_aufsichtsbehorde" 
+    <fieldset name="abstimmung_aufsichtsbehorde"
               label="4.1.4 Abstimmung mit der Aufsichtsbeh&#246;rde"
               description="Abstimmung mit der zust&#228;ndigen Aufsichtsbeh&#246;rde">
       <field name="konsultation_aufsichtsbehorde" type="zope.schema.Choice">
@@ -387,7 +383,7 @@
         <title>4.1.4.3 Beschreibung der Abstimmung</title>
       </field>
     </fieldset>
-    <fieldset name="datenschutzmassnahmen" 
+    <fieldset name="datenschutzmassnahmen"
               label="4.2 Geplante oder bereits umgesetzte Datenschutzma&#223;nahmen"
               description="Geplante oder bereits umgesetzte Datenschutzma&#223;nahmen">
       <field name="id_bezeichnung_bescheibung_und_anmerkung" type="zope.schema.Text">

@@ -42,6 +42,13 @@
       name="edi.datenschutz-hiddenprofiles"
       />
 
+  <utility
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    component="edi.datenschutz.interfaces.get_ampel"
+    name="datenschutz-ampel"
+    />
+
+
   <!-- -*- extra stuff goes here -*- -->
 
   <include package=".views" />
