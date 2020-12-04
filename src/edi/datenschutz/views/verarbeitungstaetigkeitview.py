@@ -94,16 +94,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
 
         dsfa = self.context.listFolderContents(contentFilter={"portal_type": "Datenschutzfolgenabschaetzung"})
 
-        verfuegbarkeit = dsfa[0].verfuegbarkeit
-        vertraulichkeit = dsfa[0].vertraulichkeit
-        datenintegritaet = dsfa[0].datenintegritaet
-        datenminimierung = dsfa[0].datenminimierung
-        intervenierbarkeit = dsfa[0].intervenierbarkeit
-        transparenz = dsfa[0].transparenz
-        nichtverkettung = dsfa[0].nichtverkettung
-        konzeptionseinhaltung = dsfa[0].konzeptionseinhaltung
-        richtigkeit = dsfa[0].richtigkeit
-
         ziele = []
         ziele.append(('Verfügbarkeit:', dsfa[0].verfuegbarkeit))
         ziele.append(('Vertraulichkeit:', dsfa[0].vertraulichkeit))
