@@ -284,11 +284,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Datenintegrit&#228;t</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="datenminimierung" type="zope.schema.Choice">
@@ -296,11 +292,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Datenminimierung</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="intervenierbarkeit" type="zope.schema.Choice">
@@ -308,11 +300,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Intervenierbarkeit</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="transparenz" type="zope.schema.Choice">
@@ -320,11 +308,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Transparenz</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="nichtverkettung" type="zope.schema.Choice">
@@ -332,11 +316,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Nichtverkettung</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="konzeptionseinhaltung" type="zope.schema.Choice">
@@ -344,11 +324,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Konzeptionseinhaltung</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="richtigkeit" type="zope.schema.Choice">
@@ -356,11 +332,7 @@
         <required>False</required>
         <default>secondary</default>
         <title>Richtigkeit</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
     </fieldset>
 
