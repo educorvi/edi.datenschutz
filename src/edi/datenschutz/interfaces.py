@@ -79,6 +79,7 @@ ampel = SimpleVocabulary((
     SimpleTerm(value="success", token="gr", title=u"grün"),
     SimpleTerm(value="warning", token="ge", title=u"gelb"),
     SimpleTerm(value="danger", token="ro", title=u"rot"),
+    SimpleTerm(value="secondary", token="se", title=u"kein Wert"),
     ))
 
 def get_ampel(context):

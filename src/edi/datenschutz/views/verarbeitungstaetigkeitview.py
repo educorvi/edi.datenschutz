@@ -95,8 +95,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
         dsfa = self.context.listFolderContents(contentFilter={"portal_type": "Datenschutzfolgenabschaetzung"})
 
         verfuegbarkeit = dsfa[0].verfuegbarkeit
-        if verfuegbarkeit == None:
-            verfuegbarkeit = "Kein Wert"
         vertraulichkeit = dsfa[0].vertraulichkeit
         datenintegritaet = dsfa[0].datenintegritaet
         datenminimierung = dsfa[0].datenminimierung
@@ -108,5 +106,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
 
         ziele = []
         ziele.append(('Verfügbarkeit:', verfuegbarkeit))
+        #ziele.append(('Vertraulichkeit:', vertraulichkeit))
 
         return ziele

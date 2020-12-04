@@ -266,6 +266,7 @@
       <field name="verfuegbarkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Verf&#252;gbarkeit</title>
          <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -273,12 +274,9 @@
       <field name="vertraulichkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
+        <default>secondary</default>
         <title>Vertraulichkeit</title>
-        <values>
-          <element>rot</element>
-          <element>gelb</element>
-          <element>gr&#252;n</element>
-        </values>
+        <vocabulary>datenschutz-ampel</vocabulary>
       </field>
 
       <field name="datenintegritaet" type="zope.schema.Choice">
