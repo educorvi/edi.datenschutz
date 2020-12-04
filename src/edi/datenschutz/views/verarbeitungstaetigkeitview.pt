@@ -414,12 +414,12 @@
               <div class="card-body">
 
 		 <ul>
-                   <li tal:repeat="ziel view/get_zielelist">
+                   <p tal:repeat="ziel view/get_zielelist">
 
                      <span tal:content="python: ziel[0]"/>
-                     <span tal:attributes="class python:'badge badge-'+ziel[1]">Farbe</span>
+                     <span tal:attributes="class python:'badge badge-'+ziel[1]" tal:content="python: ziel[2]"/>
 
-                   </li>
+                   </p>
 		 </ul>
 
               </div>

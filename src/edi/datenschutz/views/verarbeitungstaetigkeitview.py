@@ -3,6 +3,8 @@
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
 
+from edi.datenschutz.interfaces import ampel
+
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -51,59 +53,19 @@ class Verarbeitungstaetigkeitview(BrowserView):
     def get_foldercontents(self):
         return self.context.getFolderContents()
 
-
-    """
-    def get_verfuegbarkeit(dsfa):
-        verfuegbarkeit = dsfa[0].verfuegbarkeit
-        return verfuegbarkeit
-
-    def get_vertraulichkeit(dsfa):
-        vertraulichkeit = dsfa[0].vertraulichkeit
-        return vertraulichkeit
-
-    def get_datenintegritaet(dsfa):
-        datenintegritaet = dsfa[0].datenintegritaet
-        return datenintegritaet
-
-    def get_datenminimierung(dsfa):
-        datenminimierung = dsfa[0].datenminimierung
-        return datenminimierung
-
-    def get_intervenierbarkeit(dsfa):
-        intervenierbarkeit = dsfa[0].intervenierbarkeit
-        return intervenierbarkeit
-
-    def get_transparenz(dsfa):
-        transparenz = dsfa[0].transparenz
-        return transparenz
-
-    def get_nichtverkettung(dsfa):
-        nichtverkettung = dsfa[0].nichtverkettung
-        return nichtverkettung
-
-    def get_konzeptionseinhaltung(dsfa):
-        konzeptionseinhaltung = dsfa[0].konzeptionseinhaltung
-        return konzeptionseinhaltung
-
-    def get_richtigkeit(dsfa):
-        richtigkeit = dsfa[0].richtigkeit
-        return richtigkeit
-
-    """
     def get_zielelist(self):
 
         dsfa = self.context.listFolderContents(contentFilter={"portal_type": "Datenschutzfolgenabschaetzung"})
 
         ziele = []
-        ziele.append(('Verfügbarkeit:', dsfa[0].verfuegbarkeit))
-        ziele.append(('Vertraulichkeit:', dsfa[0].vertraulichkeit))
-        ziele.append(('Datenintegrität:', dsfa[0].datenintegritaet))
-        ziele.append(('Datenminimierung:', dsfa[0].datenminimierung))
-        ziele.append(('Intervenierbarkeit:', dsfa[0].intervenierbarkeit))
-        ziele.append(('Transparenz:', dsfa[0].transparenz))
-        ziele.append(('Nichtverkettung:', dsfa[0].nichtverkettung))
-        ziele.append(('Konzeptionseinhaltung:', dsfa[0].konzeptionseinhaltung))
-        ziele.append(('Richtigkeit:', dsfa[0].richtigkeit))
-
+        ziele.append(('Verfügbarkeit:', dsfa[0].verfuegbarkeit, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Vertraulichkeit:', dsfa[0].vertraulichkeit, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Datenintegrität:', dsfa[0].datenintegritaet, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Datenminimierung:', dsfa[0].datenminimierung, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Intervenierbarkeit:', dsfa[0].intervenierbarkeit, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Transparenz:', dsfa[0].transparenz, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Nichtverkettung:', dsfa[0].nichtverkettung, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Konzepteinhaltung:', dsfa[0].konzeptionseinhaltung, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
+        ziele.append(('Richtigkeit:', dsfa[0].richtigkeit, ampel.getTerm(dsfa[0].verfuegbarkeit).title))
 
         return ziele
