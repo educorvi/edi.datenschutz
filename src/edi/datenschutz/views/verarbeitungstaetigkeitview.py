@@ -105,7 +105,15 @@ class Verarbeitungstaetigkeitview(BrowserView):
         richtigkeit = dsfa[0].richtigkeit
 
         ziele = []
-        ziele.append(('Verfügbarkeit:', verfuegbarkeit))
-        #ziele.append(('Vertraulichkeit:', vertraulichkeit))
+        ziele.append(('Verfügbarkeit:', dsfa[0].verfuegbarkeit))
+        ziele.append(('Vertraulichkeit:', dsfa[0].vertraulichkeit))
+        ziele.append(('Datenintegrität:', dsfa[0].datenintegritaet))
+        ziele.append(('Datenminimierung:', dsfa[0].datenminimierung))
+        ziele.append(('Intervenierbarkeit:', dsfa[0].intervenierbarkeit))
+        ziele.append(('Transparenz:', dsfa[0].transparenz))
+        ziele.append(('Nichtverkettung:', dsfa[0].nichtverkettung))
+        ziele.append(('Konzeptionseinhaltung:', dsfa[0].konzeptionseinhaltung))
+        ziele.append(('Richtigkeit:', dsfa[0].richtigkeit))
+
 
         return ziele
