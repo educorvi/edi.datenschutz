@@ -392,49 +392,36 @@
               </div>
             </div><!--card-->
 
-	  </div>
-	</div>
+          </div><!--accordeon-->
+	</div><!--col-->
 
         <div class="col-12 col-md-3">
-           <div class="card card-shadow mb-3">
-              <div class="card-header">Inhalt</div>
-              <div class="card-body">
-		 <ul tal:define="fc view/get_foldercontents">
-                   <li tal:repeat="entry fc"><a tal:attributes="href entry/getURL" tal:content="entry/Title"/></li>
-		 </ul>
-              </div>
+
+          <div class="card card-shadow mb-3">
+            <div class="card-header">Inhalt</div>
+            <div class="card-body" tal:define="fc view/get_foldercontents">
+              <p tal:repeat="entry fc"><a tal:attributes="href entry/getURL" tal:content="entry/Title"/></p>
+	    </div>
+	  </div><!--card-->
+
+          <div class="card card-shadow mb-3">
+            <div class="card-header">Gewährleistung-ziele</div>
+            <div class="card-body">
+              <p class="row pr-2" tal:repeat="ziel view/get_zielelist">
+                <span class="col align-self-start" tal:content="python: ziel[0]"/>
+                <span class="col align-self-end" tal:attributes="class python:'badge badge-'+ziel[1]" tal:content="python: ziel[2]"/>
+              </p>
             </div>
-        </div>
-      </div>
+          </div><!--card-->
 
-
-      <div class="col-12 col-md-3">
-           <div class="card card-shadow mb-3">
-              <div class="card-header">Gewährleistungsziele</div>
-              <div class="card-body">
-
-		 <ul>
-                   <p tal:repeat="ziel view/get_zielelist">
-
-                     <span tal:content="python: ziel[0]"/>
-                     <span tal:attributes="class python:'badge badge-'+ziel[1]" tal:content="python: ziel[2]"/>
-
-                   </p>
-		 </ul>
-
-              </div>
-            </div>
-        </div>
-
+        </div><!--col-->
+      </div><!--row-->
 
       <div tal:replace="structure provider:plone.belowcontentbody" />
 
-    </div>
+    </div><!-- container -->
 
     </tal:main-macro>
-
   </metal:main>
-
 </body>
-
 </html>
