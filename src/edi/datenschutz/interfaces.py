@@ -13,7 +13,8 @@ class IEdiDatenschutzLayer(IDefaultBrowserLayer):
 class IAnlagenVerweise(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Bezeichnung der Anlage bzw. des Verweises", required=False)
+    bezeichnung = schema.TextLine(title=u"Bezeichnung des Verweises", required=False)
+    link = schema.URI(title=u"Link bzw. URL", required=False)
     anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 class IAenderungen(Interface):
