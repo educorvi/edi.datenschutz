@@ -227,8 +227,7 @@
       <field name="recht_auf_einschrankung_oder_widerspruch" type="zope.schema.Text">
         <description/>
         <required>False</required>
-        <title>3.2.5 Wie k&#246;nnen betroffene Personen ihr Recht auf Einschr&#228;nkung oder Widerspruch der
-          Verarbeitung aus&#252;ben?</title>
+        <title>3.2.5 Wie k&#246;nnen betroffene Personen ihr Recht auf Einschr&#228;nkung oder Widerspruch der Verarbeitung aus&#252;ben?</title>
       </field>
       <field name="recht_auf_datenubertragbarkeit" type="zope.schema.Text">
         <description/>
@@ -339,8 +338,7 @@
       <field name="konsultation_aufsichtsbehorde" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <title>4.1.4.1 Wurde die zust&#228;ndige Aufsichtsbeh&#246;rde konsultiert bzw. ist eine
-          Konsultation geplant?</title>
+        <title>4.1.4.1 Wurde die zust&#228;ndige Aufsichtsbeh&#246;rde konsultiert bzw. ist eine Konsultation geplant?</title>
         <values>
           <element>Ja</element>
           <element>Nein</element>

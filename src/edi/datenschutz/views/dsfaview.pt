@@ -61,25 +61,44 @@
                      data-target="#collapse1" aria-controls="collapse1">1.2 Anlagen bzw. Verweise zum DSFA-Bericht</button>
                   </h2>
               </div>
-              <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordeonAnsicht" id="collapse1">
+              <div tal:define="anlagen view/get_anlagen" class="collapse" aria-labelledby="headingTwo"
+                                                         data-parent="#accordeonAnsicht" id="collapse1">
                 <div class="card-body">
-                  <h3>Anlage 1</h3>
-                  <p>Placeholder NamedBlobFile 1</p>
-                  <h3 class="mt-5">Anlage 2</h3>
-                  <p>Placeholder NamedBlobFile 2</p>
-                  <h3 class="mt-5">Anlagen bzw. Verweise zur Beschreibung</h3>
+                  <h3>Anlagen</h3>
+                  <table tal:condition="anlagen" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Anlage</th>
+			                  <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="anlage anlagen">
+                        <td tal:content="anlage/nr"></td>
+                        <td><a tal:attributes="href anlage/link" tal:content="anlage/title"></a></td>
+                        <td tal:content="anlage/anmerkung"></td>
+                      </tr>
+		                </tbody>
+                  </table>
+		              <p tal:condition="not:anlagen">Zu dieser Verfahrensbeschreibung exisitieren derzeit keine Dateiannlagen</p>
+		              <p tal:condition="anlagen"><a tal:attributes="href python:context.absolute_url()+'/++add++File'">
+                    <i class="bi bi-upload"></i> Weitere Anlage hochladen</a></p>
+		              <p tal:condition="not:anlagen"><a tal:attributes="href python:context.absolute_url()+'/++add++File'">
+                    <i class="bi bi-upload"></i> Anlage hochladen</a></p>
+                  <h3>Verweise</h3>
                   <table class="table table-bordered">
                     <thead>
                       <tr>
                         <th scope="col">Nr.</th>
-                        <th scope="col">Bezeichnung der Anlage bzw. des Verweises</th>
+                        <th scope="col">Verweis</th>
                         <th scope="col">Anmerkung</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr tal:repeat="anlage context/anlagen_beschreibung">
                         <td tal:content="anlage/nr"></td>
-                        <td tal:content="anlage/bezeichnung"></td>
+			                  <td><a tal:attributes="href anlage/link" tal:content="anlage/bezeichnung"></a></td>
                         <td tal:content="anlage/anmerkung"></td>
                       </tr>
                     </tbody>
@@ -126,7 +145,8 @@
               </div>
               <div class="collapse" aria-labelledby="headingFour" data-parent="#accordeonAnsicht" id="collapse3">
                 <div class="card-body">
-                    <p tal:content="view/get_ueberpruefung"></p>
+                  <h3>Zeitpunkt der nächsten routinemäßigen Überprüfung</h3>
+                  <p tal:content="view/get_ueberpruefung"></p>
                 </div>
               </div>
             </div><!--card-->
@@ -313,7 +333,7 @@
               <div class="card-header" id="headingNine">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse9" aria-controls="collapse9">4.1 Risikoanalyse: SDM-Datensicherheitsziele</button>
+                     data-target="#collapse9" aria-controls="collapse9">4.1 Risikoanalyse: SDM-Gewährleistungsziele</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingNine" data-parent="#accordeonAnsicht" id="collapse9">
@@ -325,31 +345,21 @@
 		              <h3 class="mt-5">4.1.2 Wie wird die Erfüllung der SDM-Schutzbedarfsziele gewährleistet?</h3>
                   <span tal:content="structure context/erfullung_der_sdm_schutzbedarfsziele"></span>
 
-                </div>
-              </div>
-            </div><!--card-->
+                  <h3 class="mt-5">4.1.3 Risikogesamtbewertung</h3>
+                  <span tal:repeat="ziel view/get_zielelist">
+                    <span tal:attributes="class python:'badge badge-pill badge-'+ziel[1]" tal:content="python: ziel[0]"/>
+                  </span>
 
-            <div class="card">
-              <div class="card-header" id="headingTen">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-                     data-target="#collapse10" aria-controls="collapse10">4.1.4 Abstimmung mit der Aufsichtsbehörde</button>
-                  </h2>
-              </div>
-              <div class="collapse" aria-labelledby="headingTen" data-parent="#accordeonAnsicht" id="collapse10">
-                <div class="card-body">
+                  <h3 class="mt-5">4.1.4 Abstimmung mit der Aufsichtsbehörde</h3>
 
-                  <span tal:content="structure context/erfullung_der_sdm_datensicherheitsziele"></span>
-
-		              <h3 class="mt-5">4.1.4.1 Wurde die zuständige Aufsichtsbehörde konsultiert bzw. ist eine Konsultation geplant?</h3>
+		              <h4 class="mt-5">4.1.4.1 Wurde die zuständige Aufsichtsbehörde konsultiert bzw. ist eine Konsultation geplant?</h4>
                   <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
 
-                  <h3 class="mt-5">4.1.4.2 Begründung</h3>
+                  <h4 class="mt-5">4.1.4.2 Begründung</h4>
                   <span tal:content="structure context/begrundung"></span>
 
-                  <h3 class="mt-5">4.1.4.3 Beschreibung der Abstimmung</h3>
+                  <h4 class="mt-5">4.1.4.3 Beschreibung der Abstimmung</h4>
                   <span tal:content="structure context/beschreibung_der_abstimmung"></span>
-
                 </div>
               </div>
             </div><!--card-->
@@ -374,6 +384,16 @@
 	        </div><!--accordion-->
 	      </div><!--col-->
         <div class="col-12 col-md-3">
+
+          <div tal:condition="view/get_zielelist" class="card card-shadow mb-3">
+            <div class="card-header">Gewährleistung-ziele</div>
+            <div class="card-body">
+              <h4 tal:repeat="ziel view/get_zielelist">
+                <span tal:attributes="class python:'badge badge-pill badge-'+ziel[1]" tal:content="python: ziel[0]"/>
+              </h4>
+            </div>
+          </div><!--card-->
+
 
         </div><!--col-->
       </div><!--row-->

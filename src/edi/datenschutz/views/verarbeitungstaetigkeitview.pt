@@ -433,13 +433,11 @@
           <div tal:condition="view/get_zielelist" class="card card-shadow mb-3">
             <div class="card-header">Gewährleistung-ziele</div>
             <div class="card-body">
-              <p class="row pr-2" tal:repeat="ziel view/get_zielelist">
-                <span class="col align-self-start" tal:content="python: ziel[0]"/>
-                <span class="col align-self-end" tal:attributes="class python:'badge badge-'+ziel[1]" tal:content="python: ziel[2]"/>
-              </p>
+              <h4 tal:repeat="ziel view/get_zielelist">
+                <span tal:attributes="class python:'badge badge-pill badge-'+ziel[1]" tal:content="python: ziel[0]"/>
+              </h4>
             </div>
           </div><!--card-->
-
         </div><!--col-->
       </div><!--row-->
 
