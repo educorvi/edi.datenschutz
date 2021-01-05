@@ -31,14 +31,14 @@
           <h3>Verantwortlicher</h3>
           <span tal:content="structure context/verantwortlicher"></span>
 
-	  <h3 tal:condition="context/angaben_zu_verantwortlichen" class="mt-3">
-	    Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
+	        <h3 tal:condition="context/angaben_zu_verantwortlichen" class="mt-3">
+	          Falls zutreffend: Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
           <span tal:condition="context/angaben_zu_verantwortlichen" tal:content="structure context/angaben_zu_verantwortlichen"></span>
 
           <h3 tal:condition="context/datenschutzbeauftragter" class="mt-3">Datenschutzbeauftragter der Behörde oder des Unternehmens</h3>
           <span tal:condition="context/datenschutzbeauftragter" tal:content="structure context/behordlicher_datenschutzbeauftragter"></span>
 
-	  <h3 class="mt-3" tal:replace="structure view/get_datenschutzfolgenabschaetzung"></h3>
+	        <h3 class="mt-3" tal:replace="structure view/get_datenschutzfolgenabschaetzung"></h3>
 
           <h3 tal:condition="context/pruefung_bis_wann" class="mt-3">Zeitpunkt der Fertigstellung / Überprüfung</h3>
           <p tal:condition="context/pruefung_bis_wann" tal:content="context/pruefung_bis_wann"></p>
@@ -70,7 +70,7 @@
                   <p tal:content="structure context/anmerkung_zum_status"></p>
                 </div>
               </div>
-	    </div><!--card-->
+	          </div><!--card-->
 
             <div class="card">
               <div class="card-header" id="headingTwo">
@@ -87,7 +87,7 @@
                       <tr>
                         <th scope="col">Nr.</th>
                         <th scope="col">Anlage</th>
-			<th scope="col">Anmerkung</th>
+			                  <th scope="col">Anmerkung</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -96,12 +96,12 @@
                         <td><a tal:attributes="href anlage/link" tal:content="anlage/title"></a></td>
                         <td tal:content="anlage/anmerkung"></td>
                       </tr>
-		    </tbody>
+		                </tbody>
                   </table>
-		  <p tal:condition="not:anlagen">Zu dieser Verfahrensbeschreibung exisitieren derzeit keine Dateiannlagen</p>
-		  <p tal:condition="anlagen"><a tal:attributes="href python:context.absolute_url()+'/++add++File'">
+		              <p tal:condition="not:anlagen">Zu dieser Verfahrensbeschreibung exisitieren derzeit keine Dateiannlagen</p>
+		              <p tal:condition="anlagen"><a tal:attributes="href python:context.absolute_url()+'/++add++File'">
                     <i class="bi bi-upload"></i> Weitere Anlage hochladen</a></p>
-		  <p tal:condition="not:anlagen"><a tal:attributes="href python:context.absolute_url()+'/++add++File'">
+		              <p tal:condition="not:anlagen"><a tal:attributes="href python:context.absolute_url()+'/++add++File'">
                     <i class="bi bi-upload"></i> Anlage hochladen</a></p>
                   <h3>Verweise</h3>
                   <table class="table table-bordered">
@@ -115,7 +115,7 @@
                     <tbody>
                       <tr tal:repeat="anlage context/anlagen_beschreibung">
                         <td tal:content="anlage/nr"></td>
-			<td><a tal:attributes="href anlage/link" tal:content="anlage/bezeichnung"></a></td>
+			                  <td><a tal:attributes="href anlage/link" tal:content="anlage/bezeichnung"></a></td>
                         <td tal:content="anlage/anmerkung"></td>
                       </tr>
                     </tbody>
@@ -133,22 +133,22 @@
               </div>
               <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
                 <div class="card-body">
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Wann?</th>
-		        <th scope="col">Wer?</th>
-		        <th scope="col">Was?</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="aenderung context/aenderungen">
-		        <td tal:content="aenderung/wann"></td>
-		        <td tal:content="aenderung/wer"></td>
-		        <td tal:content="aenderung/was"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Wann?</th>
+                        <th scope="col">Wer?</th>
+                        <th scope="col">Was?</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="aenderung context/aenderungen">
+                        <td tal:content="aenderung/wann"></td>
+                        <td tal:content="aenderung/wer"></td>
+                        <td tal:content="aenderung/was"></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div><!--card-->
@@ -194,21 +194,21 @@
               </div>
               <div class="collapse" aria-labelledby="headingSeven" data-parent="#accordeonAnsicht" id="collapse6">
                 <div class="card-body">
-		  <h3>Auflistung der personenbezogenen Daten</h3>
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Bezeichnung der Daten</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="datenbezeichnung context/kategorien_daten">
-		        <td tal:content="datenbezeichnung/nr"></td>
-		        <td tal:content="datenbezeichnung/bezeichnung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <h3>Auflistung der personenbezogenen Daten</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Daten</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="datenbezeichnung context/kategorien_daten">
+                        <td tal:content="datenbezeichnung/nr"></td>
+                        <td tal:content="datenbezeichnung/bezeichnung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div><!--card-->
@@ -223,20 +223,20 @@
               <div class="collapse" aria-labelledby="headingEight" data-parent="#accordeonAnsicht" id="collapse7">
                 <div class="card-body">
                   <h3>Auflistung der betroffenen Personen</h3>
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Betroffene Person</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="person context/kategorien_personen">
-		        <td tal:content="person/nr"></td>
-		        <td tal:content="person/bezeichnung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Betroffene Person</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="person context/kategorien_personen">
+                        <td tal:content="person/nr"></td>
+                        <td tal:content="person/bezeichnung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div><!--card-->
@@ -251,22 +251,22 @@
               <div class="collapse" aria-labelledby="headingNine" data-parent="#accordeonAnsicht" id="collapse8">
                 <div class="card-body">
                   <h3>Auflistung der Empf&auml;nger und Anl&auml;sse der Offenlegung</h3>
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Empfänger</th>
-		        <th scope="col">Anlass der Offenlegung</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="empfaenger context/kategorien_empfaenger">
-		        <td tal:content="empfaenger/nr"></td>
-		        <td tal:content="empfaenger/bezeichnung"></td>
-		        <td tal:content="empfaenger/anmerkung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Empfänger</th>
+                        <th scope="col">Anlass der Offenlegung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="empfaenger context/kategorien_empfaenger">
+                        <td tal:content="empfaenger/nr"></td>
+                        <td tal:content="empfaenger/bezeichnung"></td>
+                        <td tal:content="empfaenger/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div><!--card-->
@@ -276,28 +276,28 @@
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
                      data-target="#collapse9" aria-controls="collapse9">
-			    9. Übermittlung an ein Drittland oder an eine internationale Organisation</button>
+			              9. Übermittlung an ein Drittland oder an eine internationale Organisation</button>
                   </h2>
               </div>
               <div class="collapse" aria-labelledby="headingTen" data-parent="#accordeonAnsicht" id="collapse9">
                 <div class="card-body">
                   <h3>Auflistung der betreffenden Übermittlungen</h3>
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Drittland oder internationale Organisation</th>
-		        <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art. 49 Abs. 1 Unterabsatz 2 DSGVO</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="uebermittlung context/internationale_organisationen">
-		        <td tal:content="uebermittlung/nr"></td>
-		        <td tal:content="uebermittlung/bezeichnung"></td>
-		        <td tal:content="uebermittlung/anmerkung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Drittland oder internationale Organisation</th>
+                        <th scope="col">Geeignete Garantien im Falle einer Übermittlung (Art. 49 Abs. 1 Unterabsatz 2 DSGVO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="uebermittlung context/internationale_organisationen">
+                        <td tal:content="uebermittlung/nr"></td>
+                        <td tal:content="uebermittlung/bezeichnung"></td>
+                        <td tal:content="uebermittlung/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div><!--card-->
@@ -312,25 +312,25 @@
               <div class="collapse" aria-labelledby="headingEleven" data-parent="#accordeonAnsicht" id="collapse10">
                 <div class="card-body">
                   <h3>Auflistung der Löschfristen</h3>
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Löschungsfrist</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="loeschung context/loeschfristen">
-		        <td tal:content="loeschung/nr"></td>
-		        <td tal:content="loeschung/bezeichnung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Löschungsfrist</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="loeschung context/loeschfristen">
+                        <td tal:content="loeschung/nr"></td>
+                        <td tal:content="loeschung/bezeichnung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div><!--card-->
 
-	    <div class="card">
+	          <div class="card">
               <div class="card-header" id="headingTwelf">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
@@ -339,7 +339,7 @@
               </div>
               <div class="collapse" aria-labelledby="headingTwelf" data-parent="#accordeonAnsicht" id="collapse11">
                 <div class="card-body">
-		  <div tal:condition="context/beschreibung_massnahmen" tal:replace="structure context/beschreibung_massnahmen/output"/>
+		              <div tal:condition="context/beschreibung_massnahmen" tal:replace="structure context/beschreibung_massnahmen/output"/>
                 </div>
               </div>
             </div><!--card-->
@@ -353,8 +353,8 @@
               </div>
               <div class="collapse" aria-labelledby="headingThirteen" data-parent="#accordeonAnsicht" id="collapse12">
                 <div class="card-body">
-	          <div tal:condition="context/dienststelle_sachgebiet_abteilung"
-			  tal:replace="structure context/dienststelle_sachgebiet_abteilung"/>
+	                <div tal:condition="context/dienststelle_sachgebiet_abteilung"
+			              tal:replace="structure context/dienststelle_sachgebiet_abteilung"/>
                 </div>
               </div>
             </div><!--card-->
@@ -377,7 +377,7 @@
             </div><!--card-->
 
           </div><!--accordeon-->
-	</div><!--col-->
+	      </div><!--col-->
 
         <div class="col-12 col-md-3">
 
@@ -385,48 +385,50 @@
             <div class="card-header">Bearbeitung</div>
             <div class="card-body" tal:define="data view/get_todo; todo data/todo; erfuellung data/erfuellung">
               <div>
-	        <h5>Status:</h5>
-	          <span tal:attributes="class python:view.get_status()[1]" tal:content="python:view.get_status()[0]"/>
+	              <h5>Status:</h5>
+	              <span tal:attributes="class python:view.get_status()[1]" tal:content="python:view.get_status()[0]"/>
        	      </div>
-	      <div class="mt-3">
+	            <div class="mt-3">
                 <h5>Fortschritt:</h5>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%;"
-		      tal:attributes="aria-valuenow erfuellung; style string:width: ${erfuellung}%;" aria-valuemin="0"
-	              aria-valuemax="100"><span tal:content="string:${erfuellung}%"/>
-		    </div>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%;"
+		                tal:attributes="aria-valuenow erfuellung; style string:width: ${erfuellung}%;" aria-valuemin="0"
+                       aria-valuemax="100"><span tal:content="string:${erfuellung}%"></span>
                   </div>
-	      </div>
-	      <div tal:condition="todo" class="mt-3">
-	        <h5>Nächster Schritt:</h5>
-                <p tal:define="first python:todo[0]">
-		   <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(first[0])"
-	           tal:content="python:first[1]"/></p>
-
-		<a class="btn btn-secondary btn-sm mb-2" role="button"
-		  tal:condition="python:len(todo)>1" data-toggle="collapse" href="#more" aria-expanded="false">alle Schritte</a>
-		<div class="collapse" tal:condition="python:len(todo)>1" id="more">
-                   <p tal:repeat="step python:todo[1:]">
-                     <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(step[0])"
-                     tal:content="python:step[1]"/></p>
                 </div>
-
-	      </div>
-
-
+              </div>
+	            <div tal:condition="todo" class="mt-3">
+	              <h5>Nächster Schritt:</h5>
+                <p tal:define="first python:todo[0]">
+                  <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(first[0])"
+                          tal:content="python:first[1]"/>
+                </p>
+                <a class="btn btn-secondary btn-sm mb-2" role="button"
+		                tal:condition="python:len(todo)>1" data-toggle="collapse" href="#more" aria-expanded="false">
+                    alle Schritte
+                </a>
+                <div class="collapse" tal:condition="python:len(todo)>1" id="more">
+                  <p tal:repeat="step python:todo[1:]">
+                    <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(step[0])"
+                      tal:content="python:step[1]"/>
+                  </p>
+                </div>
+              </div>
             </div>
-	    <div class="card-footer">
-              <p><a tal:attributes="href python:context.absolute_url()+'/edit'"><i class="bi bi-pencil-square"></i> bearbeiten</a></p>
-	      <p><a tal:attributes="href python:context.absolute_url()+'/++add++File'"><i class="bi bi-upload"></i> Anlage hochladen</a></p>
-	    </div>
-          </div>
+	          <div class="card-footer">
+              <p><a tal:attributes="href python:context.absolute_url()+'/edit'">
+                <i class="bi bi-pencil-square"></i> bearbeiten</a>
+              </p>
+	            <p><a tal:attributes="href python:context.absolute_url()+'/++add++File'"><i class="bi bi-upload"></i> Anlage hochladen</a></p>
+            </div>
+          </div><!--card-->
 
           <div class="card card-shadow mb-3">
             <div class="card-header">Inhalt</div>
             <div class="card-body" tal:define="fc view/get_foldercontents">
               <p tal:repeat="entry fc"><a tal:attributes="href entry/link" tal:content="entry/title"/></p>
-	    </div>
-	  </div><!--card-->
+	          </div>
+	        </div><!--card-->
 
           <div tal:condition="view/get_zielelist" class="card card-shadow mb-3">
             <div class="card-header">Gewährleistung-ziele</div>
