@@ -24,8 +24,8 @@
 
 
       <div class="row mb-3">
-
         <div class="col-12 col-md-9">
+
           <div class="accordion" id="accordeonAnsicht">
 
             <div class="card">
@@ -52,7 +52,7 @@
                   <p tal:content="structure context/kontaktdaten_datenschutzbeauftragter"></p>
                 </div>
               </div>
-	    </div><!--card-->
+	          </div><!--card-->
 
             <div class="card">
               <div class="card-header" id="headingTwo">
@@ -97,22 +97,22 @@
               </div>
               <div class="collapse" aria-labelledby="headingTree" data-parent="#accordeonAnsicht" id="collapse2">
                 <div class="card-body">
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Wann?</th>
-		        <th scope="col">Wer?</th>
-		        <th scope="col">Was?</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="aenderung context/aenderungen">
-		        <td tal:content="aenderung/wann"></td>
-		        <td tal:content="aenderung/wer"></td>
-		        <td tal:content="aenderung/was"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+		                <thead>
+		                  <tr>
+		                    <th scope="col">Wann?</th>
+                        <th scope="col">Wer?</th>
+		                    <th scope="col">Was?</th>
+                      </tr>
+		                </thead>
+		                <tbody>
+		                  <tr tal:repeat="aenderung context/aenderungen">
+		                    <td tal:content="aenderung/wann"></td>
+                        <td tal:content="aenderung/wer"></td>
+		                    <td tal:content="aenderung/was"></td>
+		                  </tr>
+		                </tbody>
+		              </table>
                 </div>
               </div>
             </div><!--card-->
@@ -172,7 +172,6 @@
               </div>
             </div><!--card-->
 
-
             <div class="card">
               <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
@@ -185,62 +184,62 @@
 
                   <h3>2.2.1 Auflistung der Datenkategorien</h3>
 
-		  <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Bezeichnung der Datenkategorie</th>
-		        <th scope="col">Anmerkung</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="kategorie context/kategorien_personenbezogener_daten">
-		        <td tal:content="kategorie/nr"></td>
-		        <td tal:content="kategorie/bezeichnung"></td>
-		        <td tal:content="kategorie/anmekrung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Datenkategorie</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="kategorie context/kategorien_personenbezogener_daten">
+                        <td tal:content="kategorie/nr"></td>
+                        <td tal:content="kategorie/bezeichnung"></td>
+                        <td tal:content="kategorie/anmekrung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
 
                   <h3 class="mt-5">2.2.2 Auflistung der Kategorien betroffener Personen</h3>
 
-      <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-		        <th scope="col">Bezeichnung der Kategorien betroffener Personen</th>
-		        <th scope="col">Anmerkung</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
-		        <td tal:content="kategorie/nr"></td>
-		        <td tal:content="kategorie/bezeichnung"></td>
-		        <td tal:content="kategorie/anmekrung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Kategorien betroffener Personen</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
+                        <td tal:content="kategorie/nr"></td>
+                        <td tal:content="kategorie/bezeichnung"></td>
+                        <td tal:content="kategorie/anmekrung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
 
                   <h3 class="mt-5">2.2.3 Auflistung der Empfänger denen Daten offengelegt wurden</h3>
 
-      <table class="table table-bordered">
-		    <thead>
-		      <tr>
-		        <th scope="col">Nr.</th>
-            <th scope="col">Empfänger</th>
-            <th scope="col">Anlass der Offenlegung</th>
-            <th scope="col">Anmerkung</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr tal:repeat="kategorie context/empfaenger_fuer_offenlegung">
-		        <td tal:content="kategorie/nr"></td>
-            <td tal:content="kategorie/empfaenger"></td>
-            <td tal:content="kategorie/anlass"></td>
-            <td tal:content="kategorie/anmerkung"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Empfänger</th>
+                        <th scope="col">Anlass der Offenlegung</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="kategorie context/empfaenger_fuer_offenlegung">
+                        <td tal:content="kategorie/nr"></td>
+                        <td tal:content="kategorie/empfaenger"></td>
+                        <td tal:content="kategorie/anlass"></td>
+                        <td tal:content="kategorie/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
 
                   <h3 class="mt-5">2.2.4 Wie verläuft der Lebenszyklus von Daten und Prozessen?</h3>
                   <span tal:content="structure context/lebenszyklus_daten_prozesse"></span>
@@ -252,8 +251,7 @@
               </div>
             </div><!--card-->
 
-
-      <div class="card">
+            <div class="card">
               <div class="card-header" id="headingSeven">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
@@ -279,7 +277,7 @@
               </div>
             </div><!--card-->
 
-      <div class="card">
+            <div class="card">
               <div class="card-header" id="headingEight">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
@@ -311,7 +309,7 @@
               </div>
             </div><!--card-->
 
-      <div class="card">
+            <div class="card">
               <div class="card-header" id="headingNine">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
@@ -331,7 +329,7 @@
               </div>
             </div><!--card-->
 
-      <div class="card">
+            <div class="card">
               <div class="card-header" id="headingTen">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
@@ -356,7 +354,7 @@
               </div>
             </div><!--card-->
 
-      <div class="card">
+            <div class="card">
               <div class="card-header" id="headingEleven">
                   <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
@@ -373,13 +371,16 @@
               </div>
             </div><!--card-->
 
-	  </div>
-	</div>
-      </div>
+	        </div><!--accordion-->
+	      </div><!--col-->
+        <div class="col-12 col-md-3">
+
+        </div><!--col-->
+      </div><!--row-->
 
       <div tal:replace="structure provider:plone.belowcontentbody" />
 
-    </div>
+    </div><!--container-->
 
     </tal:main-macro>
 
