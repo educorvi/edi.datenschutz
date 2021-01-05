@@ -13,7 +13,6 @@ class Dsfaview(BrowserView):
 
     def __call__(self):
         # Implement your own actions:
-        import pdb;pdb.set_trace()
         self.msg = _(u'A small message')
         return self.index()
 
