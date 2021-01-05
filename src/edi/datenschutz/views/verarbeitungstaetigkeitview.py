@@ -18,40 +18,41 @@ class Verarbeitungstaetigkeitview(BrowserView):
         return self.index()
 
     def get_todo(self):
+        context = self.context
         todo = []
-        if not self.context.beteiligte_personen_und_ihre_rollen:
+        if not context.beteiligte_personen_und_ihre_rollen:
             todo.append((1, u"Beteiligte Person(en) und ihre Rolle(n)"))
-        if self.context.status == u"Sonstiges (Bitte  in Anmerkungen schreiben)" and not self.context.anmerkung_zum_status:
+        if context.status == u"Sonstiges (Bitte  in Anmerkungen schreiben)" and not context.anmerkung_zum_status:
             todo.append((1, u"Anmerkung zum Status"))
-        if not self.context.datumsangabe:
+        if not context.datumsangabe:
             todo.append((4, u"Zeitpunkt der Überprüfung"))
-        if not self.context.zwecke or not self.context.rechtsgrundlagen_befugnis:
+        if not context.zwecke or not context.rechtsgrundlagen_befugnis:
             todo.append((5, u"Zwecke und Rechtsgrundlagen der Verarbeitung"))
-        if not self.context.kategorien_daten:
+        if not context.kategorien_daten:
             todo.append((6, u"Kategorien der personenbezogenen Daten"))
-        if not self.context.kategorien_personen:
+        if not context.kategorien_personen:
             todo.append((7, u"Kategorien der personenbezogenen Personen"))
-        if not self.context.kategorien_empfaenger:
+        if not context.kategorien_empfaenger:
             todo.append((8, u"Kategorien der Empfänger"))
-        if not self.context.loeschfristen:
+        if not context.loeschfristen:
             todo.append((10, u"Fristen für die Löschung"))
-        if not self.context.beschreibung_massnahmen:
+        if not context.beschreibung_massnahmen:
             todo.append((11, u"Technische und Organisatorische Maßnahmen"))
-        if not self.context.dienststelle_sachgebiet_abteilung:
+        if not context.dienststelle_sachgebiet_abteilung:
             todo.append((12, u"Verantwortliche Organisationseinheit"))
-        if not self.context.vorliegen_stellungnahme:
+        if not context.vorliegen_stellungnahme:
             todo.append((13, u"Stellungnahme des Datenschutzbeauftragten"))
         print(todo)
         print(len(todo))
         rest = len(todo)
         erfuellung = (11 - rest) / 11 * 100
-        retdict = {'erfuellung':int(erfuellung),
-                   'todo':todo}
+        retdict = {'erfuellung': int(erfuellung),
+                   'todo': todo}
         return retdict
 
     def get_documentid(self):
-        id = self.context.dokument_id
-        result = "<p><strong>Dokument-ID:</strong> %s</p>" % id
+        docid = self.context.dokument_id
+        result = "<p><strong>Dokument-ID:</strong> %s</p>" % docid
         return result
 
     def get_aktenzeichen(self):
@@ -70,22 +71,26 @@ class Verarbeitungstaetigkeitview(BrowserView):
         return result
 
     def get_datenschutzfolgenabschaetzung(self):
+        dsfa_ja = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-danger">ja</span>'
+        dsfa_nein = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-success">nein</span>'
         if self.context.datenschutz_folgenabschatzung_erforderlich == 'Ja':
-            return '<h3 class="mt-3">Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-danger">ja</span></h3>'
+            return '<h3 class="mt-3">%s</h3>' % dsfa_ja
         else:
-            return '<h3 class="mt-3">Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-success">nein</span></h3>'
+            return '<h3 class="mt-3">%s</h3>' % dsfa_nein
 
     def get_status(self):
-        statusdict = {
-                'in Bearbeitung':'badge badge-primary',
-                'Aktiviert':'badge badge-success',
-                'Deaktiviert':'badge badge-danger',
-                'Sonstiges (Bitte  in Anmerkungen schreiben)':'badge badge-warning'}
+        statusdict = {'in Bearbeitung': 'badge badge-primary',
+                      'Aktiviert': 'badge badge-success',
+                      'Deaktiviert': 'badge badge-danger',
+                      'Sonstiges (Bitte  in Anmerkungen schreiben)': 'badge badge-warning'
+                      }
         status = self.context.status
-        if self.context.status == 'Sonstiges (Bitte  in Anmerkungen schreiben)':
-            return ('Sonstiges', statusdict.get(self.context.status))
+        statusclass = statusdict.get(status)
+        if status == 'Sonstiges (Bitte  in Anmerkungen schreiben)':
+            ret = ('Sonstiges', statusclass)
         else:
-            return (self.context.status, statusdict.get(self.context.status))
+            ret = (status, statusclass)
+        return ret
 
     def get_ueberpruefung(self):
         result = u'Es wurde noch kein Datum für die nächste routinemäßige Überprüfung festgelegt.'
@@ -100,11 +105,11 @@ class Verarbeitungstaetigkeitview(BrowserView):
         return result
 
     def get_anlagen(self):
-        anlagen = self.context.listFolderContents(contentFilter={"portal_type" : "File"})
+        anlagen = self.context.listFolderContents(contentFilter={"portal_type": "File"})
         counter = 1
         formatanlagen = []
         for i in anlagen:
-            entry = {}
+            entry = dict()
             entry['nr'] = counter
             entry['title'] = i.title
             entry['link'] = i.absolute_url()
@@ -133,7 +138,7 @@ class Verarbeitungstaetigkeitview(BrowserView):
         contents = []
         if self.context.datenschutz_folgenabschatzung_erforderlich == 'Ja':
             for i in dsfatypes:
-                entry = {}
+                entry = dict()
                 entry['title'] = i[1]
                 content = self.context.listFolderContents(contentFilter={"portal_type": i[0]})
                 if content:
@@ -147,7 +152,7 @@ class Verarbeitungstaetigkeitview(BrowserView):
                 contents.append(entry)
         else:
             for i in types:
-                entry = {}
+                entry = dict()
                 entry['title'] = i[1]
                 content = self.context.listFolderContents(contentFilter={"portal_type": i[0]})
                 if content:
