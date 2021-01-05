@@ -162,6 +162,7 @@
               </div>
               <div class="collapse" aria-labelledby="headingFour" data-parent="#accordeonAnsicht" id="collapse3">
                 <div class="card-body">
+                   <h3>Zeitpunkt der nächsten routinemäßigen Überprüfung</h3>
                    <p tal:content="view/get_ueberpruefung"></p>
                 </div>
               </div>
@@ -383,40 +384,40 @@
           <div class="card card-shadow mb-3">
             <div class="card-header">Bearbeitung</div>
             <div class="card-body" tal:define="data view/get_todo; todo data/todo; erfuellung data/erfuellung">
-              <div>		    
+              <div>
 	        <h5>Status:</h5>
 	          <span tal:attributes="class python:view.get_status()[1]" tal:content="python:view.get_status()[0]"/>
        	      </div>
 	      <div class="mt-3">
-                <h5>Fortschritt:</h5>			
+                <h5>Fortschritt:</h5>
                   <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" 
-		      tal:attributes="aria-valuenow erfuellung; style string:width: ${erfuellung}%;" aria-valuemin="0" 
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%;"
+		      tal:attributes="aria-valuenow erfuellung; style string:width: ${erfuellung}%;" aria-valuemin="0"
 	              aria-valuemax="100"><span tal:content="string:${erfuellung}%"/>
 		    </div>
                   </div>
-	      </div>	  
+	      </div>
 	      <div tal:condition="todo" class="mt-3">
 	        <h5>Nächster Schritt:</h5>
                 <p tal:define="first python:todo[0]">
-		   <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(first[0])" 
+		   <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(first[0])"
 	           tal:content="python:first[1]"/></p>
 
-		<a class="btn btn-secondary btn-sm mb-2" role="button" 
+		<a class="btn btn-secondary btn-sm mb-2" role="button"
 		  tal:condition="python:len(todo)>1" data-toggle="collapse" href="#more" aria-expanded="false">alle Schritte</a>
 		<div class="collapse" tal:condition="python:len(todo)>1" id="more">
                    <p tal:repeat="step python:todo[1:]">
-                     <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(step[0])" 
+                     <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(step[0])"
                      tal:content="python:step[1]"/></p>
                 </div>
-	 		
+
 	      </div>
 
 
             </div>
 	    <div class="card-footer">
-              <p><a tal:attributes="href python:context.absolute_url()+'/edit'"><i class="bi bi-pencil-square"></i> bearbeiten</a></p>		    
-	      <p><a tal:attributes="href python:context.absolute_url()+'/++add++File'"><i class="bi bi-upload"></i> Anlage hochladen</a></p>    
+              <p><a tal:attributes="href python:context.absolute_url()+'/edit'"><i class="bi bi-pencil-square"></i> bearbeiten</a></p>
+	      <p><a tal:attributes="href python:context.absolute_url()+'/++add++File'"><i class="bi bi-upload"></i> Anlage hochladen</a></p>
 	    </div>
           </div>
 

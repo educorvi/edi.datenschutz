@@ -43,7 +43,7 @@
       <title>Datenschutzbeauftragter</title>
     </field>
 
-    <field name="datenschutz_folgenabschatzung_erforderlich" 
+    <field name="datenschutz_folgenabschatzung_erforderlich"
            type="zope.schema.Choice">
       <description/>
       <required>True</required>
@@ -54,10 +54,10 @@
       </values>
     </field>
 
-    <field name="pruefung_bis_wann" type="zope.schema.Text">
-      <description/>
-      <required>False</required>
-      <title>Falls ja, bis wann durchzuf&#252;hren oder zu &#252;berpr&#252;fen?</title>
+    <field name="pruefung_bis_wann" type="zope.schema.Date">
+        <required>False</required>
+        <description/>
+        <title>Falls ja, bis wann durchzuf&#252;hren oder zu &#252;berpr&#252;fen?</title>
     </field>
 
     <field name="begruendung" type="zope.schema.Text">
@@ -66,7 +66,7 @@
       <title>Begr&#252;ndung</title>
     </field>
 
-    <fieldset name="beteiligte_personen_und_status" 
+    <fieldset name="beteiligte_personen_und_status"
               label="1. Beteiligte Personen und Status"
               description="Beteiligte Personen und Status">
       <field name="beteiligte_personen_und_ihre_rollen" type="zope.schema.List">
@@ -108,8 +108,8 @@
       </field>
     </fieldset>
 
-    <fieldset name="anderungshistorie" 
-              label="3. &#196;nderungshistorie" 
+    <fieldset name="anderungshistorie"
+              label="3. &#196;nderungshistorie"
               description="In der &#196;nderungshistorie werden die wesentlichen &#196;nderungen der Beschreibung nachvollziehbar festgehalten.">
       <field name="aenderungen" type="zope.schema.List">
         <required>False</required>
@@ -132,7 +132,7 @@
       </field>
     </fieldset>
 
-    <fieldset name="zwecke_und_rechtsgrundlagen" 
+    <fieldset name="zwecke_und_rechtsgrundlagen"
               label="6. Zwecke und Rechtsgrundlagen der Verarbeitung"
               description="Zwecke und Rechtsgrundlagen der Verarbeitung">
       <field name="zwecke" type="zope.schema.Text">
@@ -147,8 +147,8 @@
       </field>
     </fieldset>
 
-    <fieldset name="kategorien_der_personenbezogenen_daten" 
-              label="7. Kategorien der personenbezogenen Daten" 
+    <fieldset name="kategorien_der_personenbezogenen_daten"
+              label="7. Kategorien der personenbezogenen Daten"
               description="Bezeichnung der Daten bitte nummeriert untereinander auflisten.">
       <field name="kategorien_daten" type="zope.schema.List">
         <description/>
@@ -161,7 +161,7 @@
       </field>
     </fieldset>
 
-    <fieldset name="kategorien_der_betroffenen_personen" 
+    <fieldset name="kategorien_der_betroffenen_personen"
               label="8. Kategorien der betroffenen Personen"
               description="Kategorien der betroffenen Personen">
       <field name="kategorien_personen" type="zope.schema.List">
@@ -175,9 +175,9 @@
       </field>
     </fieldset>
 
-    <fieldset name="kategorien_der_empfanger" 
-              label="9. Kategorien der Empf&#228;nger" 
-              description="Kategorien der Empf&#228;nger, denen die personenbezogenen Daten offengelegt worden sind oder noch offengelegt werden, 
+    <fieldset name="kategorien_der_empfanger"
+              label="9. Kategorien der Empf&#228;nger"
+              description="Kategorien der Empf&#228;nger, denen die personenbezogenen Daten offengelegt worden sind oder noch offengelegt werden,
                            einschlie&#223;lich Empf&#228;nger in Drittl&#228;ndern oder internationalen Organisationen">
       <field name="kategorien_empfaenger" type="zope.schema.List">
         <description/>
@@ -190,8 +190,8 @@
       </field>
     </fieldset>
 
-    <fieldset name="ubermittlungen_drittland_organisation" 
-              label="10. &#220;bermittlungen an ein Drittland oder an eine internationale Organisation" 
+    <fieldset name="ubermittlungen_drittland_organisation"
+              label="10. &#220;bermittlungen an ein Drittland oder an eine internationale Organisation"
               description="Falls zutreffend: &#220;bermittlungen von personenbezogenen Daten an ein Drittland oder an eine internationale Organisation">
       <field name="internationale_organisationen" type="zope.schema.List">
         <description/>
@@ -204,7 +204,7 @@
       </field>
     </fieldset>
 
-    <fieldset name="vorgesehene_fristen_loschung" 
+    <fieldset name="vorgesehene_fristen_loschung"
               label="11. Fristen f&#252;r die L&#246;schung"
               description="Vorgesehene Fristen f&#252;r die L&#246;schung der verschiedenen Datenkategorien">
       <field name="loeschfristen" type="zope.schema.List">
@@ -218,16 +218,16 @@
       </field>
     </fieldset>
 
-    <fieldset name="technische_und_organisatorische_massnahmen" 
+    <fieldset name="technische_und_organisatorische_massnahmen"
               label="12. Technische und organisatorische Ma&#223;nahmen"
-              description="Allgemeine Beschreibung der technischen und organisatorischen Ma&#223;nahmen gem&#228;&#223; Art. 32 Abs. 1 DSGVO"> 
+              description="Allgemeine Beschreibung der technischen und organisatorischen Ma&#223;nahmen gem&#228;&#223; Art. 32 Abs. 1 DSGVO">
       <field name="beschreibung_massnahmen" type="plone.app.textfield.RichText">
         <description/>
         <required>False</required>
         <title>Beschreibung</title>
       </field>
       <field name="massnahmen" type="z3c.relationfield.schema.RelationList">
-        <description>Hier können bereits dokumentierte technische und organisatorische Maßnahmen für diese 
+        <description>Hier können bereits dokumentierte technische und organisatorische Maßnahmen für diese
                    Verarbeitungstätigkeit ausgewählt werden.</description>
         <required>False</required>
         <title>Technische und organisatorische Maßnahmen</title>
@@ -242,7 +242,7 @@
       </field>
     </fieldset>
 
-    <fieldset name="verantwortliche_organisationseinheit" 
+    <fieldset name="verantwortliche_organisationseinheit"
               label="13. Verantwortliche Organisationseinheit"
               description="Verantwortliche Organisationseinheit">
       <field name="dienststelle_sachgebiet_abteilung" type="zope.schema.Text">
@@ -252,10 +252,10 @@
       </field>
     </fieldset>
 
-    <fieldset name="stellungnahme_datenschutz" 
+    <fieldset name="stellungnahme_datenschutz"
               label="14. Stellungnahme des Datenschutzbeauftragten"
               description="Stellungnahme des Datenschutzbeauftragten">
-      <field name="vorliegen_stellungnahme" 
+      <field name="vorliegen_stellungnahme"
              type="zope.schema.Choice">
         <description/>
         <required>False</required>

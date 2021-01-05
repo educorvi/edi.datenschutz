@@ -47,7 +47,7 @@ class Verarbeitungstaetigkeitview(BrowserView):
         erfuellung = (11 - rest) / 11 * 100
         retdict = {'erfuellung':int(erfuellung),
                    'todo':todo}
-        return retdict   
+        return retdict
 
     def get_documentid(self):
         id = self.context.dokument_id
@@ -88,11 +88,10 @@ class Verarbeitungstaetigkeitview(BrowserView):
             return (self.context.status, statusdict.get(self.context.status))
 
     def get_ueberpruefung(self):
-        result = u''
+        result = u'Es wurde noch kein Datum für die nächste routinemäßige Überprüfung festgelegt.'
         datum = self.context.datumsangabe
         if datum:
-            formatteddatum = datum.strftime("%d.%m.%Y")
-            result = "Datumsangabe: "+str(formatteddatum)
+            result = datum.strftime("%d.%m.%Y")
         return result
 
     def get_dienststelle(self):
@@ -112,7 +111,7 @@ class Verarbeitungstaetigkeitview(BrowserView):
             entry['anmerkung'] = i.description
             formatanlagen.append(entry)
             counter += 1
-        print(formatanlagen)    
+        print(formatanlagen)
         return formatanlagen
 
     def is_redakteur(self):
