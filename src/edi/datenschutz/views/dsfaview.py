@@ -14,6 +14,33 @@ class Dsfaview(BrowserView):
     def __call__(self):
         return self.index()
 
+    def get_todo(self):
+        context = self.context
+        todo = []
+        if not dsfa_beteiligte_person:
+            todo.append((1, u"An DSFA beteiligte Person(en) und ihre Rolle(n)"))
+        if context.status_der_dsfa == u"Sonstiges (Bitte  in Anmerkungen schreiben)" and not context.anmerkung_zum_status:
+            todo.append((1, u"Anmerkung zum Status der DSFA"))
+        if not context.datum:
+            todo.append((4, u"Zeitpunkt der Überprüfung"))
+        if not context.welche_verarbeitung_ist_geplant_:
+            todo.append((5, u"Geplante Verarbeitung"))
+        if not context.welche_zwecke_hat_die_verarbeitung_:
+            todo.append((5, u"Zwecke der geplanten Verarbeitung"))
+        if not context.welche_rechtsgrundlagen_befugnisse_fur_die_verarbeitung_gibt_es_:
+            todo.append((5, u"Rechtsgrundlagen/Befugnisse der Verarbeitung"))
+        if not context.wenn_anwendbar__wie_wird_die_einwilligung_der_betroffenen_personen_eingeholt_:
+            todo.append((5, u"Einwilligung der betroffenen Personen"))
+        if not context.normen_verarbeitung_relevant:
+            todo.append((5, u"Normen und Standards"))
+        print(todo)
+        print(len(todo))
+        rest = len(todo)
+        erfuellung = (8 - rest) / 8 * 100
+        retdict = {'erfuellung': int(erfuellung),
+                   'todo': todo}
+        return retdict
+
     def get_status(self):
         statusdict = {
                 'in Bearbeitung':'badge badge-primary',
