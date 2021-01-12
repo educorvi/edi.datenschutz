@@ -381,18 +381,19 @@
 
         <div class="col-12 col-md-3">
 
-          <div class="card card-shadow mb-3">
+          <div class="card card-shadow mb-3" tal:define="status view/get_status">
             <div class="card-header">Bearbeitung</div>
             <div class="card-body" tal:define="data view/get_todo; todo data/todo; erfuellung data/erfuellung">
               <div>
 	              <h5>Status:</h5>
-	              <span tal:attributes="class python:view.get_status()[1]" tal:content="python:view.get_status()[0]"/>
+	              <span tal:attributes="class python:'badge badge-' + status[1]"
+                        tal:content="python:status[0]"/>
        	      </div>
 	            <div class="mt-3">
                 <h5>Fortschritt:</h5>
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%;"
-		                tal:attributes="aria-valuenow erfuellung; style string:width: ${erfuellung}%;" aria-valuemin="0"
+                  <div role="progressbar" tal:attributes="aria-valuenow erfuellung; style string:width: ${erfuellung}%;
+                          class python:'progress-bar bg-' + status[1]" aria-valuemin="0"
                        aria-valuemax="100"><span tal:content="string:${erfuellung}%"></span>
                   </div>
                 </div>

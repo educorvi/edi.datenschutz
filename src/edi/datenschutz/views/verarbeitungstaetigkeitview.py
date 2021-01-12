@@ -79,10 +79,10 @@ class Verarbeitungstaetigkeitview(BrowserView):
             return '<h3 class="mt-3">%s</h3>' % dsfa_nein
 
     def get_status(self):
-        statusdict = {'in Bearbeitung': 'badge badge-primary',
-                      'Aktiviert': 'badge badge-success',
-                      'Deaktiviert': 'badge badge-danger',
-                      'Sonstiges (Bitte  in Anmerkungen schreiben)': 'badge badge-warning'
+        statusdict = {'in Bearbeitung': 'primary',
+                      'Aktiviert': 'success',
+                      'Deaktiviert': 'danger',
+                      'Sonstiges (Bitte  in Anmerkungen schreiben)': 'warning'
                       }
         status = self.context.status
         statusclass = statusdict.get(status)
