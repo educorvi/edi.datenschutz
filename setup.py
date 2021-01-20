@@ -55,6 +55,7 @@ setup(
         'plone.restapi',
         'plone.app.dexterity',
         'collective.z3cform.datagridfield',
+        'docxtpl',
     ],
     extras_require={
         'test': [

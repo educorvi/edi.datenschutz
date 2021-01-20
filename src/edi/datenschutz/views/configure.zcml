@@ -8,7 +8,7 @@
 
   <browser:page
     name="wordview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".wordview.Wordview"
     template="wordview.pt"
     permission="zope2.View"
