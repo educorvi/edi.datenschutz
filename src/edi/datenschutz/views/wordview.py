@@ -28,6 +28,8 @@ class Wordview(BrowserView):
         transformer = ITransformer(self.context)
         transformedValue = transformer(self.context.beschreibung_massnahmen, 'text/plain')
 
+        """
+
         if len(self.context.kategorien_daten) >= 1:
             kategorien_daten0 = self.context.kategorien_daten[(len(self.context.kategorien_daten)) - 1][
                                         'bezeichnung']
@@ -59,56 +61,6 @@ class Wordview(BrowserView):
             kategorien_daten4 = ""
 
         """
-        -------------------------------------------------------------------------------------------------
-        """
-
-        """
-        kategorien_personen0 = ""
-        kategorien_personen1 = ""
-        kategorien_personen2 = ""
-        kategorien_personen3 = ""
-        kategorien_personen4 = ""
-
-        liste = []
-
-        for i in reversed(self.context.kategorien_personen):
-            import pdb; pdb.set_trace()
-            liste.append
-
-
-
-
-        if len(self.context.kategorien_personen) >= 1:
-            kategorien_personen0 = self.context.kategorien_personen[(len(self.context.kategorien_personen)) - 1][
-                                        'bezeichnung']
-        else:
-            kategorien_personen0 = ""
-
-        if len(self.context.kategorien_personen) >= 2:
-            kategorien_personen1 = self.context.kategorien_personen[(len(self.context.kategorien_personen)) - 2][
-                                        'bezeichnung']
-        else:
-            kategorien_personen1 = ""
-
-        if len(self.context.kategorien_personen) >= 3:
-            kategorien_personen2 = self.context.kategorien_personen[(len(self.context.kategorien_personen)) - 3][
-                                        'bezeichnung']
-        else:
-            kategorien_personen2 = ""
-
-        if len(self.context.kategorien_personen) >= 4:
-            kategorien_personen3 = self.context.kategorien_personen[(len(self.context.kategorien_personen)) - 4][
-                                        'bezeichnung']
-        else:
-            kategorien_personen3 = ""
-
-        if len(self.context.kategorien_personen) >= 5:
-            kategorien_personen4 = self.context.kategorien_personen[(len(self.context.kategorien_personen)) - 5][
-                                        'bezeichnung']
-        else:
-            kategorien_personen4 = ""
-
-        """
 
         context = {
             'document_id' : self.context.dokument_id,
@@ -135,19 +87,19 @@ class Wordview(BrowserView):
             'datenschutz_erlaeuterung': self.context.datenschutz_erlaeuterung,
             'beschreibung_massnahmen': transformedValue,
 
-            'kategorien_daten0': kategorien_daten0,
-            'kategorien_daten1': kategorien_daten1,
-            'kategorien_daten2': kategorien_daten2,
-            'kategorien_daten3': kategorien_daten3,
-            'kategorien_daten4': kategorien_daten4,
-
         }
 
         count = 0
         for i in reversed(self.context.kategorien_personen):
             key = 'kategorien_personen%s' %count
-            context[key] = i
+            context[key] = i['bezeichnung']
             count +=1
+
+        count = 0
+        for i in reversed(self.context.kategorien_daten):
+            key = 'kategorien_daten%s' % count
+            context[key] = i['bezeichnung']
+            count += 1
 
 
         doc.render(context)
