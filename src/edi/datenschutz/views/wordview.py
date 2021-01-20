@@ -19,7 +19,7 @@ class Wordview(BrowserView):
 
         # Implement your own actions:
 
-        #import pdb; pdb.set_trace()
+        import pdb; pdb.set_trace()
 
         doc = DocxTemplate("/Users/seppowalther/Dropbox/Arbeit/VVT-Vorlage.docx")
 
@@ -27,40 +27,6 @@ class Wordview(BrowserView):
 
         transformer = ITransformer(self.context)
         transformedValue = transformer(self.context.beschreibung_massnahmen, 'text/plain')
-
-        """
-
-        if len(self.context.kategorien_daten) >= 1:
-            kategorien_daten0 = self.context.kategorien_daten[(len(self.context.kategorien_daten)) - 1][
-                                        'bezeichnung']
-        else:
-            kategorien_daten0 = ""
-
-        if len(self.context.kategorien_daten) >= 2:
-            kategorien_daten1 = self.context.kategorien_daten[(len(self.context.kategorien_daten)) - 2][
-                                        'bezeichnung']
-        else:
-            kategorien_daten1 = ""
-
-        if len(self.context.kategorien_daten) >= 3:
-            kategorien_daten2 = self.context.kategorien_daten[(len(self.context.kategorien_daten)) - 3][
-                                        'bezeichnung']
-        else:
-            kategorien_daten2 = ""
-
-        if len(self.context.kategorien_daten) >= 4:
-            kategorien_daten3 = self.context.kategorien_daten[(len(self.context.kategorien_daten)) - 4][
-                                        'bezeichnung']
-        else:
-            kategorien_daten3 = ""
-
-        if len(self.context.kategorien_daten) >= 5:
-            kategorien_daten4 = self.context.kategorien_daten[(len(self.context.kategorien_daten)) - 5][
-                                        'bezeichnung']
-        else:
-            kategorien_daten4 = ""
-
-        """
 
         context = {
             'document_id' : self.context.dokument_id,
