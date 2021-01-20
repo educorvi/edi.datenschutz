@@ -19,7 +19,7 @@ class Wordview(BrowserView):
 
         # Implement your own actions:
 
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
 
         doc = DocxTemplate("/Users/seppowalther/Dropbox/Arbeit/VVT-Vorlage.docx")
 
@@ -67,6 +67,45 @@ class Wordview(BrowserView):
             context[key] = i['bezeichnung']
             count += 1
 
+        count = 0
+        for i in reversed(self.context.kategorien_empfaenger):
+            key1 = 'kategorien_empfaenger_emp%s' % count
+            key2 = 'kategorien_empfaenger_offen%s' % count
+            context[key1] = i['bezeichnung']
+            context[key2] = i['anmerkung']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.internationale_organisationen):
+            key1 = 'uebermittlung_drittland%s' % count
+            key2 = 'uebermittlung_garantien%s' % count
+            context[key1] = i['bezeichnung']
+            context[key2] = i['anmerkung']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.loeschfristen):
+            key = 'loeschung%s' % count
+            context[key] = i['bezeichnung']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.anlagen_beschreibung):
+            key1 = 'anlagen_bezeichnung%s' % count
+            key2 = 'anlagen_anmerkung%s' % count
+            context[key1] = i['bezeichnung']
+            context[key2] = i['anmerkung']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.aenderungen):
+            key1 = 'aenderungen_wann%s' % count
+            key2 = 'aenderungen_wer%s' % count
+            key3 = 'aenderungen_was%s' % count
+            context[key1] = i['wann'].strftime("%d/%m/%Y")
+            context[key2] = i['wer']
+            context[key3] = i['was']
+            count += 1
 
         doc.render(context)
 
