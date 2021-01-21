@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
-
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope.interface import Interface
 from zope import schema
@@ -13,7 +12,8 @@ class IEdiDatenschutzLayer(IDefaultBrowserLayer):
 class IAnlagenVerweise(Interface):
 
     nr = schema.TextLine(title=u"Nr.")
-    bezeichnung = schema.TextLine(title=u"Bezeichnung der Anlage bzw. des Verweises", required=False)
+    bezeichnung = schema.TextLine(title=u"Bezeichnung des Verweises", required=False)
+    link = schema.URI(title=u"Link bzw. URL", required=False)
     anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 class IAenderungen(Interface):
@@ -52,7 +52,7 @@ class IKategorienEmpfaenger(Interface):
 
 class IInternationaleOrganisationen(Interface):
 
-    nr = schema.TextLine(title=u"Nr.")     
+    nr = schema.TextLine(title=u"Nr.")
     bezeichnung = schema.TextLine(title=u"Drittland oder internationale Organisation", required=False)
     anmerkung = schema.TextLine(title=u"Geeignete Garantien im Falle einer Übermittlung (Art.49 Abs.1 Unterabsatz 2 DSGVO)", required=False)
 
@@ -76,10 +76,14 @@ grad = SimpleVocabulary((
     ))
 
 ampel = SimpleVocabulary((
-    SimpleTerm(value="gr", token="gr", title=u"grün"),
-    SimpleTerm(value="ge", token="ge", title=u"gelb"),
-    SimpleTerm(value="ro", token="ro", title=u"rot"),
+    SimpleTerm(value="success", token="gr", title=u"grün"),
+    SimpleTerm(value="warning", token="ge", title=u"gelb"),
+    SimpleTerm(value="danger", token="ro", title=u"rot"),
+    SimpleTerm(value="light", token="se", title=u"kein Wert"),
     ))
+
+def get_ampel(context):
+    return ampel
 
 ziele = SimpleVocabulary((
     SimpleTerm(value="verfuegbarkeit", token="verfuegbarkeit", title=u"Verfügbarkeit"),

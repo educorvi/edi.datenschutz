@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="wordview"
+    for="*"
+    class=".wordview.Wordview"
+    template="wordview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="view"
     for="edi.datenschutz.content.gefaehrdung.IGefaehrdung"
     class=".gefaehrdungview.Gefaehrdungview"
