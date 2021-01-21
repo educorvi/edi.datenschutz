@@ -41,7 +41,7 @@
 	        <h3 class="mt-3" tal:replace="structure view/get_datenschutzfolgenabschaetzung"></h3>
 
           <h3 tal:condition="context/pruefung_bis_wann" class="mt-3">Zeitpunkt der Fertigstellung / Überprüfung</h3>
-          <p tal:condition="context/pruefung_bis_wann" tal:content="context/pruefung_bis_wann"></p>
+          <p tal:condition="context/pruefung_bis_wann" tal:content="view/get_pruefung_bis_wann"></p>
 
           <h3 tal:condition="context/begruendung" class="mt-3">Begründung</h3>
           <p tal:condition="context/begruendung" tal:content="context/begruendung"></p>
@@ -406,7 +406,7 @@
                 </p>
                 <a class="btn btn-secondary btn-sm mb-2" role="button"
 		                tal:condition="python:len(todo)>1" data-toggle="collapse" href="#more" aria-expanded="false">
-                    alle Schritte
+                    weitere Schritte
                 </a>
                 <div class="collapse" tal:condition="python:len(todo)>1" id="more">
                   <p tal:repeat="step python:todo[1:]">
@@ -427,9 +427,14 @@
           <div class="card card-shadow mb-3">
             <div class="card-header">Inhalt</div>
             <div class="card-body" tal:define="fc view/get_foldercontents">
-              <p tal:repeat="entry fc"><a tal:attributes="href entry/link" tal:content="entry/title"/></p>
-	          </div>
-	        </div><!--card-->
+              <p tal:repeat="entry fc">
+	        <a tal:condition="not:entry/add" tal:attributes="href entry/link"><span tal:content="entry/title"/>
+                </a>				
+		<a tal:condition="entry/add" tal:attributes="href entry/link"><span tal:content="entry/title"/>
+		</a>
+	      </p>
+	    </div>
+	 </div><!--card-->
 
           <div tal:condition="view/get_zielelist" class="card card-shadow mb-3">
             <div class="card-header">Gewährleistung-ziele</div>

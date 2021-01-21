@@ -72,11 +72,16 @@ class Verarbeitungstaetigkeitview(BrowserView):
 
     def get_datenschutzfolgenabschaetzung(self):
         dsfa_ja = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-danger">ja</span>'
-        dsfa_nein = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-success">nein</span>'
+        dsfa_nein = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO: <span class="badge badge-success">nein</span>'
         if self.context.datenschutz_folgenabschatzung_erforderlich == 'Ja':
             return '<h3 class="mt-3">%s</h3>' % dsfa_ja
         else:
             return '<h3 class="mt-3">%s</h3>' % dsfa_nein
+
+    def get_pruefung_bis_wann(self):
+        if self.context.pruefung_bis_wann:
+            return self.context.pruefung_bis_wann.strftime('%d.%m.%Y')
+        return u''
 
     def get_status(self):
         statusdict = {'in Bearbeitung': 'primary',
@@ -144,11 +149,13 @@ class Verarbeitungstaetigkeitview(BrowserView):
                 if content:
                     obj = content[0]
                     entry['link'] = obj.absolute_url()
+                    entry['add'] = False
                 else:
                     if self.is_redakteur:
                         entry['link'] = self.context.absolute_url()+'/++add++%s' % i[0]
                     else:
                         entry['link'] = '#'
+                    entry['add'] = True    
                 contents.append(entry)
         else:
             for i in types:
@@ -158,11 +165,13 @@ class Verarbeitungstaetigkeitview(BrowserView):
                 if content:
                     obj = content[0]
                     entry['link'] = obj.absolute_url()
+                    entry['add'] = False
                 else:
                     if self.is_redakteur:
                         entry['link'] = self.context.absolute_url()+'/++add++%s' % i[0]
                     else:
                         entry['link'] = '#'
+                    entry['add'] = True    
                 contents.append(entry)
         return contents
 
