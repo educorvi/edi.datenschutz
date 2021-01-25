@@ -98,7 +98,7 @@
                     <tbody>
                       <tr tal:repeat="anlage context/anlagen_beschreibung">
                         <td tal:content="anlage/nr"></td>
-			                  <td><a tal:attributes="href anlage/link" tal:content="anlage/bezeichnung"></a></td>
+			                  <!--<td><a tal:attributes="href anlage/link" tal:content="anlage/bezeichnung"></a></td>-->
                         <td tal:content="anlage/anmerkung"></td>
                       </tr>
                     </tbody>
