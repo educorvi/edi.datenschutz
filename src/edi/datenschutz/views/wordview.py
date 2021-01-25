@@ -61,6 +61,7 @@ class Wordview(BrowserView):
             context[key] = i['bezeichnung']
             count +=1
 
+        #count = i_love_you<3
         count = 0
         for i in reversed(self.context.kategorien_daten):
             key = 'kategorien_daten%s' % count
