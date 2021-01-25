@@ -33,6 +33,8 @@ class Wordviewdsfa(BrowserView):
             'normen_verarbeitung_relevant': self.context.normen_verarbeitung_relevant,
             'zustandigkeiten_fur_verarbeitung': self.context.zustandigkeiten_fur_verarbeitung,
             'verpflichtungen_der_auftragsverarbeiter': self.context.verpflichtungen_der_auftragsverarbeiter,
+            'standpunkt_der_betroffenen_personen': self.context.standpunkt_der_betroffenen_personen,
+            'anmerkung_begrundung': self.context.anmerkung_begrundung,
 
         }
 
