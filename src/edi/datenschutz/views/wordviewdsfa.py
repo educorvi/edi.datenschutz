@@ -18,24 +18,28 @@ class Wordviewdsfa(BrowserView):
     def __call__(self):
         # Implement your own actions:
         self.msg = _(u'A small message')
-        import pdb; pdb.set_trace()
 
         doc = DocxTemplate("/Users/seppowalther/Dropbox/Arbeit/DSFA-Bericht-Vorlage.docx")
 
-        import pdb; pdb.set_trace()
-
         context = {
-            'document_id': self.context.dokument_id,
+            'dokument_id': self.context.dokument_id,
             'status': self.context.status_der_dsfa,
             'anmerkung_zum_status': self.context.anmerkung_zum_status,
             'datumsangabe': self.context.datum,
-            
+            'dsfa_geplante_verarbeitung': self.context.dsfa_geplante_verarbeitung,
+            'dsfa_zwecke_der_verarbeitung': self.context.dsfa_zwecke_der_verarbeitung,
+            'dsfa_rechtsgrundlagen_der_verarbeitung': self.context.dsfa_rechtsgrundlagen_der_verarbeitung,
+            'dsfa_einwilligung_der_betroffenen': self.context.dsfa_einwilligung_der_betroffenen,
+            'normen_verarbeitung_relevant': self.context.normen_verarbeitung_relevant,
+            'zustandigkeiten_fur_verarbeitung': self.context.zustandigkeiten_fur_verarbeitung,
+            'verpflichtungen_der_auftragsverarbeiter': self.context.verpflichtungen_der_auftragsverarbeiter,
+
         }
 
         count = 0
         for i in reversed(self.context.dsfa_beteiligte_person):
             key = 'person%s' % count
-            context[key] = i['bezeichnung']
+            context[key] = i
             count += 1
 
         count = 0
