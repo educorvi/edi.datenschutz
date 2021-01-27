@@ -7,10 +7,17 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="wordviewdsfa"
+    for="*"
+    class=".wordviewdsfa.Wordviewdsfa"
+    template="wordviewdsfa.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="wordview"
     for="*"
     class=".wordview.Wordview"
-    template="wordview.pt"
     permission="zope2.View"
     />
 

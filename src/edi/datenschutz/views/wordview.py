@@ -19,9 +19,16 @@ class Wordview(BrowserView):
 
         # Implement your own actions:
 
-        #import pdb; pdb.set_trace()
+        rudi = __file__
+        tiberius = rudi.split('/')
+        tiberius.pop()
+        path = ""
+        for i in tiberius:
+            path = path + i + "/"
 
-        doc = DocxTemplate("/Users/seppowalther/Dropbox/Arbeit/VVT-Vorlage.docx")
+        path = path+"VVT-Vorlage.docx"
+
+        doc = DocxTemplate(path)
 
         personen = self.context.beteiligte_personen_und_ihre_rollen
 
@@ -61,6 +68,7 @@ class Wordview(BrowserView):
             context[key] = i['bezeichnung']
             count +=1
 
+        #count = i_love_you<3
         count = 0
         for i in reversed(self.context.kategorien_daten):
             key = 'kategorien_daten%s' % count
@@ -111,5 +119,11 @@ class Wordview(BrowserView):
 
         doc.save("/Users/seppowalther/Dropbox/Arbeit/changed.docx")
 
-        self.msg = _(u'A small message')
-        return self.index()
+        path = "/Users/seppowalther/Dropbox/Arbeit/changed.docx"
+        file = open(path, 'rb')
+        file.seek(0)
+
+        RESPONSE = self.request.response
+        RESPONSE.setHeader('content-type', 'application/application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        RESPONSE.setHeader('content-disposition', 'attachment; filename=verarbeitungstaetigkeit.docx')
+        return file.read()
