@@ -17,16 +17,8 @@ class Wordview(BrowserView):
 
     def __call__(self):
 
-        # Implement your own actions:
-
-        rudi = __file__
-        tiberius = rudi.split('/')
-        tiberius.pop()
-        path = ""
-        for i in tiberius:
-            path = path + i + "/"
-
-        path = path+"VVT-Vorlage.docx"
+        path = '/'.join(__file__.split('/')[:-1])
+        path = path+"/VVT-Vorlage.docx"
 
         doc = DocxTemplate(path)
 
@@ -117,10 +109,10 @@ class Wordview(BrowserView):
 
         doc.render(context)
 
-        doc.save("/Users/seppowalther/Dropbox/Arbeit/changed.docx")
+        savepath = '/tmp/changed'
+        doc.save(savepath)
 
-        path = "/Users/seppowalther/Dropbox/Arbeit/changed.docx"
-        file = open(path, 'rb')
+        file = open(savepath, 'rb')
         file.seek(0)
 
         RESPONSE = self.request.response
