@@ -19,9 +19,16 @@ class Wordview(BrowserView):
 
         # Implement your own actions:
 
-        #import pdb; pdb.set_trace()
+        rudi = __file__
+        tiberius = rudi.split('/')
+        tiberius.pop()
+        path = ""
+        for i in tiberius:
+            path = path + i + "/"
 
-        doc = DocxTemplate("/Users/seppowalther/Dropbox/Arbeit/VVT-Vorlage.docx")
+        path = path+"VVT-Vorlage.docx"
+
+        doc = DocxTemplate(path)
 
         personen = self.context.beteiligte_personen_und_ihre_rollen
 
