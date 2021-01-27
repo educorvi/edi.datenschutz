@@ -71,12 +71,12 @@ class Verarbeitungstaetigkeitview(BrowserView):
         return result
 
     def get_datenschutzfolgenabschaetzung(self):
-        dsfa_ja = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO <span class="badge badge-danger">ja</span>'
-        dsfa_nein = u'Datenschutz-Folgenabschätzung nach Art. 35 DSGVO: <span class="badge badge-success">nein</span>'
+        dsfa_ja = u'DSFA nach Art. 35 DSGVO erforderlich: <span class="badge badge-danger">ja</span>'
+        dsfa_nein = u'DSFA nach Art. 35 DSGVO erforderlich: <span class="badge badge-success">nein</span>'
         if self.context.datenschutz_folgenabschatzung_erforderlich == 'Ja':
-            return '<h3 class="mt-3">%s</h3>' % dsfa_ja
+            return '<h3 class="mt-5">%s</h3>' % dsfa_ja
         else:
-            return '<h3 class="mt-3">%s</h3>' % dsfa_nein
+            return '<h3 class="mt-5">%s</h3>' % dsfa_nein
 
     def get_pruefung_bis_wann(self):
         if self.context.pruefung_bis_wann:
