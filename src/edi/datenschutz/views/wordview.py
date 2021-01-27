@@ -112,5 +112,11 @@ class Wordview(BrowserView):
 
         doc.save("/Users/seppowalther/Dropbox/Arbeit/changed.docx")
 
-        self.msg = _(u'A small message')
-        return self.index()
+        path = "/Users/seppowalther/Dropbox/Arbeit/changed.docx"
+        file = open(path, 'rb')
+        file.seek(0)
+
+        RESPONSE = self.request.response
+        RESPONSE.setHeader('content-type', 'application/application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        RESPONSE.setHeader('content-disposition', 'attachment; filename=verarbeitungstaetigkeit.docx')
+        return file.read()

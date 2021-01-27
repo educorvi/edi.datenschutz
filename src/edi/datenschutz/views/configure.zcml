@@ -18,7 +18,6 @@
     name="wordview"
     for="*"
     class=".wordview.Wordview"
-    template="wordview.pt"
     permission="zope2.View"
     />
 
