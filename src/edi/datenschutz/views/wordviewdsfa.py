@@ -46,9 +46,14 @@ class Wordviewdsfa(BrowserView):
             'recht_auf_auskunft_betroffener': self.context.recht_auf_auskunft_betroffener,
             'recht_auf_loschung': self.context.recht_auf_loschung,
             'recht_auf_berichtigung': self.context.recht_auf_berichtigung,
-
-
-
+            'recht_auf_widerspruch': self.context.recht_auf_widerspruch,
+            'recht_auf_datenubertragbarkeit': self.context.recht_auf_datenubertragbarkeit,
+            'erfullung_datensicherheitsziele': self.context.erfullung_datensicherheitsziele,
+            'erfullung_schutzbedarfsziele': self.context.erfullung_schutzbedarfsziele,
+            'konsultation_aufsichtsbehorde': self.context.konsultation_aufsichtsbehorde,
+            'begrundung': self.context.begrundung,
+            'beschreibung_der_abstimmung': self.context.beschreibung_der_abstimmung,
+            'dsfa_datenschutzmassnahmen': self.context.dsfa_datenschutzmassnahmen,
         }
 
         count = 0
