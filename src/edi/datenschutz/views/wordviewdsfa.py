@@ -25,6 +25,7 @@ class Wordviewdsfa(BrowserView):
             'dokument_id': self.context.dokument_id,
             'status': self.context.status_der_dsfa,
             'anmerkung_zum_status': self.context.anmerkung_zum_status,
+            'kontaktdaten_datenschutzbeauftragter': self.context.kontaktdaten_datenschutzbeauftragter,
             'datumsangabe': self.context.datum,
             'dsfa_geplante_verarbeitung': self.context.dsfa_geplante_verarbeitung,
             'dsfa_zwecke_der_verarbeitung': self.context.dsfa_zwecke_der_verarbeitung,
@@ -35,6 +36,7 @@ class Wordviewdsfa(BrowserView):
             'verpflichtungen_der_auftragsverarbeiter': self.context.verpflichtungen_der_auftragsverarbeiter,
             'standpunkt_der_betroffenen_personen': self.context.standpunkt_der_betroffenen_personen,
             'anmerkung_begrundung': self.context.anmerkung_begrundung,
+            'lebenszyklus_daten_prozesse': self.context.lebenszyklus_daten_prozesse,
 
         }
 
@@ -60,6 +62,32 @@ class Wordviewdsfa(BrowserView):
             context[key1] = i['wann'].strftime("%d/%m/%Y")
             context[key2] = i['wer']
             context[key3] = i['was']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.kategorien_personenbezogener_daten):
+            key1 = 'kategorie_bezeichnung%s' % count
+            key2 = 'kategorie_anmerkung%s' % count
+            context[key1] = i['bezeichnung']
+            context[key2] = i['anmerkung']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.kategorien_betroffener_personen):
+            key1 = 'kategorie_personen%s' % count
+            key2 = 'kategorie_personen_anmerkung%s' % count
+            context[key1] = i['bezeichnung']
+            context[key2] = i['anmerkung']
+            count += 1
+
+        count = 0
+        for i in reversed(self.context.empfaenger_fuer_offenlegung):
+            key1 = 'empfaenger%s' % count
+            key2 = 'empfaenger_anlass%s' % count
+            key3 = 'empfaenger_anmerkung%s' % count
+            context[key1] = i['empfaenger']
+            context[key2] = i['anlass']
+            context[key3] = i['anmerkung']
             count += 1
 
         doc.render(context)
