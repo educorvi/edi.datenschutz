@@ -16,10 +16,11 @@ class Wordviewdsfa(BrowserView):
     # template = ViewPageTemplateFile('wordviewdsfa.pt')
 
     def __call__(self):
-        # Implement your own actions:
-        self.msg = _(u'A small message')
 
-        doc = DocxTemplate("/Users/seppowalther/Dropbox/Arbeit/DSFA-Bericht-Vorlage.docx")
+        path = '/'.join(__file__.split('/')[:-1])
+        path = path + "/DSFA-Bericht-Vorlage.docx"
+
+        doc = DocxTemplate(path)
 
         context = {
             'dokument_id': self.context.dokument_id,
@@ -108,4 +109,14 @@ class Wordviewdsfa(BrowserView):
 
         doc.render(context)
 
-        doc.save("/Users/seppowalther/Dropbox/Arbeit/changeddsfa.docx")
+        savepath = '/tmp/changeddsfa'
+        doc.save(savepath)
+
+        file = open(savepath, 'rb')
+        file.seek(0)
+
+        RESPONSE = self.request.response
+        RESPONSE.setHeader('content-type',
+                           'application/application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        RESPONSE.setHeader('content-disposition', 'attachment; filename=datenschutzfolgeabschaetzung.docx')
+        return file.read()
