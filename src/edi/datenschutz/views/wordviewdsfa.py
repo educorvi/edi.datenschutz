@@ -37,6 +37,17 @@ class Wordviewdsfa(BrowserView):
             'standpunkt_der_betroffenen_personen': self.context.standpunkt_der_betroffenen_personen,
             'anmerkung_begrundung': self.context.anmerkung_begrundung,
             'lebenszyklus_daten_prozesse': self.context.lebenszyklus_daten_prozesse,
+            'betriebsmittel_fuer_datenverarbeitung': self.context.betriebsmittel_fuer_datenverarbeitung,
+            'verarbeitung_verhaltnismassig': self.context.verarbeitung_verhaltnismassig,
+            'warum_daten_erforderlich': self.context.warum_daten_erforderlich,
+            'daten_auf_dem_neuesten_stand': self.context.daten_auf_dem_neuesten_stand,
+            'speicherdauer_der_daten': self.context.speicherdauer_der_daten,
+            'information_betroffener_personen': self.context.information_betroffener_personen,
+            'recht_auf_auskunft_betroffener': self.context.recht_auf_auskunft_betroffener,
+            'recht_auf_loschung': self.context.recht_auf_loschung,
+            'recht_auf_berichtigung': self.context.recht_auf_berichtigung,
+
+
 
         }
 
