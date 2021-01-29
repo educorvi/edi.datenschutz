@@ -26,7 +26,7 @@
                 <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
               </svg>
             </span>
-            <span tal:content="context/description">Lorem ipsum dolor sit amet</span>
+            <span tal:content="context/description"></span>
           </p>
 
           <div tal:replace="structure provider:plone.belowcontenttitle" />
