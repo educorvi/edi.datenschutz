@@ -11,20 +11,28 @@
     <tal:main-macro metal:define-macro="main">
 
     <div class="container">
-
-      <div tal:replace="structure provider:plone.abovecontenttitle" />
-
-      <h1 class="documentFirstHeading" tal:content="context/title" />
-
-      <div tal:replace="structure provider:plone.belowcontenttitle" />
-
-      <p class="documentDescription" tal:content="context/description" />
-
-      <div tal:replace="structure provider:plone.abovecontentbody" />
-
-
       <div class="row mb-3">
         <div class="col-12 col-md-9">
+
+          <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+          <h1 class="documentFirstHeading" tal:content="context/title" />
+
+          <p class="lead" tal:condition="context/description">
+            <span class="dot">
+              <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <defs></defs>
+                <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+              </svg>
+            </span>
+            <span tal:content="context/description"></span>
+          </p>
+
+          <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+          <div tal:replace="structure provider:plone.abovecontentbody" />
+
+
 
           <div class="accordion" id="accordeonAnsicht">
 
@@ -408,9 +416,9 @@
                   <a tal:attributes="href python:context.absolute_url()+'/edit#autotoc-item-autotoc-'+str(first[0])"
                           tal:content="python:first[1]"/>
                 </p>
-                <a class="btn btn-secondary btn-sm mb-2" role="button"
-		                tal:condition="python:len(todo)>1" data-toggle="collapse" href="#more" aria-expanded="false">
-                    alle Schritte
+                <a class="btn btn-outline-dark btn-sm mb-2" role="button"
+                                tal:condition="python:len(todo)>1" data-toggle="collapse" href="#more" aria-expanded="false">
+                    <i class="bi bi-caret-right pt-1"></i> Weitere Schritte anzeigen
                 </a>
                 <div class="collapse" tal:condition="python:len(todo)>1" id="more">
                   <p tal:repeat="step python:todo[1:]">

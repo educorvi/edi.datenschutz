@@ -25,6 +25,7 @@
           <element>Deaktiviert</element>
           <element>Sonstiges (Bitte in Anmerkungen schreiben)</element>
         </values>
+        <default>in Bearbeitung</default>
       </field>
       <field name="anmerkung_zum_status" type="zope.schema.Text">
         <description/>
@@ -261,7 +262,7 @@
       <field name="verfuegbarkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Verf&#252;gbarkeit</title>
          <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -269,7 +270,7 @@
       <field name="vertraulichkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Vertraulichkeit</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -277,7 +278,7 @@
       <field name="datenintegritaet" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Datenintegrit&#228;t</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -285,7 +286,7 @@
       <field name="datenminimierung" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Datenminimierung</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -293,7 +294,7 @@
       <field name="intervenierbarkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Intervenierbarkeit</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -301,7 +302,7 @@
       <field name="transparenz" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Transparenz</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -309,7 +310,7 @@
       <field name="nichtverkettung" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Nichtverkettung</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -317,7 +318,7 @@
       <field name="konzeptionseinhaltung" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Konzeptionseinhaltung</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
@@ -325,7 +326,7 @@
       <field name="richtigkeit" type="zope.schema.Choice">
         <description/>
         <required>False</required>
-        <default>secondary</default>
+        <default>light</default>
         <title>Richtigkeit</title>
         <vocabulary>datenschutz-ampel</vocabulary>
       </field>
