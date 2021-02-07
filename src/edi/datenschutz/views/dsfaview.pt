@@ -243,7 +243,7 @@
                       <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
                         <td tal:content="kategorie/nr"></td>
                         <td tal:content="kategorie/bezeichnung"></td>
-                        <td tal:content="kategorie/anmekrung"></td>
+                        <td tal:content="kategorie/anmerkung"></td>
                       </tr>
                     </tbody>
                   </table>
