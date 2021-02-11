@@ -444,7 +444,7 @@
               <p tal:repeat="entry fc">
 	        <a tal:condition="not:entry/add" tal:attributes="href entry/link"><span tal:content="entry/title"/>
                 </a>				
-		<a tal:condition="entry/add" tal:attributes="href entry/link"><span tal:content="entry/title"/>
+		<a tal:condition="entry/add" tal:attributes="href entry/link"><span tal:content="string:${entry/title} hinzufügen"/>
 		</a>
 	      </p>
 	    </div>

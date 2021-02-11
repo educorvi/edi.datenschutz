@@ -58,54 +58,60 @@ class Wordviewdsfa(BrowserView):
         }
 
         count = 0
-        for i in reversed(self.context.dsfa_beteiligte_person):
-            key = 'person%s' % count
-            context[key] = i
-            count += 1
+        if self.context.dsfa_beteiligte_person:
+            for i in reversed(self.context.dsfa_beteiligte_person):
+                key = 'person%s' % count
+                context[key] = i
+                count += 1
 
         count = 0
-        for i in reversed(self.context.anlagen_beschreibung):
-            key1 = 'anlagen_bezeichnung%s' % count
-            key2 = 'anlagen_anmerkung%s' % count
-            context[key1] = i['bezeichnung']
-            context[key2] = i['anmerkung']
-            count += 1
+        if self.context.anlagen_beschreibung:
+            for i in reversed(self.context.anlagen_beschreibung):
+                key1 = 'anlagen_bezeichnung%s' % count
+                key2 = 'anlagen_anmerkung%s' % count
+                context[key1] = i['bezeichnung']
+                context[key2] = i['anmerkung']
+                count += 1
 
         count = 0
-        for i in reversed(self.context.aenderungen):
-            key1 = 'aenderungen_wann%s' % count
-            key2 = 'aenderungen_wer%s' % count
-            key3 = 'aenderungen_was%s' % count
-            context[key1] = i['wann'].strftime("%d/%m/%Y")
-            context[key2] = i['wer']
-            context[key3] = i['was']
-            count += 1
+        if self.context.aenderungen:
+            for i in reversed(self.context.aenderungen):
+                key1 = 'aenderungen_wann%s' % count
+                key2 = 'aenderungen_wer%s' % count
+                key3 = 'aenderungen_was%s' % count
+                context[key1] = i['wann'].strftime("%d/%m/%Y")
+                context[key2] = i['wer']
+                context[key3] = i['was']
+                count += 1
 
         count = 0
-        for i in reversed(self.context.kategorien_personenbezogener_daten):
-            key1 = 'kategorie_bezeichnung%s' % count
-            key2 = 'kategorie_anmerkung%s' % count
-            context[key1] = i['bezeichnung']
-            context[key2] = i['anmerkung']
-            count += 1
+        if self.context.kategorien_personenbezogener_daten:
+            for i in reversed(self.context.kategorien_personenbezogener_daten):
+                key1 = 'kategorie_bezeichnung%s' % count
+                key2 = 'kategorie_anmerkung%s' % count
+                context[key1] = i['bezeichnung']
+                context[key2] = i['anmerkung']
+                count += 1
 
         count = 0
-        for i in reversed(self.context.kategorien_betroffener_personen):
-            key1 = 'kategorie_personen%s' % count
-            key2 = 'kategorie_personen_anmerkung%s' % count
-            context[key1] = i['bezeichnung']
-            context[key2] = i['anmerkung']
-            count += 1
+        if self.context.kategorien_betroffener_personen:
+            for i in reversed(self.context.kategorien_betroffener_personen):
+                key1 = 'kategorie_personen%s' % count
+                key2 = 'kategorie_personen_anmerkung%s' % count
+                context[key1] = i['bezeichnung']
+                context[key2] = i['anmerkung']
+                count += 1
 
         count = 0
-        for i in reversed(self.context.empfaenger_fuer_offenlegung):
-            key1 = 'empfaenger%s' % count
-            key2 = 'empfaenger_anlass%s' % count
-            key3 = 'empfaenger_anmerkung%s' % count
-            context[key1] = i['empfaenger']
-            context[key2] = i['anlass']
-            context[key3] = i['anmerkung']
-            count += 1
+        if self.context.empfaenger_fuer_offenlegung:
+            for i in reversed(self.context.empfaenger_fuer_offenlegung):
+                key1 = 'empfaenger%s' % count
+                key2 = 'empfaenger_anlass%s' % count
+                key3 = 'empfaenger_anmerkung%s' % count
+                context[key1] = i['empfaenger']
+                context[key2] = i['anlass']
+                context[key3] = i['anmerkung']
+                count += 1
 
         doc.render(context)
 

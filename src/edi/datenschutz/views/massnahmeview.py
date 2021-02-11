@@ -23,7 +23,7 @@ class Massnahmeview(BrowserView):
             term = interfaces.ziele.getTerm(i)
             termtitle = term.title
             termtitles.append(termtitle)
-        return termtitles
+        return ", ".join(termtitles)
 
     def get_massnahmenart(self):
         massnahmen = self.context.art_der_massnahme

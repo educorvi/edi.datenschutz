@@ -243,7 +243,7 @@
                       <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
                         <td tal:content="kategorie/nr"></td>
                         <td tal:content="kategorie/bezeichnung"></td>
-                        <td tal:content="kategorie/anmekrung"></td>
+                        <td tal:content="kategorie/anmerkung"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -428,11 +428,13 @@
                 </div>
               </div>
             </div>
-	          <div class="card-footer">
+	    <div class="card-footer">
               <p><a tal:attributes="href python:context.absolute_url()+'/edit'">
                 <i class="bi bi-pencil-square"></i> bearbeiten</a>
               </p>
-	            <p><a tal:attributes="href python:context.absolute_url()+'/++add++File'"><i class="bi bi-upload"></i> Anlage hochladen</a></p>
+	      <p><a tal:attributes="href python:context.absolute_url()+'/++add++File'"><i class="bi bi-upload"></i> Anlage hochladen</a></p>
+              <p><a tal:attributes="href python:context.absolute_url()+'/wordviewdsfa'">
+                      <i class="bi bi-download"></i> Download Word-Vorlage</a></p>
             </div>
           </div><!--card-->
 

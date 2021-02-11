@@ -31,413 +31,75 @@
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
 
+
+         <div tal:condition="verfuegbarkeit" class="row mb-3">
+           <div class="col-12">
+             <h2>Verfügbarkeit</h2>
+           </div>
+         </div>
+
+         <div tal:condition="verfuegbarkeit" class="row mb-3">
+           <div class="col-12 mb-3">
+             <table class="table table-bordered table-responsive">
+               <thead>
+                 <tr>
+                   <th scope="col">ID</th>
+	           <th scope="col">Vermögensgegenstand</th>
+	           <th scope="col">Bedrohung</th>		      
+                   <th scope="col">Schwachstelle</th>
+                   <th scope="col">Risko vor Maßnahmen</th>
+                   <th scope="col">Maßnahmen</th>
+	           <th scope="col">Risiko nach Maßnahmen</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr tal:repeat="objdict verfuegbarkeit">
+	           <td><a tal:attributes="href python:objdict['obj'].absolute_url()" tal:content="python:objdict['obj'].id"/></td>
+                   <td tal:content="python:objdict['asset']"></td>
+	           <td tal:content="python:objdict['threat']"></td>
+                   <td tal:content="python:objdict['vul']"></td>
+	           <td tal:define="color python:objdict['risiko'][0]; value python:objdict['risiko'][1]"><span tal:attributes="class python:'badge badge-pill badge-'+color" tal:content="value"/></td>
+                   <td tal:define="refs objdict/refs">
+                     <ul>
+                       <li tal:repeat="massnahmedict refs">
+                         <a href="#" data-toggle="modal" data-target="#exampleModal"
+                            tal:attributes="data-target python:'#'+massnahmedict['uid']" tal:content="massnahmedict/title">
+                            Launch demo modal
+                         </a>
+                       </li>
+                     </ul>
+                   </td>
+	           <td tal:define="color python:objdict['bewertung'][0]; value python:objdict['bewertung'][1]"><span tal:attributes="class python:'badge badge-pill badge-'+color" tal:content="value"/></td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+         </div>
+
+         <div tal:repeat="massnahme view/massnahmen" class="modal fade" tal:attributes="id massnahme/uid;aria_labelledby massnahme/uid" tabindex="-1" role="dialog" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" tal:content="massnahme/title">Modal title</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+	         <span tal:replace="structure massnahme/rawview"/>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+               </div>
+             </div>
+           </div>
+         </div>
+
+
          <div tal:replace="structure provider:plone.belowcontentbody" />
 
 
-       <div tal:condition="verfuegbarkeit" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Verfügbarkeit</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
       </div>
-
-       <div tal:condition="verfuegbarkeit" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict verfuegbarkeit">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <!--<a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>-->
-                    <a href="#" data-toggle="modal" data-target="#exampleModal"
-                            tal:attributes="data-target python:'#'+massnahmedict['uid']" tal:content="massnahmedict/title">
-                             Launch demo modal
-                    </a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="vertraulichkeit" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Vertraulichkeit</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="vertraulichkeit" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict vertraulichkeit">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-     <div tal:condition="datenintegritaet" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Datenintegrität</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="datenintegritaet" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict datenintegritaet">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="datenminimierung" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Datenminimierung</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="datenminimierung" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict datenminimierung">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="intervenierbarkeit" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Intervenierbarkeit</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="intervenierbarkeit" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict intervenierbarkeit">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="transparenz" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Transparenz</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="transparenz" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict transparenz">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="nichtverkettung" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Nichtverkettung</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="nichtverkettung" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict nichtverkettung">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="konzeptionseinhaltung" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Konzeptionseinhaltung</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="konzeptionseinhaltung" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-        <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict konzeptionseinhaltung">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:condition="richtigkeit" class="row mb-3">
-        <div class="col-12 col-md-8">
-            <h2>Richtigkeit</h2>
-        </div>
-        <div class="col-12 col-md-1">
-        </div>
-        <div class="col-12 col-md-3">
-        </div>
-      </div>
-
-      <div tal:condition="richtigkeit" class="row mb-3">
-       <!--<div class="col-12 col-md-8 mb-3">-->
-       <div class="col-12 mb-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Schwachstelle</th>
-              <th scope="col">Risikoquelle</th>
-              <th scope="col">Risiko-Szenario</th>
-              <th scope="col">Maßnahmen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr tal:repeat="objdict richtigkeit">
-              <td tal:content="python:objdict['obj'].id"></td>
-              <td tal:content="python:objdict['obj'].schwachstelle"></td>
-              <td tal:content="python:objdict['obj'].quelle"></td>
-              <td tal:content="python:objdict['obj'].szenario"></td>
-              <td tal:define="refs objdict/refs">
-                <ul>
-                  <li tal:repeat="massnahmedict refs">
-                    <a tal:attributes="href massnahmedict/url" target="_blank" tal:content="massnahmedict/title"/>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-      </div>
-
-      <div tal:repeat="massnahme view/massnahmen" class="modal fade" tal:attributes="id massnahme/uid;aria_labelledby massnahme/uid" 
-	   tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" tal:content="massnahme/title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-		    <span tal:replace="structure massnahme/rawview"/>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
 
 
 
