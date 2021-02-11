@@ -2,6 +2,7 @@
 
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
+from edi.datenschutz.riskvocab import asset, vulnerability, threat
 
 from plone.memoize import ram
 from time import time
@@ -36,7 +37,26 @@ class Risikomanagementview(BrowserView):
             objdict = {}
             if 'verfuegbarkeit' in i.focus:
                 objdict['obj'] = i
+                objdict['asset'] = ", ".join([asset.getTerm(k).title for k in i.asset_choice])
+                objdict['threat'] = threat.getTerm(i.quelle).title
+                objdict['vul'] = vulnerability.getTerm(i.schwachstelle_choice).title
+                risiko = i.grad_schwere * i.grad_wahrscheinlichkeit
+                if risiko < 3:
+                    compurisk = ('success', u'geringes Risiko (%i)' % risiko)
+                elif 2 < risiko < 12:
+                    compurisk = ('warning', u'Risiko (%i)' % risiko)
+                else:
+                    compurisk = ('danger', u'hohes Risiko (%i)' % risiko)
+                objdict['risiko'] = compurisk
                 objdict['refs'] = []
+                bewertung = ('light', 'keine Bewertung')
+                if i.bewertung == 'success':
+                    bewertung = (i.bewertung, u'geringes Risiko')
+                elif i.bewertung == 'warning':
+                    bewertung = (i.bewertung, u'Risiko')
+                elif i.bewertung == 'danger':
+                    bewertung = (i.bewertung, u'hohes Risiko')
+                objdict['bewertung'] = bewertung    
                 for massnahme in i.massnahmen:
                     objmassnahme = massnahme.to_object
                     massnahmendict = {}
