@@ -90,15 +90,18 @@
 	       <p class="lead mt-4">Grafische Darstellung des Riskoindex auf der Skala</p>
 
 	       <div class="progress mb-2" style="height: 4px;">
-                 <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%" 
+                 <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100"
 		       tal:attributes="aria-valuenow riskdict/prozent; style string:width: ${riskdict/prozent}%">
 	         </div>
                </div>
 
 	       <div class="progress">
-                 <div class="progress-bar bg-success" role="progressbar" style="width: 13%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">niedriges Risiko</div>
-                 <div class="progress-bar bg-warning" role="progressbar" style="width: 62%;" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">Risiko</div>
-                 <div class="progress-bar bg-danger" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">hohes Risiko</div>
+                 <div class="progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+			tal:attributes="aria-valuenow riskdict/low; style string:width: ${riskdict/low}%">geringes Risiko</div>
+                 <div class="progress-bar bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+			tal:attributes="aria-valuenow riskdict/medium; style string:width: ${riskdict/medium}%">Risiko</div>
+                 <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+			tal:attributes="aria-valuenow riskdict/high; style string:width: ${riskdict/high}%">hohes Risiko</div>
                </div>
 	     </div>
 

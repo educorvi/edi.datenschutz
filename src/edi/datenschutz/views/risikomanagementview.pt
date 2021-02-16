@@ -10,16 +10,7 @@
    <metal:main fill-slot="main">
      <tal:main-macro metal:define-macro="main">
 
-       <div class="container" tal:define="verfuegbarkeit view/verfuegbarkeit;
-                                          vertraulichkeit view/vertraulichkeit;
-                                          datenminimierung view/datenminimierung;
-                                          datenintegritaet view/datenintegritaet;
-                                          datenminimierung view/datenminimierung;
-                                          intervenierbarkeit view/intervenierbarkeit;
-                                          transparenz view/transparenz;
-                                          nichtverkettung view/nichtverkettung;
-                                          konzeptionseinhaltung view/konzeptionseinhaltung;
-                                          richtigkeit view/richtigkeit">
+     <div class="container" tal:define="ziele view/get_ziele">
 
          <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -31,15 +22,9 @@
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
 
-
-         <div tal:condition="verfuegbarkeit" class="row mb-3">
-           <div class="col-12">
-             <h2>Verfügbarkeit</h2>
-           </div>
-         </div>
-
-         <div tal:condition="verfuegbarkeit" class="row mb-3">
-           <div class="col-12 mb-3">
+         <div tal:repeat="ziel ziele" class="row mb-3">
+           <div tal:condition="ziel/data" class="col-12 mb-3">
+             <h2 tal:content="ziel/title"/>		   
              <table class="table table-bordered table-responsive">
                <thead>
                  <tr>
@@ -53,7 +38,7 @@
                  </tr>
                </thead>
                <tbody>
-                 <tr tal:repeat="objdict verfuegbarkeit">
+                 <tr tal:repeat="objdict ziel/data">
 	           <td><a tal:attributes="href python:objdict['obj'].absolute_url()" tal:content="python:objdict['obj'].id"/></td>
                    <td tal:content="python:objdict['asset']"></td>
 	           <td tal:content="python:objdict['threat']"></td>
@@ -64,7 +49,7 @@
                        <li tal:repeat="massnahmedict refs">
                          <a href="#" data-toggle="modal" data-target="#exampleModal"
                             tal:attributes="data-target python:'#'+massnahmedict['uid']" tal:content="massnahmedict/title">
-                            Launch demo modal
+                            Launch modal
                          </a>
                        </li>
                      </ul>

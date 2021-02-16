@@ -27,14 +27,15 @@ class IRisiko(model.Schema):
     """ Marker interface and Dexterity Python Schema for Risiko
     """
     directives.widget("focus", CheckBoxFieldWidget)
-    focus = schema.List(title="Welches Gewährleistungsziel wird durch das Risiko kompromittiert?", constraint=checkbox_constraint, value_type=schema.Choice(vocabulary=ziele))
+    focus = schema.List(title="Auswahl der Gewährleistungsziele, die durch das Risiko kompromittiert werden", constraint=checkbox_constraint, value_type=schema.Choice(vocabulary=ziele))
 
     directives.widget("asset_choice", CheckBoxFieldWidget)
-    asset_choice = schema.List(title=u"Art des Vermögensgegenstands, treffen Sie eine Auswahl.", constraint=checkbox_constraint, value_type=schema.Choice(vocabulary=asset))
+    asset_choice = schema.List(title=u"Art des Vermögensgegenstands", constraint=checkbox_constraint, value_type=schema.Choice(vocabulary=asset))
 
     asset = schema.Text(title=u"Optional: Nähere Erläuterung / Anmerkung zum Vermögensgegenstand", required=False)
 
-    quelle = schema.Choice(title=u"Art der Bedrohung bzw. Quelle des Risikos", description=u"Treffen Sie eine Auswahl.", vocabulary=threat)
+    quelle = schema.Choice(title=u"Art der Bedrohung bzw. Quelle des Risikos", description=u"Treffen Sie eine Auswahl.", default="intern_employee", 
+            vocabulary=threat)
 
     szenario = schema.Text(title=u"Optional: Nähere Erläuterung zur Bedrohung bzw. zur Quelle des Risikos", required=False)
 
@@ -42,25 +43,26 @@ class IRisiko(model.Schema):
 
     schwachstelle = schema.Text(title=u"Optional: Nähere Erläuterung zur Schwachstelle (Vulnerability)", required=False)
 
-    schwachstelle_link = schema.URI(title=u"Optional: Link auf eine Quelle in der die Schwachstelle (Vulnerability) beschrieben bzw. dokumentiert wird.",
+    schwachstelle_link = schema.URI(title=u"Optional: Link auf eine Quelle in der die Schwachstelle (Vulnerability) beschrieben bzw. dokumentiert wird",
                                description=u"Beispiel: Link auf Datenbank von Heise Online", required=False)
 
     directives.widget("grad_wahrscheinlichkeit", RadioFieldWidget)
-    grad_wahrscheinlichkeit = schema.Choice(title=u"Eintrittswahrscheinlichkeit", vocabulary=grad, required=True)
+    grad_wahrscheinlichkeit = schema.Choice(title=u"Grad der Eintrittswahrscheinlichkeit", vocabulary=grad, required=True)
 
     wahrscheinlichkeit = schema.Text(title=u"Erläuterung zur Eintrittswahrscheinlichkeit", required=False)
 
     directives.widget("grad_schwere", RadioFieldWidget)
-    grad_schwere = schema.Choice(title=u"Schaden/Schwere", vocabulary=grad, required=True)
+    grad_schwere = schema.Choice(title=u"Grad der Schwere des Schadens", vocabulary=grad, required=True)
 
-    schwere = schema.Text(title=u"Erläuterung zur Schwere / zum Schaden", required=False)
+    schwere = schema.Text(title=u"Erläuterung zur Schwere des Schaden", required=False)
 
-    massnahmen = RelationList(title=u"Maßnahmen zur Vermeidung oder Minimierung des Risikos",
-                              value_type=RelationChoice(vocabulary='plone.app.vocabularies.Catalog'))
+    massnahmen = RelationList(title=u"Maßnahmen zur Minimierung oder Vermeidung des Risikos",
+                              value_type=RelationChoice(vocabulary='plone.app.vocabularies.Catalog'),
+                              required=False)
 
     erlaeuterung = schema.Text(title=u"Erläuterungen zu den Maßnahmen", required=False)
 
-    bewertung = schema.Choice(title=u"Risikobewertung nach den ergriffenen Maßnahmen", vocabulary=ampel, default='light')
+    bewertung = schema.Choice(title=u"Risikobewertung nach Umsetzung der aufgeführten Maßnahmen", vocabulary=ampel, default='light')
 
     directives.widget(
         "massnahmen",

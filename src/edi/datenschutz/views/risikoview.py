@@ -7,6 +7,19 @@ from edi.datenschutz.riskvocab import asset, threat, vulnerability
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+matrixrange = 4
+low = 22
+high = 22
+
+def calculate_risk(value):
+    erglist = []
+    for i in range(1,matrixrange+1):
+        for k in range(1,matrixrange+1):
+            erg = i*k
+            if erg not in erglist:
+                erglist.append(erg)
+    prozent = ((erglist.index(value)+1) / len(erglist)) * 100
+    return int(prozent)
 
 class Risikoview(BrowserView):
     # If you want to define a template here, please remove the template from
@@ -46,11 +59,16 @@ class Risikoview(BrowserView):
         riskdict = dict()
         risiko = self.context.grad_wahrscheinlichkeit * self.context.grad_schwere
         riskdict['risiko'] = risiko
-        riskdict['prozent'] = risiko/16 * 100
-        if risiko < 3:
+        prozent = calculate_risk(risiko)
+        riskdict['prozent'] = prozent
+        riskmedium = 100 - (low+high)
+        riskdict['low'] = low
+        riskdict['high'] = high
+        riskdict['medium'] = riskmedium
+        if prozent < low:
             riskdict['wertung'] = u'geringes Risiko'
             riskdict['class'] = 'success'
-        elif 2 < risiko < 12:
+        elif low < prozent < (low + riskmedium):
             riskdict['wertung'] = u'Risiko'
             riskdict['class'] = 'warning'
         else:
