@@ -69,10 +69,10 @@ class IOffenlegungen(Interface):
     anmerkung = schema.TextLine(title=u"Anmerkung", required=False)
 
 grad = SimpleVocabulary((
-    SimpleTerm(value=1, token="1", title="1"),
+    SimpleTerm(value=1, token="1", title="1 (niedrig)"),
     SimpleTerm(value=2, token="2", title="2"),
     SimpleTerm(value=3, token="3", title="3"),
-    SimpleTerm(value=4, token="4", title="4"),
+    SimpleTerm(value=4, token="4", title="4 (hoch)"),
     ))
 
 ampel = SimpleVocabulary((
