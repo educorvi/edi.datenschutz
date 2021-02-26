@@ -11,4 +11,5 @@
   <object meta_type="Dexterity FTI" name="Kontrolle"/>
   <object meta_type="Dexterity FTI" name="Risiko"/>
   <object meta_type="Dexterity FTI" name="Gefaehrdung"/>
+  <object name="Vorlage Verarbeitung" meta_type="Dexterity FTI"/>
 </object>

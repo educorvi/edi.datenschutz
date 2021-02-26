@@ -1,0 +1,183 @@
+<model
+    xmlns="http://namespaces.plone.org/supermodel/schema"
+    xmlns:security="http://namespaces.plone.org/supermodel/security"
+    xmlns:form="http://namespaces.plone.org/supermodel/form"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="edi.datenschutz">
+  <schema>
+
+    <fieldset name="beteiligte_personen_und_status"
+              label="1.1 Beteiligte Personen und Status"
+              description="Beteiligte Personen und Status">
+      <field name="dsfa_beteiligte_person" type="zope.schema.List">
+        <value_type type="zope.schema.TextLine"></value_type>
+        <description/>
+        <required>False</required>
+        <title>1.1.1 An DSFA beteiligte Person(en) und ihre Rolle(n)</title>
+      </field>
+      <field name="status_der_dsfa" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>1.1.2 Status der DSFA</title>
+        <values>
+          <element>in Bearbeitung</element>
+          <element>Aktiviert</element>
+          <element>Deaktiviert</element>
+          <element>Sonstiges (Bitte in Anmerkungen schreiben)</element>
+        </values>
+        <default>in Bearbeitung</default>
+      </field>
+      <field name="anmerkung_zum_status" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>1.1.3 Anmerkung zum Status</title>
+      </field>
+      <field name="kontaktdaten_datenschutzbeauftragter" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>1.1.4 Kontaktdaten Datenschutzbeauftragte/r</title>
+      </field>
+    </fieldset>
+
+    <fieldset name="kontext_uberblick"
+              label="2.1 Kontext: &#220;berblick">
+              description="Kontext: &#220;berblick">
+      <field name="dsfa_zwecke_der_verarbeitung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.2 Welche Zwecke hat die Verarbeitung?</title>
+      </field>
+      <field name="dsfa_rechtsgrundlagen_der_verarbeitung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.3 Welche Rechtsgrundlagen/Befugnisse f&#252;r die Verarbeitung gibt es?</title>
+      </field>
+      <field name="dsfa_einwilligung_der_betroffenen" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</title>
+      </field>
+      <field name="normen_verarbeitung_relevant" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die f&#252;r die Verarbeitung relevant sind?</title>
+      </field>
+      <field name="zustandigkeiten_fur_verarbeitung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.6 Welche Zust&#228;ndigkeiten bestehen f&#252;r die Verarbeitung?</title>
+      </field>
+      <field name="verpflichtungen_der_auftragsverarbeiter" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</title>
+      </field>
+    </fieldset>
+
+    <fieldset name="kontext_daten_prozesse"
+              label="2.2 Kontext: Daten, Prozesse und Unterst&#252;tzung"
+              description="Kontext: Daten, Prozesse und Unterst&#252;tzung">
+      <field name="kategorien_personenbezogener_daten" type="zope.schema.List">
+        <required>False</required>
+        <description/>
+        <title>2.2.1 Auflistung der Datenkategorien</title>
+        <description>Welche Kategorien personenbezogener Daten werden verarbeitet?</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IKategorienDatenProzesse</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+      <field name="kategorien_betroffener_personen" type="zope.schema.List">
+        <required>False</required>
+        <description/>
+        <title>2.2.2 Auflistung der Kategorien betroffener Personen</title>
+        <description>Welche Kategorien von Personen sind von der Verarbeitung betroffen?</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IKategorienPersonenDSFA</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+      <field name="empfaenger_fuer_offenlegung" type="zope.schema.List">
+        <required>False</required>
+        <description/>
+        <title>2.2.3 Auflistung der Empf&#228;nger denen Daten offengelegt wurden</title>
+        <description>Welche Empf&#228;nger, denen die personenbezogenen Daten offengelegt werden,
+                     einschlie&#223;lich Empf&#228;nger in Drittl&#228;ndern oder internationale Organisationen gibt es?</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>edi.datenschutz.interfaces.IOffenlegungen</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      </field>
+      <field name="lebenszyklus_daten_prozesse" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.2.4 Wie verl&#228;uft der Lebenszyklus von Daten und Prozessen?</title>
+      </field>
+      <field name="betriebsmittel_fuer_datenverarbeitung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>2.2.5 Mit Hilfe welcher Betriebsmittel erfolgt die Datenverarbeitung?</title>
+      </field>
+    </fieldset>
+
+    <fieldset name="grundlegende_prinzipien_der_betroffenenrechte"
+              label="3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte"
+              description="Grundlegende Prinzipien: Umsetzung der Betroffenenrechte">
+      <field name="information_betroffener_personen" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.1 Wie werden die betroffenen Personen &#252;ber die Verarbeitung informiert?</title>
+      </field>
+      <field name="recht_auf_auskunft_betroffener" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.2 Wie k&#246;nne Betroffene ihr Recht auf Auskunft aus&#252;ben?</title>
+      </field>
+      <field name="recht_auf_loschung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.3 Wie k&#246;nnen betroffene Personen ihr Recht auf L&#246;schung aus&#252;ben?</title>
+      </field>
+      <field name="recht_auf_berichtigung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.4 Wie k&#246;nnen betroffene Personen ihr Recht auf Berichtigung aus&#252;ben?</title>
+      </field>
+      <field name="recht_auf_widerspruch" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.5 Wie k&#246;nnen betroffene Personen ihr Recht auf Einschr&#228;nkung oder Widerspruch der Verarbeitung aus&#252;ben?</title>
+      </field>
+      <field name="recht_auf_datenubertragbarkeit" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>3.2.6 Wie k&#246;nnen betroffene Personen ihr Recht auf Daten&#252;bertragbarkeit aus&#252;ben?</title>
+      </field>
+    </fieldset>
+
+    <fieldset name="abstimmung_aufsichtsbehorde"
+              label="4.1.4 Abstimmung mit der Aufsichtsbeh&#246;rde"
+              description="Abstimmung mit der zust&#228;ndigen Aufsichtsbeh&#246;rde">
+      <field name="konsultation_aufsichtsbehorde" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>4.1.4.1 Wurde die zust&#228;ndige Aufsichtsbeh&#246;rde konsultiert bzw. ist eine Konsultation geplant?</title>
+        <values>
+          <element>Ja</element>
+          <element>Nein</element>
+        </values>
+      </field>
+      <field name="begrundung" type="zope.schema.Text">
+        <description/>
+        <required>False</required>
+        <title>4.1.4.2 Begr&#252;ndung</title>
+      </field>
+      <field name="beschreibung_der_abstimmung" type="zope.schema.Text">
+        <description>(zeitlicher Verlauf, Status, Verweis auf Schriftverkehr, Ergebnisse usw.)</description>
+        <required>False</required>
+        <title>4.1.4.3 Beschreibung der Abstimmung</title>
+      </field>
+    </fieldset>
+
+  </schema>
+</model>

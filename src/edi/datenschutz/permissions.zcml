@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddVorlageVerarbeitung"
+        title="edi.datenschutz: Add VorlageVerarbeitung"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddGefaehrdung"
         title="edi.datenschutz: Add Gefaehrdung"
     />
