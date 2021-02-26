@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddVorlageDSFA"
+        title="edi.datenschutz: Add VorlageDSFA"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddVorlageVerarbeitung"
         title="edi.datenschutz: Add VorlageVerarbeitung"
     />
