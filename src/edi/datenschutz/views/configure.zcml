@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="vorlage-dsfa-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".vorlage_dsfa_view.VorlageDsfaView"
+    template="vorlage_dsfa_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="vorlage-verarbeitung-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".vorlage_verarbeitung_view.VorlageVerarbeitungView"
