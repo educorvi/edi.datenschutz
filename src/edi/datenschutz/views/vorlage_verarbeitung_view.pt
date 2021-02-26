@@ -1,13 +1,40 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="edi.datenschutz"
-      metal:use-macro="context/main_template/macros/master">
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-9">
+            <div tal:replace="structure provider:plone.abovecontenttitle" />
+            <h1 class="documentFirstHeading" tal:content="context/title" />
+            <div tal:replace="structure provider:plone.belowcontenttitle" />
+            <p class="documentDescription" tal:content="context/description" />
+            <div tal:replace="structure provider:plone.abovecontentbody" />
+            <h2>Anlegen einer Verarbeitungstätigkeit aus dieser Vorlage</h2>
+            <form action="createVerarbeitung">
+              <div class="form-group">
+                <label for="selectFolder">Auswahl des Ordners</label>
+                <select class="form-control" id="selectFolder" required>
+                  <option tal:repeat="folder view/folders" tal:attributes="value folder/uid" tal:content="folder/title"/>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Verarbeitungstätigkeit anlegen</button>
+            </form>
+            <div tal:replace="structure provider:plone.belowcontentbody" />
+          </div>
+        </div>
+      </div>
+   
+    </tal:main-macro>
+  </metal:main>
+
 </body>
 </html>

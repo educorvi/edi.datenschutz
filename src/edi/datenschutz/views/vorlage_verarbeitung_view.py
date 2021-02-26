@@ -1,17 +1,21 @@
 # -*- coding: utf-8 -*-
-
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
-
-# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
+from plone import api as ploneapi
 
 class VorlageVerarbeitungView(BrowserView):
-    # If you want to define a template here, please remove the template from
-    # the configure.zcml registration of this view.
-    # template = ViewPageTemplateFile('vorlage_verarbeitung_view.pt')
+
+    def get_folders(self):
+        folders = api.content.find(context=self.context, portal_type='Folder')
+        options = []
+        for i in folders:
+            entry = {}
+            obj = i.getObject()
+            entry['title'] = obj.title
+            entry['uid'] = obj.UID()
+            options.append(entry)
+        return options
 
     def __call__(self):
-        # Implement your own actions:
-        self.msg = _(u'A small message')
+        self.folders = self.get_folders()
         return self.index()
