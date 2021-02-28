@@ -12,22 +12,209 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-9">
+          <div class="col-12 col-md-9">
             <div tal:replace="structure provider:plone.abovecontenttitle" />
             <h1 class="documentFirstHeading" tal:content="context/title" />
+
+            <p class="lead" tal:condition="context/description">
+              <span class="dot">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                  <defs></defs>
+                  <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+                </svg>
+              </span>
+              <span tal:content="context/description"></span>
+            </p>
+
             <div tal:replace="structure provider:plone.belowcontenttitle" />
-            <p class="documentDescription" tal:content="context/description" />
             <div tal:replace="structure provider:plone.abovecontentbody" />
+
+            <h3 class="mt-1">Verantwortlicher</h3>
+              <span tal:content="structure context/verantwortlicher"></span>
+
+            <h3 tal:condition="context/angaben_zu_verantwortlichen" class="mt-5">
+               Angaben zu weiteren gemeinsam für die Verarbeitung Verantwortlichen</h3>
+            <span tal:condition="context/angaben_zu_verantwortlichen" tal:content="structure context/angaben_zu_verantwortlichen"></span>
+
+            <h3 tal:condition="context/datenschutzbeauftragter" class="mt-5">Datenschutzbeauftragter der Behörde oder des Unternehmens</h3>
+            <span tal:condition="context/datenschutzbeauftragter" tal:content="context/datenschutzbeauftragter"></span>
+
+            <div class="accordion mt-5 mb-3" id="accordeonAnsicht">
+
+              <div class="card">
+              <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse0" aria-controls="collapse0">1. Beteiligte Personen und Status</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingOne" data-parent="#accordeonAnsicht" id="collapse0">
+                <div class="card-body">
+                  <h3>1.1 An Beschreibung beteiligte Person(en) und ihre Rolle(n)</h3>
+                  <ul class="list-group">
+                    <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+                    <li tal:repeat="person context/beteiligte_personen_und_ihre_rollen" class="list-group-item">
+                      <span tal:content="person"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </div><!--card-->
+
+              <div class="card">
+              <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse5" aria-controls="collapse5">5. Zwecke und Rechtsgrundlagen der Verarbeitung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingSix" data-parent="#accordeonAnsicht" id="collapse5">
+                <div class="card-body">
+                  <h3>5.1 Zwecke</h3>
+                  <span tal:content="structure context/zwecke"></span>
+                  <h3 class="mt-5">5.2 Rechtsgrundlagen/Befugnis</h3>
+                  <span tal:content="structure context/rechtsgrundlagen_befugnis"></span>
+                </div>
+              </div>
+              </div><!--card--> 
+
+              <div class="card">
+              <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse6" aria-controls="collapse6">6. Kategorien der personenbezogenen Daten</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingSeven" data-parent="#accordeonAnsicht" id="collapse6">
+                <div class="card-body">
+                  <h3>Auflistung der personenbezogenen Daten</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Daten</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="datenbezeichnung context/kategorien_daten">
+                        <td tal:content="datenbezeichnung/nr"></td>
+                        <td tal:content="datenbezeichnung/bezeichnung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div><!--card-->
+
+              <div class="card">
+              <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse7" aria-controls="collapse7">7. Kategorien der betroffenen Personen</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingEight" data-parent="#accordeonAnsicht" id="collapse7">
+                <div class="card-body">
+                  <h3>Auflistung der betroffenen Personen</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Betroffene Person</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="person context/kategorien_personen">
+                        <td tal:content="person/nr"></td>
+                        <td tal:content="person/bezeichnung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div><!--card-->
+
+              <div class="card">
+              <div class="card-header" id="headingEleven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse10" aria-controls="collapse10">10. Fristen für die Löschung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingEleven" data-parent="#accordeonAnsicht" id="collapse10">
+                <div class="card-body">
+                  <h3>Auflistung der Löschfristen</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Löschungsfrist</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="loeschung context/loeschfristen">
+                        <td tal:content="loeschung/nr"></td>
+                        <td tal:content="loeschung/bezeichnung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div><!--card-->
+
+              <div class="card">
+              <div class="card-header" id="headingThirteen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse12" aria-controls="collapse12">12. Verantwortliche Organisationseinheit</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingThirteen" data-parent="#accordeonAnsicht" id="collapse12">
+                <div class="card-body">
+                    <div tal:condition="context/dienststelle_sachgebiet_abteilung"
+                          tal:replace="structure context/dienststelle_sachgebiet_abteilung"/>
+                </div>
+              </div>
+              </div><!--card-->
+
+              <div class="card">
+              <div class="card-header" id="headingFiveteen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse14" aria-controls="collapse14">13. Stellungnahme des Datenschutzbeauftragten</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordeonAnsicht" id="collapse14">
+                <div class="card-body">
+                  <h3>13.1 Liegt eine Stellungnahme des Datenschutzbeauftragten vor?</h3>
+                  <p tal:content="context/vorliegen_stellungnahme"></p>
+                  <h3 class="mt-5">13.2 Gegebenenfalls nähere Erläuterung</h3>
+                  <p tal:content="context/datenschutz_erlaeuterung"></p>
+                </div>
+              </div>
+              </div><!--card-->
+
+            </div><!--akkordeon-->
+
+            <div class="bg-light p-3">
             <h2>Anlegen einer Verarbeitungstätigkeit aus dieser Vorlage</h2>
-            <form action="createVerarbeitung">
+            <form action="createVerarbeitung" tal:attributes="action view/createurl">
               <div class="form-group">
                 <label for="selectFolder">Auswahl des Ordners</label>
-                <select class="form-control" id="selectFolder" required>
+                <select class="form-control" name="selectFolder" id="selectFolder" required>
                   <option tal:repeat="folder view/folders" tal:attributes="value folder/uid" tal:content="folder/title"/>
                 </select>
+                <small id="vorlageHelp" class="form-text text-muted">Auswahl des Ordners in dem die neue Verarbeitungstätigkeit
+                  angelegt werden soll.</small>
               </div>
-              <button type="submit" class="btn btn-primary">Verarbeitungstätigkeit anlegen</button>
+              <div class="form-group">
+                <label for="vorlagetitel">Titel der neuen Verarbeitungstätigkeit</label>
+                <input type="text" class="form-control" name="vorlagetitel" id="vorlagetitel" aria-describedby="vorlageHelp">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Neue Verarbeitungstätigkeit anlegen">
             </form>
+            </div>
+
             <div tal:replace="structure provider:plone.belowcontentbody" />
           </div>
         </div>

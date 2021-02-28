@@ -6,7 +6,7 @@ from plone import api as ploneapi
 class VorlageVerarbeitungView(BrowserView):
 
     def get_folders(self):
-        folders = api.content.find(context=self.context, portal_type='Folder')
+        folders = ploneapi.content.find(context=self.context.aq_inner.aq_parent, portal_type='Folder')
         options = []
         for i in folders:
             entry = {}
@@ -18,4 +18,5 @@ class VorlageVerarbeitungView(BrowserView):
 
     def __call__(self):
         self.folders = self.get_folders()
+        self.createurl = self.context.absolute_url()  + '/createVerarbeitung'
         return self.index()
