@@ -15,23 +15,6 @@
         <required>False</required>
         <title>1.1.1 An DSFA beteiligte Person(en) und ihre Rolle(n)</title>
       </field>
-      <field name="status_der_dsfa" type="zope.schema.Choice">
-        <description/>
-        <required>False</required>
-        <title>1.1.2 Status der DSFA</title>
-        <values>
-          <element>in Bearbeitung</element>
-          <element>Aktiviert</element>
-          <element>Deaktiviert</element>
-          <element>Sonstiges (Bitte in Anmerkungen schreiben)</element>
-        </values>
-        <default>in Bearbeitung</default>
-      </field>
-      <field name="anmerkung_zum_status" type="zope.schema.Text">
-        <description/>
-        <required>False</required>
-        <title>1.1.3 Anmerkung zum Status</title>
-      </field>
       <field name="kontaktdaten_datenschutzbeauftragter" type="zope.schema.Text">
         <description/>
         <required>False</required>

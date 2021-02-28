@@ -7,8 +7,8 @@
   -*- extra stuff goes here -*-
 
   <browser:page
-    name="create-dsfa"
-    for="Products.CMFCore.interfaces.IFolderish"
+    name="createDsfa"
+    for="edi.datenschutz.content.vorlage_d_s_f_a.IVorlageDSFA"
     class=".create_dsfa.CreateDsfa"
     permission="zope2.View"
     />

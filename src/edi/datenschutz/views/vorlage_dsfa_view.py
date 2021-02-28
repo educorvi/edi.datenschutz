@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
-
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
-
-# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone import api as ploneapi
 
 
 class VorlageDsfaView(BrowserView):
-    # If you want to define a template here, please remove the template from
-    # the configure.zcml registration of this view.
-    # template = ViewPageTemplateFile('vorlage_dsfa_view.pt')
+
+    def get_folders(self):
+        folders = ploneapi.content.find(context=self.context.aq_inner.aq_parent, portal_type='Verarbeitungstaetigkeit')
+        options = []
+        for i in folders:
+            entry = {}
+            obj = i.getObject()
+            entry['title'] = obj.title
+            entry['uid'] = obj.UID()
+            options.append(entry)
+        return options
 
     def __call__(self):
-        # Implement your own actions:
-        self.msg = _(u'A small message')
+        self.folders = self.get_folders()
+        self.createurl = self.context.absolute_url()  + '/createDsfa'
         return self.index()

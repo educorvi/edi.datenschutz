@@ -1,13 +1,241 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="edi.datenschutz"
-      metal:use-macro="context/main_template/macros/master">
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <div tal:replace="structure provider:plone.abovecontenttitle" />
+            <h1 class="documentFirstHeading" tal:content="context/title" />
+
+            <p class="lead" tal:condition="context/description">
+              <span class="dot">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                  <defs></defs>
+                  <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+                </svg>
+              </span>
+              <span tal:content="context/description"></span>
+            </p>
+
+            <div tal:replace="structure provider:plone.belowcontenttitle" />
+            <div tal:replace="structure provider:plone.abovecontentbody" />
+
+            <div class="accordion mt-5 mb-3" id="accordeonAnsicht">
+
+              <div class="card">
+              <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse0" aria-controls="collapse0">1.1 Beteiligte Personen und Status</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingOne" data-parent="#accordeonAnsicht" id="collapse0">
+                <div class="card-body">
+                  <h3>1.1.1 An DSFA beteiligte Person(en) und ihre Rolle(n)</h3>
+                  <ul class="list-group">
+                    <li class="list-group-item active">Nachname, Vorname, Rolle</li>
+                    <li tal:repeat="person context/dsfa_beteiligte_person" class="list-group-item">
+                      <span tal:content="person"></span>
+                    </li>
+                  </ul>
+                  <h3 class="mt-5">1.1.4 Kontaktdaten Datenschutzbeauftragte/r</h3>
+                  <p tal:content="structure context/kontaktdaten_datenschutzbeauftragter"></p>
+                </div>
+              </div>
+              </div>
+
+              <div class="card">
+              <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse4" aria-controls="collapse4">2.1 Kontext: Überblick</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingFive" data-parent="#accordeonAnsicht" id="collapse4">
+                <div class="card-body">
+
+                  <h3 class="mt-5">2.1.2 Welche Zwecke hat die Verarbeitung?</h3>
+                  <span tal:content="structure context/dsfa_zwecke_der_verarbeitung"></span>
+
+                  <h3 class="mt-5">2.1.3 Welche Rechtsgrundlagen/Befugnisse für die Verarbeitung gibt es?</h3>
+                  <span tal:content="structure context/dsfa_rechtsgrundlagen_der_verarbeitung"></span>
+
+                  <h3 class="mt-5">2.1.4 Wenn anwendbar, wie wird die Einwilligung der betroffenen Personen eingeholt?</h3>
+                  <span tal:content="structure context/dsfa_einwilligung_der_betroffenen"></span>
+
+                  <h3 class="mt-5">2.1.5 Welche weiteren Normen, Standards und Zertifizierungen gibt es, die für die 
+                    Verarbeitung relevant sind?</h3>
+                  <span tal:content="structure context/normen_verarbeitung_relevant"></span>
+
+                  <h3 class="mt-5">2.1.6 Welche Zuständigkeiten bestehen für die Verarbeitung?</h3>
+                  <span tal:content="structure context/zustandigkeiten_fur_verarbeitung"></span>
+
+                  <h3 class="mt-5">2.1.7 Wie sind die Verpflichtungen der Auftragsverarbeiter klar definiert und vertraglich geregelt?</h3>
+                  <span tal:content="structure context/verpflichtungen_der_auftragsverarbeiter"></span>
+
+                </div>
+              </div>
+              </div>
+
+              <div class="card">
+              <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse5" aria-controls="collapse5">2.2 Kontext: Daten, Prozesse und Unterstützung</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingSix" data-parent="#accordeonAnsicht" id="collapse5">
+                <div class="card-body">
+                  <h3>2.2.1 Auflistung der Datenkategorien</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Datenkategorie</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="kategorie context/kategorien_personenbezogener_daten">
+                        <td tal:content="kategorie/nr"></td>
+                        <td tal:content="kategorie/bezeichnung"></td>
+                        <td tal:content="kategorie/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3 class="mt-5">2.2.2 Auflistung der Kategorien betroffener Personen</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bezeichnung der Kategorien betroffener Personen</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="kategorie context/kategorien_betroffener_personen">
+                        <td tal:content="kategorie/nr"></td>
+                        <td tal:content="kategorie/bezeichnung"></td>
+                        <td tal:content="kategorie/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3 class="mt-5">2.2.3 Auflistung der Empfänger denen Daten offengelegt wurden</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Empfänger</th>
+                        <th scope="col">Anlass der Offenlegung</th>
+                        <th scope="col">Anmerkung</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="kategorie context/empfaenger_fuer_offenlegung">
+                        <td tal:content="kategorie/nr"></td>
+                        <td tal:content="kategorie/empfaenger"></td>
+                        <td tal:content="kategorie/anlass"></td>
+                        <td tal:content="kategorie/anmerkung"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 <h3 class="mt-5">2.2.4 Wie verläuft der Lebenszyklus von Daten und Prozessen?</h3>
+                  <span tal:content="structure context/lebenszyklus_daten_prozesse"></span>
+                  <h3 class="mt-5">2.2.5 Mit Hilfe welcher Betriebsmittel erfolgt die Datenverarbeitung?</h3>
+                  <span tal:content="structure context/betriebsmittel_fuer_datenverarbeitung"></span>
+                </div>
+              </div>
+              </div>
+
+              <div class="card">
+              <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse8" aria-controls="collapse8">3.2 Grundlegende Prinzipien: Umsetzung der Betroffenenrechte</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingEight" data-parent="#accordeonAnsicht" id="collapse8">
+                <div class="card-body">
+
+                  <h3>3.2.1 Wie werden die betroffenen Personen über die Verarbeitung informiert?</h3>
+                  <span tal:content="structure context/information_betroffener_personen"></span>
+
+                      <h3 class="mt-5">3.2.2 Wie könne Betroffene ihr Recht auf Auskunft ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_auskunft_betroffener"></span>
+
+                  <h3 class="mt-5">3.2.3 Wie können betroffene Personen ihr Recht auf Löschung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_loschung"></span>
+
+                  <h3 class="mt-5">3.2.4 Wie können betroffene Personen ihr Recht auf Berichtigung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_berichtigung"></span>
+
+                  <h3 class="mt-5">3.2.5 Wie können betroffene Personen ihr Recht auf Einschränkung oder Widerspruch der Verarbeitung ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_widerspruch"></span>
+
+                  <h3 class="mt-5">3.2.6 Wie können betroffene Personen ihr Recht auf Datenübertragbarkeit ausüben?</h3>
+                  <span tal:content="structure context/recht_auf_datenubertragbarkeit"></span>
+
+                </div>
+              </div>
+              </div>
+
+              <div class="card">
+              <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" aria-expanded="false"
+                     data-target="#collapse9" aria-controls="collapse9">4.1 Abstimmung Aufsichtsbehörde</button>
+                  </h2>
+              </div>
+              <div class="collapse" aria-labelledby="headingNine" data-parent="#accordeonAnsicht" id="collapse9">
+                <div class="card-body">
+                  <h3 class="mt-5">4.1.4 Abstimmung mit der Aufsichtsbehörde</h3>
+                  <h4 class="mt-5">4.1.4.1 Wurde die zuständige Aufsichtsbehörde konsultiert bzw. ist eine Konsultation geplant?</h4>
+                  <span tal:content="structure context/konsultation_aufsichtsbehorde"></span>
+                  <h4 class="mt-5">4.1.4.2 Begründung</h4>
+                  <span tal:content="structure context/begrundung"></span>
+                  <h4 class="mt-5">4.1.4.3 Beschreibung der Abstimmung</h4>
+                  <span tal:content="structure context/beschreibung_der_abstimmung"></span>
+                </div>
+              </div>
+              </div>
+
+            </div>
+
+            <div class="bg-light p-3">
+            <h2>Anlegen einer Datenschutzfolgenabschätzung aus dieser Vorlage</h2>
+            <form action="createDsfa" tal:attributes="action view/createurl">
+              <div class="form-group">
+                <label for="selectFolder">Auswahl der Verarbeitungstätigkeit</label>
+                <select class="form-control" name="selectFolder" id="selectFolder" required>
+                  <option tal:repeat="folder view/folders" tal:attributes="value folder/uid" tal:content="folder/title"/>
+                </select>
+                <small id="vorlageHelp" class="form-text text-muted">Auswahl der Verarbeitungstätigkeit für die eine neue DSFA
+                  angelegt werden soll.</small>
+              </div>
+              <div class="form-group">
+                <label for="vorlagetitel">Titel der neuen Datenschutzfolgenabschätzung</label>
+                <input type="text" class="form-control" name="vorlagetitel" id="vorlagetitel" aria-describedby="vorlageHelp">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Neue DSFA anlegen">
+            </form>
+            </div>
+
+            <div tal:replace="structure provider:plone.belowcontentbody" />
+          </div>
+        </div>
+      </div>
+   
+    </tal:main-macro>
+  </metal:main>
+
 </body>
 </html>
