@@ -8,7 +8,6 @@ class CreateVerarbeitung(BrowserView):
         folderuid = self.request.get('selectFolder')
         container = ploneapi.content.get(UID=folderuid)
         vorlagetitel = self.request.get('vorlagetitel')
-        import pdb;pdb.set_trace()
         obj = ploneapi.content.create(
             type='Verarbeitungstaetigkeit',
             title=vorlagetitel,
