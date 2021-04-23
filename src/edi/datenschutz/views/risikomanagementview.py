@@ -50,17 +50,18 @@ class Risikomanagementview(BrowserView):
         objdict['bewertung'] = bewertung
         for massnahme in i.massnahmen:
             objmassnahme = massnahme.to_object
-            massnahmendict = {}
-            massnahmendict['title'] = objmassnahme.title
-            massnahmendict['url'] = objmassnahme.absolute_url()
-            massnahmendict['uid'] = 'edi'+objmassnahme.UID()
-            rawview = api.content.get_view(
-                name='massnahmeraw',
-                context=objmassnahme,
-                request=self.request,
-            )
-            massnahmendict['view'] = rawview()
-            objdict['refs'].append(massnahmendict)
+            if objmassnahme:
+                massnahmendict = {}
+                massnahmendict['title'] = objmassnahme.title
+                massnahmendict['url'] = objmassnahme.absolute_url()
+                massnahmendict['uid'] = 'edi'+objmassnahme.UID()
+                rawview = api.content.get_view(
+                    name='massnahmeraw',
+                    context=objmassnahme,
+                    request=self.request,
+                )
+                massnahmendict['view'] = rawview()
+                objdict['refs'].append(massnahmendict)
         return objdict
 
     def massnahmen(self):
@@ -72,19 +73,20 @@ class Risikomanagementview(BrowserView):
         for i in objects:
             for k in i.massnahmen:
                 objmassnahme = k.to_object
-                if objmassnahme.UID() not in uids:
-                    massdict = {}
-                    uids.append(objmassnahme.UID())
+                if objmassnahme:
+                    if objmassnahme.UID() not in uids:
+                        massdict = {}
+                        uids.append(objmassnahme.UID())
 
-                    rawview = api.content.get_view(
-                        name='massnahmeraw',
-                        context=objmassnahme,
-                        request=self.request,
-                    )
-                    massdict['title'] = objmassnahme.title
-                    massdict['uid'] = 'edi'+objmassnahme.UID()
-                    massdict['rawview'] = rawview()
-                    massnahmen.append(massdict)
+                        rawview = api.content.get_view(
+                            name='massnahmeraw',
+                            context=objmassnahme,
+                            request=self.request,
+                        )
+                        massdict['title'] = objmassnahme.title
+                        massdict['uid'] = 'edi'+objmassnahme.UID()
+                        massdict['rawview'] = rawview()
+                        massnahmen.append(massdict)
 
         return massnahmen
 

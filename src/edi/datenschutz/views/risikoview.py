@@ -80,9 +80,10 @@ class Risikoview(BrowserView):
         massnahmen = []
         for massnahme in self.context.massnahmen:
             objmassnahme = massnahme.to_object
-            massnahmendict = {}
-            massnahmendict['title'] = objmassnahme.title
-            massnahmendict['url'] = objmassnahme.absolute_url()
-            massnahmendict['uid'] = 'edi'+objmassnahme.UID()
-            massnahmen.append(massnahmendict)
+            if objmassnahme:
+                massnahmendict = {}
+                massnahmendict['title'] = objmassnahme.title
+                massnahmendict['url'] = objmassnahme.absolute_url()
+                massnahmendict['uid'] = 'edi'+objmassnahme.UID()
+                massnahmen.append(massnahmendict)
         return massnahmen    
