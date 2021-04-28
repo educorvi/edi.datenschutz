@@ -78,8 +78,6 @@ class Dsfaview(BrowserView):
         if not context.dsfa_datenschutzmassnahmen:
             todo.append((13, u"Datenschutzmaßnahmen"))
 
-        print(todo)
-        print(len(todo))
         rest = len(todo)
         erfuellung = (30 - rest) / 30 * 100
         retdict = {'erfuellung': int(erfuellung),
@@ -111,7 +109,6 @@ class Dsfaview(BrowserView):
             entry['anmerkung'] = i.description
             formatanlagen.append(entry)
             counter += 1
-        print(formatanlagen)
         return formatanlagen
 
     def get_ueberpruefung(self):

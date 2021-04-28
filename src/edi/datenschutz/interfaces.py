@@ -76,9 +76,9 @@ grad = SimpleVocabulary((
     ))
 
 ampel = SimpleVocabulary((
-    SimpleTerm(value="success", token="gr", title=u"grün"),
-    SimpleTerm(value="warning", token="ge", title=u"gelb"),
-    SimpleTerm(value="danger", token="ro", title=u"rot"),
+    SimpleTerm(value="success", token="gr", title=u"geringen Risiko (grün)"),
+    SimpleTerm(value="warning", token="ge", title=u"Risiko (gelb)"),
+    SimpleTerm(value="danger", token="ro", title=u"hohes Risiko (rot)"),
     SimpleTerm(value="light", token="se", title=u"kein Wert"),
     ))
 

@@ -4,6 +4,19 @@
     xmlns:form="http://namespaces.plone.org/supermodel/form"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="edi.datenschutz">
-  <schema>
+    <schema>
+
+      <field name="title" type="zope.schema.TextLine">
+        <title>Titel des Maßnahmenkataloges</title>
+        <description>In diesem Maßnahmenkatalog können technische und organisatorische Maßnahmen (TOMs) für diese Verarbeitungstätigkeit 
+	             gespeichert werden.</description>	    
+        <defaultFactory>edi.datenschutz.content.massnahmenkatalog.get_title</defaultFactory>
+      </field>
+
+      <field name="description" type="zope.schema.Text">
+        <required>False</required>	    
+        <description>Kurzbeschreibung (Anzeige in den Suchergebnissen)</description>
+      </field>
+
   </schema>
 </model>

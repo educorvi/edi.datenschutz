@@ -6,6 +6,16 @@
     i18n:domain="edi.datenschutz">
   <schema>
 
+    <field name="title" type="zope.schema.TextLine">
+      <title>Titel der DSFA</title>
+      <defaultFactory>edi.datenschutz.content.datenschutzfolgenabschaetzung.get_title</defaultFactory>
+    </field>
+
+    <field name="description" type="zope.schema.Text">
+      <required>False</required>	    
+      <description>Kurzbeschreibung der DSFA (Anzeige in den Suchergebnissen)</description>
+    </field>
+
     <fieldset name="beteiligte_personen_und_status"
               label="1.1 Beteiligte Personen und Status"
               description="Beteiligte Personen und Status">

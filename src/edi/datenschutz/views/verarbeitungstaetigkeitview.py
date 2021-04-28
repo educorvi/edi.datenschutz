@@ -14,7 +14,11 @@ class Verarbeitungstaetigkeitview(BrowserView):
     # template = ViewPageTemplateFile('verarbeitungstaetigkeitview.pt')
 
     def __call__(self):
-        self.msg = _(u'A small message')
+        link = self.context.absolute_url() + '/edit#autotoc-item-autotoc-14'
+        message = u"""Für diese Verarbeitungstätigkeit ist eine erweitere Risikovorabbewertung mittels Blacklist erforderlich. Für die\
+                Durchführung der Risikovorabbewertung klicken Sie auf <a href="%s">diesen Link.</a>""" % link
+        if self.context.datenschutz_folgenabschatzung_erforderlich == 'Nein' and not self.context.bestaetigung_risikovorabbewertung:
+            ploneapi.portal.show_message(message=message, request=self.request, type='warning')
         return self.index()
 
     def get_todo(self):
@@ -42,8 +46,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
             todo.append((12, u"Verantwortliche Organisationseinheit"))
         if not context.vorliegen_stellungnahme:
             todo.append((13, u"Stellungnahme des Datenschutzbeauftragten"))
-        print(todo)
-        print(len(todo))
         rest = len(todo)
         erfuellung = (11 - rest) / 11 * 100
         retdict = {'erfuellung': int(erfuellung),
@@ -121,7 +123,6 @@ class Verarbeitungstaetigkeitview(BrowserView):
             entry['anmerkung'] = i.description
             formatanlagen.append(entry)
             counter += 1
-        print(formatanlagen)
         return formatanlagen
 
     def is_redakteur(self):
@@ -135,10 +136,10 @@ class Verarbeitungstaetigkeitview(BrowserView):
     def get_foldercontents(self):
         dsfatypes = [(u'Datenschutzfolgenabschaetzung',
                       u'DSFA'),
-                     (u'Massnahmenkatalog',
-                      u'Maßnahmenkatalog'),
                      (u'Risikomanagement',
-                      u'Risikomanagement')]
+                      u'Risikomanagement'),
+                     (u'Massnahmenkatalog',
+                      u'Maßnahmenkatalog')]
         types = [(u'Massnahmenkatalog', u'Maßnahmenkatalog')]
         contents = []
         if self.context.datenschutz_folgenabschatzung_erforderlich == 'Ja':

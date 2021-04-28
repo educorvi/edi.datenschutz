@@ -45,13 +45,16 @@
 
     <field name="datenschutz_folgenabschatzung_erforderlich"
            type="zope.schema.Choice">
-      <description/>
       <required>True</required>
-      <title>Ist f&#252;r diese Verarbeitung eine Datenschutz-Folgenabsch&#228;tzung nach Art. 35 DSGVO erforderlich?</title>
+      <title>Hohes Risiko für die Rechte und Freiheiten natürlicher Personen</title>
+      <description>Hat diese Verarbeitung ein hohes Risiko für die Rechte und Freiheiten natürlicher Personen zur Folge? Bei Angabe von "Ja" 
+	           ist eine Datenschutz-Folgenabschätzung nach Art. 35 DSGVO zwingend erforderlich. Bei Angabe von "Nein" ist einer erweiterte
+		   Risikovorabbewertung anhand einer sogenannten Blacklist erforderlich.</description>
       <values>
         <element>Ja</element>
         <element>Nein</element>
       </values>
+      <default>Ja</default>
     </field>
 
     <field name="pruefung_bis_wann" type="zope.schema.Date">
@@ -270,6 +273,133 @@
         <required>False</required>
         <title>14.2 Gegebenenfalls n&#228;here Erl&#228;uterung</title>
       </field>
+    </fieldset>
+
+    <fieldset name="risikovorabbewertung"
+	      label="Optional: Erweiterte Risikovorabbewertung"
+	      description="Durchführung der Risikovorabbewertung mittels Blacklist">
+
+    <field name="scoring"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Bewertung oder Einstufung (Scoring)</title>
+     <description>Umfasst die Verarbeitung die Bewertung oder Einstufung der Betroffenen, darunter das Erstellen von Profilen und Prognosen,
+	     insbesondere auf der Grundlage von Aspekten, die die Arbeitsleitung, wirtschaftliche Lage, Gesundheit, persönliche Vorlieben oder
+             Interessen, die Zuverlässigkeit oder das Verhalten, den Aufenthaltsort oder Ortswechsel der Person betreffen?</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="automatisierung"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Automatisierte Entscheidungsfindung mit Rechtswirkung oder ähnlich bedeutsamer Wirkung.</title>
+      <description>Umfasst die Verarbeitung eine automatisierte Entscheidungsfindung mit einer Wirkung , die zwar nicht alleine die Grundlage
+	     für Entscheidungen mit Rechtswirkung oder ähnlichen bedeutsamen Auswirkungen für die Betroffenen darstellen, aber einen
+	     wesentlichen Beitrag zu solchen Entscheidungen liefern?</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="ueberwachung"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Systematische Überwachung</title>
+      <description>Hat die Verarbeitung die Beobachtung, Überwachung oder Kontrolle von Betroffenen zum Ziel und greift auf beispielsweise
+                   über Netzwerke erfasste Daten oder eine systematische Überwachung auch über nicht öffentlich zugängliche Bereiche 
+	           (Artikel 35 Absatz 3 Buchstabe c) zurück?</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="persoenliche_daten"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Vertrauliche oder höchst persönliche Daten</title>
+      <description>Werden bei der Verarbeitung vertrauliche oder höchst persönliche Informationen verarbeitet?</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="grosser_umfang"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Datenverarbeitung in großem Umfang</title>
+      <description>Handelt es sich um eine Datenverarbeitung in großem Umfang, wie z.B. die Verarbeitung von Daten von mehr als 
+                   5 Mio Betroffenen?</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="datenabgleich"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Abgleich oder Zusammenführung von Datensätzen</title>
+      <description>Werden im Rahmen der Verarbeitung Datensätze aus zwei oder mehreren Verarbeitungen abgeglichen oder zusammengeführt,
+	           die zu unterschiedlichen Zwecken und/oder von verschiedenen Verantwortlichen durchgeführt wurden, und zwar in einer
+		   Weise, die über die vernünftigen Erwartungen der Betroffenen hinausgehen?</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="schutzbeduerftige"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Daten zu schutzbedürftigen betroffenen Personen</title>
+      <description>Werden bei der Verarbeitung Daten zu schutzbedürftigen Betroffenen verarbeitet, dazu gehören z.B. Kinder, Arbeitnehmer/
+	           Beamte bei einer Verarbeitung durch den Arbeitgeber/Dienstherrn, psychisch Kranke, Asylbewerber, Senioren, 
+		   Patienten.</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="neue_technologien"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Anwendung neuer Technologien und organisatorischer Lösungen</title>
+      <description>Werden bei der Verarbeitung neue Technologien oder organisatorische Lösungen in einer Art und Weise eingesetzt, die dem
+	           gegenwärtigen Stand der Technik voraus sind und deswegen die Abschätzung der Auswirkungen auf die Betroffenen und die
+		   Gesellschaft erschweren.</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>    
+
+    <field name="behinderung"
+           type="zope.schema.Choice">
+      <required>False</required>
+      <title>Behinderung bei der Ausübung von Rechten</title>
+      <description>Hindert die Verarbeitung an sich die Betroffenen an der Ausübung eines Rechts, der Nutzung einer Dienstleistung oder der
+	           Durchführung eines Vertrages.</description>
+      <values>
+        <element>Ja</element>
+        <element>Nein</element>
+      </values>
+    </field>
+
+    <field name="bestaetigung_risikovorabbewertung"
+           type="zope.schema.Bool">
+      <required>False</required>
+      <title>Bestätigung der Durchführung der Risikovoarbbewertung</title>
+      <description>Hiermit bestätige ich die ordnungsgemäße Durchführung der Risikovorabbewertung und die richtige und vollständige Beantwortung
+                   der Fragestellungen.</description>
+    </field>
+
     </fieldset>
 
   </schema>

@@ -7,41 +7,16 @@
 
   <schema>
 
-    <fieldset name="verfuegbarkeit"
-              label="Verf&#252;gbarkeit">
-      <field name="risikomanagement_verfuegbarkeit" type="zope.schema.List">
-        <title>Verf&#252;gbarkeit</title>
-        <description>Auflistung der Risiken</description>
-        <value_type type="collective.z3cform.datagridfield.DictRow">
-          <schema>edi.datenschutz.interfaces.IRisikomanagement</schema>
-        </value_type>
-        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      <field name="title" type="zope.schema.TextLine">
+        <title>Titel des Risikomanagements</title>
+        <description>Im Risikomanagement erfolgt die Erfassung von Risiken für diese Verarbeitungstätigkeit.</description>
+        <defaultFactory>edi.datenschutz.content.risikomanagement.get_title</defaultFactory>
       </field>
-    </fieldset>
 
-    <fieldset name="vertraulichkeit"
-              label="Vertraulichkeit">
-      <field name="risikomanagement_vertraulichkeit" type="zope.schema.List">
-        <title>Vertraulichkeit</title>
-        <description>Auflistung der Risiken</description>
-        <value_type type="collective.z3cform.datagridfield.DictRow">
-          <schema>edi.datenschutz.interfaces.IRisikomanagement</schema>
-        </value_type>
-        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+      <field name="description" type="zope.schema.Text">
+        <required>False</required>	    
+        <description>Kurzbeschreibung (Anzeige in den Suchergebnissen)</description>
       </field>
-    </fieldset>
-
-    <fieldset name="datenintegritaet"
-              label="Datenintegrit&#228;t">
-      <field name="risikomanagement_datenintegritaet" type="zope.schema.List">
-        <title>Datenintegrit&#228;t</title>
-        <description>Auflistung der Risiken</description>
-        <value_type type="collective.z3cform.datagridfield.DictRow">
-          <schema>edi.datenschutz.interfaces.IRisikomanagement</schema>
-        </value_type>
-        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
-      </field>
-    </fieldset>
 
   </schema>
 
