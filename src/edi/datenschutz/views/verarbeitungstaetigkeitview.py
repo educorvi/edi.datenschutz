@@ -15,8 +15,7 @@ class Verarbeitungstaetigkeitview(BrowserView):
 
     def __call__(self):
         link = self.context.absolute_url() + '/edit#autotoc-item-autotoc-14'
-        message = u"""Für diese Verarbeitungstätigkeit ist eine erweitere Risikovorabbewertung mittels Blacklist erforderlich. Für die\
-                Durchführung der Risikovorabbewertung klicken Sie auf <a href="%s">diesen Link.</a>""" % link
+        message = u"""Für diese Verarbeitungstätigkeit ist eine erweitere Risikovorabbewertung mittels Blacklist erforderlich."""
         if self.context.datenschutz_folgenabschatzung_erforderlich == 'Nein' and not self.context.bestaetigung_risikovorabbewertung:
             ploneapi.portal.show_message(message=message, request=self.request, type='warning')
         return self.index()
