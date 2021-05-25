@@ -22,12 +22,20 @@ class Wordview(BrowserView):
 
         doc = DocxTemplate(path)
 
+        personenlist = list()
         personen = self.context.beteiligte_personen_und_ihre_rollen
+        if personen:
+            for i in range(len(personen)):
+                key='person%s' % i+1
+                personenlist.append((key, personen[i]))
 
         transformer = ITransformer(self.context)
-        transformedValue = transformer(self.context.beschreibung_massnahmen, 'text/plain')
+        transformedValue = u''
+        if self.context.beschreibung_massnahmen:
+            transformedValue = transformer(self.context.beschreibung_massnahmen, 'text/plain')
 
         context = {
+            'title' : self.context.title,
             'document_id' : self.context.dokument_id,
             'aktenzeichen': self.context.aktenzeichen,
             'verantwortlicher': self.context.verantwortlicher,
@@ -37,12 +45,6 @@ class Wordview(BrowserView):
             'datenschutzbeauftragter': self.context.datenschutzbeauftragter,
             'zwecke': self.context.zwecke,
             'rechtsgrundlagen_befugnis': self.context.rechtsgrundlagen_befugnis,
-            'person1': personen[0],
-            'person2': personen[1],
-            'person3': personen[2],
-            'person4': personen[3],
-            'person5': personen[4],
-            'beschreibung_massnahmen': self.context.beschreibung_massnahmen.output,
             'dienststelle_sachgebiet_abteilung': self.context.dienststelle_sachgebiet_abteilung,
             'datumsangabe': self.context.datumsangabe,
             'datenschutz_folgenabschatzung_erforderlich': self.context.datenschutz_folgenabschatzung_erforderlich,
@@ -51,8 +53,13 @@ class Wordview(BrowserView):
             'vorliegen_stellungnahme': self.context.vorliegen_stellungnahme,
             'datenschutz_erlaeuterung': self.context.datenschutz_erlaeuterung,
             'beschreibung_massnahmen': transformedValue,
-
         }
+
+        if self.context.beschreibung_massnahmen:
+            context['beschreibung_massnahmen'] = self.context.beschreibung_massnahmen.output
+
+        for i in personenlist:
+            context[i[0]] = i[1]
 
         count = 0
         for i in reversed(self.context.kategorien_personen):
@@ -60,7 +67,6 @@ class Wordview(BrowserView):
             context[key] = i['bezeichnung']
             count +=1
 
-        #count = i_love_you<3
         count = 0
         for i in reversed(self.context.kategorien_daten):
             key = 'kategorien_daten%s' % count
