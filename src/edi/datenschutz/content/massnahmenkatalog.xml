@@ -15,8 +15,15 @@
 
       <field name="description" type="zope.schema.Text">
         <required>False</required>	    
-        <description>Kurzbeschreibung (Anzeige in den Suchergebnissen)</description>
+        <title>Kurzbeschreibung (Anzeige in den Suchergebnissen)</title>
       </field>
+
+      <field name="text" type="plone.app.textfield.RichText">
+        <description/>
+        <required>False</required>
+        <title>Ausführliche Beschreibung des Maßnahmenkataloges</title>
+      </field>
+
 
   </schema>
 </model>
