@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="bgetem.nine">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+      name="datenschutz.scripts"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      permission="zope2.View"
+      class=".scripts.BootstrapScripts"
+      template="scripts.pt"
+      layer="plonetheme.siguv.interfaces.IPlonethemeSiguvLayer"
+      />
+
+</configure>
