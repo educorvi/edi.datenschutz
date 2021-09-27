@@ -13,4 +13,5 @@
   <object meta_type="Dexterity FTI" name="Gefaehrdung"/>
   <object name="Vorlage Verarbeitung" meta_type="Dexterity FTI"/>
   <object name="Vorlage DSFA" meta_type="Dexterity FTI"/>
+  <object name="Risikoreferenz" meta_type="Dexterity FTI"/>
 </object>

@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.datenschutz.AddRisikoreferenz"
+        title="edi.datenschutz: Add Risikoreferenz"
+    />
+
+
+    <permission
         id="edi.datenschutz.AddVorlageDSFA"
         title="edi.datenschutz: Add VorlageDSFA"
     />
