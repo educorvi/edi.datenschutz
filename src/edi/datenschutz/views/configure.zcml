@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="risiko-referenz-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".risiko_referenz_view.RisikoReferenzView"
+    template="risiko_referenz_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="createDsfa"
     for="edi.datenschutz.content.vorlage_d_s_f_a.IVorlageDSFA"
     class=".create_dsfa.CreateDsfa"
