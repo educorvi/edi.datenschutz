@@ -355,7 +355,7 @@
 
                   <h3 class="mt-5">4.1.3 Risikogesamtbewertung</h3>
                   <span tal:repeat="ziel view/get_zielelist">
-                    <span tal:attributes="class python:'badge badge-pill badge-'+ziel[1]" tal:content="python: ziel[0]"/>
+                    <span tal:attributes="class python:'badge badge-pill badge-'+str(ziel[1])" tal:content="python: ziel[0]"/>
                   </span>
 
                   <h3 class="mt-5">4.1.4 Abstimmung mit der Aufsichtsbehörde</h3>
@@ -442,7 +442,7 @@
             <div class="card-header">Gewährleistungs-ziele</div>
             <div class="card-body">
               <h4 tal:repeat="ziel view/get_zielelist">
-                <span tal:attributes="class python:'badge badge-pill badge-'+ziel[1]" tal:content="python: ziel[0]"/>
+                <span tal:attributes="class python:'badge badge-pill badge-'+str(ziel[1])" tal:content="python: ziel[0]"/>
               </h4>
             </div>
           </div><!--card-->

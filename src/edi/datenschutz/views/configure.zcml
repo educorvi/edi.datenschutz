@@ -7,8 +7,8 @@
   -*- extra stuff goes here -*-
 
   <browser:page
-    name="risiko-referenz-view"
-    for="Products.CMFCore.interfaces.IFolderish"
+    name="referenz-view"
+    for="edi.datenschutz.content.risikoreferenz.IRisikoreferenz"
     class=".risiko_referenz_view.RisikoReferenzView"
     template="risiko_referenz_view.pt"
     permission="zope2.View"

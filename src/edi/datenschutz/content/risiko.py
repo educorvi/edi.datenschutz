@@ -9,7 +9,7 @@ from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
 from edi.datenschutz.interfaces import ziele, grad, ampel
-from edi.datenschutz.riskvocab import asset, vulnerability, threat
+from edi.datenschutz.riskvocab import asset, vulnerability, threat, schadenskategorien
 from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.app.multilingual.browser.interfaces import make_relation_root_path
 from zope.interface import Invalid
@@ -53,6 +53,9 @@ class IRisiko(model.Schema):
 
     directives.widget("grad_schwere", RadioFieldWidget)
     grad_schwere = schema.Choice(title=u"Grad der Schwere des Schadens", vocabulary=grad, required=True)
+
+    directives.widget("schadenskategorie", CheckBoxFieldWidget)
+    schadenskategorie = schema.List(title=u"Schadenskategorie", required=False, value_type=schema.Choice(vocabulary=schadenskategorien))
 
     schwere = schema.Text(title=u"Erläuterung zur Schwere des Schaden", required=False)
 

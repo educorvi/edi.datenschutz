@@ -22,8 +22,14 @@ class Risikomanagementview(BrowserView):
 
     @ram.cache(lambda *args: time() // (60 * 1))
     def get_folder_contents(self):
+        objekte = []
         contents = self.context.listFolderContents()
-        return contents
+        for obj in contents:
+            if obj.portal_type == "Risiko":
+                objekte.append(obj)
+            elif obj.portal_type == "Risikoreferenz":
+                objekte.append(obj.risikoreferenz.to_object)
+        return objekte
 
     def create_risk_entry(self, i):
         objdict = dict()

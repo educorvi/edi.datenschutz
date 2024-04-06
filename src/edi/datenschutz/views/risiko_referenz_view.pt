@@ -4,10 +4,125 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="edi.datenschutz"
       metal:use-macro="context/main_template/macros/master">
-<body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
-</body>
+
+  <body>
+
+    <metal:main fill-slot="main">
+      <tal:main-macro metal:define-macro="main">
+
+      <div class="container" tal:define="contextobj view/contextobj">
+
+         <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+         <h1 class="documentFirstHeading" tal:content="contextobj/title" />
+
+         <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+         <!--<p class="documentDescription" tal:content="contextobj/description" />-->
+
+         <div tal:replace="structure provider:plone.abovecontentbody" />
+
+
+         <div class="row mb-3"> 
+           <div class="col-12 col-sm-9">
+
+             <div id="ziele">		   
+               <h2>Gewährleistungsziel(e)</h2>
+	       <p>Das Risiko kompromittiert die folgenden Gewährleistungsziele:</p>
+               <ul class="list-group">
+                 <li tal:repeat="ziel view/ziele" class="list-group-item">
+                   <span tal:content="ziel"></span>
+                 </li>
+               </ul>
+	     </div>
+
+	     <div id="assets" class="mt-5">
+	       <h2>Vermögensgegensgegenstände</h2>
+	       <p tal:content="view/assets"/>
+	       <p tal:condition="contextobj/asset" class="lead">Nähere Erläuterung:</p>
+	       <p tal:condition="contextobj/asset"><span tal:replace="structure contextobj/asset"/></p>
+	     </div>
+
+	     <div id="threat" class="mt-5">
+	       <h2>Bedrohung</h2>
+	       <p tal:content="view/threat"/>
+	       <p tal:condition="contextobj/szenario" class="lead">Nähere Erläuterung:</p>
+	       <p tal:condition="contextobj/szenario"><span tal:replace="structure contextobj/szenario"/></p>
+	     </div>
+	     
+	     <div id="vulnerability" class="mt-5">
+               <h2>Schwachstelle</h2>
+	       <p tal:content="view/vulnerability"/>
+	       <p tal:condition="contextobj/schwachstelle" class="lead">Nähere Erläuterung:</p>
+               <p tal:condition="contextobj/schwachstelle" tal:content="structure contextobj/schwachstelle"></p>
+	       <p><a tal:condition="contextobj/schwachstelle_link" tal:attributes="href schwachstelle_link" tal:content="schwachstelle_link"/></p>
+	     </div>
+
+	     <div id="riskmatrix" tal:define="riskdict view/riskmatrix" class="mt-5">
+	       <h2>Risikomatrix</h2>
+	       <table class="table table-bordered">
+	         <thead>
+		   <tr class="bg-light">
+	             <th></th>
+		     <th>Grad</th>
+                     <th>Bewertung</th>
+		   </tr>
+	         </thead>
+	         <tbody>
+	           <tr>
+	             <th>Schwere des Schadens:</th>
+		     <td><span tal:content="structure contextobj/grad_schwere"></span></td>
+		     <td><span tal:content="structure contextobj/schwere"></span></td>
+		   </tr>
+		   <tr>
+		     <th>Eintrittswahrscheinlichkeit:</th>
+                     <td><span tal:content="structure contextobj/grad_wahrscheinlichkeit"></span></td>
+                     <td><span tal:content="structure contextobj/wahrscheinlichkeit"></span></td>
+                   </tr>
+		   <tr class="bg-light">
+	             <th>Risikoindex</th>
+		     <th tal:content="riskdict/risiko"/>
+		     <th tal:content="riskdict/wertung"/>
+		   </tr>
+	         </tbody>
+	       </table>
+
+	       <p class="lead mt-4">Grafische Darstellung des Riskoindex auf der Skala</p>
+
+	       <div class="progress mb-2" style="height: 4px;">
+                 <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+		       tal:attributes="aria-valuenow riskdict/prozent; style string:width: ${riskdict/prozent}%">
+	         </div>
+               </div>
+
+	       <div class="progress">
+                 <div class="progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+			tal:attributes="aria-valuenow riskdict/low; style string:width: ${riskdict/low}%">geringes Risiko</div>
+                 <div class="progress-bar bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+			tal:attributes="aria-valuenow riskdict/medium; style string:width: ${riskdict/medium}%">Risiko</div>
+                 <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+			tal:attributes="aria-valuenow riskdict/high; style string:width: ${riskdict/high}%">hohes Risiko</div>
+               </div>
+	     </div>
+
+	     <div id="massnahmen" class="mt-5"> 
+	       <h2>Maßnahmen zur Minimierung oder Vermeidung des Risikos</h2>
+	       <ul>
+                 <li tal:repeat="massnahme view/massnahmen"><a tal:attributes="href massnahme/url" tal:content="massnahme/title"/></li>
+	       </ul>
+
+	       <p><span tal:content="structure contextobj/erlaeuterung"></span></p>
+	     </div>
+
+           </div>
+	   <div class="col-12 col-sm-3"></div>
+	 </div>
+
+         <div tal:replace="structure provider:plone.belowcontentbody" />
+
+      </div>
+
+      </tal:main-macro>
+    </metal:main>
+  </body>
 </html>

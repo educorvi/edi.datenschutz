@@ -282,7 +282,7 @@
 	      description="Risikogesamtbewertung: Wie wird die Einhaltung der DSGVO gewährleistet?">
       <field name="verfuegbarkeit" type="zope.schema.Choice">
         <description/>
-        <required>False</required>
+        <required>True</required>
         <default>light</default>
         <title>Verf&#252;gbarkeit</title>
          <vocabulary>datenschutz-ampel</vocabulary>

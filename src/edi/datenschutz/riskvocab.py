@@ -36,3 +36,18 @@ vulnerability = SimpleVocabulary((
     SimpleTerm(value=u"human_errors", token=u"human_errors", title=u"menschliche Fehler"),
     SimpleTerm(value=u"others", token=u"others", title=u"sonstige Schwachstellen")
 ))
+
+schadenskategorien = SimpleVocabulary((
+    SimpleTerm(value=u"diskriminierung", token=u"diskriminierung", title=u"Diskriminierung"),
+    SimpleTerm(value=u"identitaetsdiebstahl", token=u"identitaetsdiebstahl", title=u"Identitätsdiebstahl oder Betrug"),
+    SimpleTerm(value=u"verlust", token=u"verlust", title=u"finanzieller Verlust"),
+    SimpleTerm(value=u"rufschaedigung", token=u"rufschaedigung", title=u"Rufschädigung"),
+    SimpleTerm(value=u"nachteile", token=u"nachteile", title=u"wirtschaftliche oder gesellschaftliche Nachteile"),
+    SimpleTerm(value=u"rechtsprobleme", token=u"rechtsprobleme", 
+               title=u"Erschwerung der Rechtsausübung und Verhinderung der Kontrolle durch betroffene Personen"),
+    SimpleTerm(value=u"rechtefreiheiten", token=u"rechtefreiheiten", title=u"Ausschluss oder Einschränkung der Ausübung von Rechten und Freiheiten"),
+    SimpleTerm(value=u"profilerstellung", token=u"profilerstellung", title=u"Profilerstellung oder -nutzung durch Bewertung persönlicher Aspekte"),
+    SimpleTerm(value=u"koerperschaden", token=u"koerperschaden", 
+               title=u"körperliche Schäden infolge von Handlungen auf der Grundlage fehlerhafter oder offengelegter Daten")
+))
+

@@ -229,6 +229,7 @@
         <required>False</required>
         <title>Beschreibung</title>
       </field>
+
       <field name="massnahmen" type="z3c.relationfield.schema.RelationList">
         <description>Hier können bereits dokumentierte technische und organisatorische Maßnahmen für diese
                    Verarbeitungstätigkeit ausgewählt werden.</description>
@@ -238,11 +239,13 @@
           <title i18n:translate="">Maßnahmen</title>
           <portal_type>
             <element>Massnahme</element>
-            <element>Ordner</element>
+            <element>Folder</element>
             <element>Massnahmenkatalog</element>
           </portal_type>
         </value_type>
+        <form:widget type="plone.app.z3cform.widget.RelatedItemsFieldWidget"/>
       </field>
+
     </fieldset>
 
     <fieldset name="verantwortliche_organisationseinheit"

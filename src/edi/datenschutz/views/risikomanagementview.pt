@@ -28,18 +28,18 @@
              <table class="table table-bordered table-responsive">
                <thead>
                  <tr>
-                   <th scope="col">ID</th>
-	           <th scope="col">Vermögensgegenstand</th>
-	           <th scope="col">Bedrohung</th>		      
+                   <th scope="col">Titel&nbsp;oder&nbsp;Beschreibung&nbsp;des&nbsp;Risikos</th>
+	               <th scope="col">Vermögensgegenstand</th>
+	               <th scope="col">Bedrohung</th>		      
                    <th scope="col">Schwachstelle</th>
                    <th scope="col">Risko vor Maßnahmen</th>
                    <th scope="col">Maßnahmen</th>
-	           <th scope="col">Risiko nach Maßnahmen</th>
+	               <th scope="col">Risiko nach Maßnahmen</th>
                  </tr>
                </thead>
                <tbody>
                  <tr tal:repeat="objdict ziel/data">
-	           <td><a tal:attributes="href python:objdict['obj'].absolute_url()" tal:content="python:objdict['obj'].id"/></td>
+	           <td><a tal:attributes="href python:objdict['obj'].absolute_url()" tal:content="python:objdict['obj'].title"/></td>
                    <td tal:content="python:objdict['asset']"></td>
 	           <td tal:content="python:objdict['threat']"></td>
                    <td tal:content="python:objdict['vul']"></td>

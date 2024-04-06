@@ -3,6 +3,7 @@
 from edi.datenschutz import _
 from Products.Five.browser import BrowserView
 from edi.datenschutz.interfaces import ampel
+from edi.datenschutz.helpers import check_value
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -121,13 +122,13 @@ class Dsfaview(BrowserView):
     def get_zielelist(self):
         dsfa = self.context
         ziele = list()
-        ziele.append(('Verfügbarkeit', dsfa.verfuegbarkeit, ampel.getTerm(dsfa.verfuegbarkeit).title))
-        ziele.append(('Vertraulichkeit', dsfa.vertraulichkeit, ampel.getTerm(dsfa.vertraulichkeit).title))
-        ziele.append(('Datenintegrität', dsfa.datenintegritaet, ampel.getTerm(dsfa.datenintegritaet).title))
-        ziele.append(('Datenminimierung', dsfa.datenminimierung, ampel.getTerm(dsfa.datenminimierung).title))
-        ziele.append(('Intervenierbarkeit', dsfa.intervenierbarkeit, ampel.getTerm(dsfa.intervenierbarkeit).title))
-        ziele.append(('Transparenz', dsfa.transparenz, ampel.getTerm(dsfa.transparenz).title))
-        ziele.append(('Nichtverkettung', dsfa.nichtverkettung, ampel.getTerm(dsfa.nichtverkettung).title))
-        ziele.append(('Konzepteinhaltung', dsfa.konzeptionseinhaltung, ampel.getTerm(dsfa.konzeptionseinhaltung).title))
-        ziele.append(('Richtigkeit', dsfa.richtigkeit, ampel.getTerm(dsfa.richtigkeit).title))
+        ziele.append(('Verfügbarkeit', dsfa.verfuegbarkeit, ampel.getTerm(check_value(dsfa.verfuegbarkeit)).title))
+        ziele.append(('Vertraulichkeit', dsfa.vertraulichkeit, ampel.getTerm(check_value(dsfa.vertraulichkeit)).title))
+        ziele.append(('Datenintegrität', dsfa.datenintegritaet, ampel.getTerm(check_value(dsfa.datenintegritaet)).title))
+        ziele.append(('Datenminimierung', dsfa.datenminimierung, ampel.getTerm(check_value(dsfa.datenminimierung)).title))
+        ziele.append(('Intervenierbarkeit', dsfa.intervenierbarkeit, ampel.getTerm(check_value(dsfa.intervenierbarkeit)).title))
+        ziele.append(('Transparenz', dsfa.transparenz, ampel.getTerm(check_value(dsfa.transparenz)).title))
+        ziele.append(('Nichtverkettung', dsfa.nichtverkettung, ampel.getTerm(check_value(dsfa.nichtverkettung)).title))
+        ziele.append(('Konzepteinhaltung', dsfa.konzeptionseinhaltung, ampel.getTerm(check_value(dsfa.konzeptionseinhaltung)).title))
+        ziele.append(('Richtigkeit', dsfa.richtigkeit, ampel.getTerm(check_value(dsfa.richtigkeit)).title))
         return ziele
